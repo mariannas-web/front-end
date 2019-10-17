@@ -14,10 +14,28 @@ export default class PostNews extends React.Component{
       link: '',
       image: '',
       source: '',
-      date: '',
       postedBy: '',
-      genre: ''
+      genre: '',
     }
+  }
+
+  
+  wordCount(str, max) {
+      let lng = str.length;
+      let deduct =  max - lng
+      if(deduct === 0){
+        return "stop"
+      } else {
+      return deduct
+      }
+  }
+
+  getDate = () => {
+      let currentTime = new Date()
+      let month = currentTime.getMonth() + 1
+      let day = currentTime.getDate()
+      let year = currentTime.getFullYear()
+      return month + "/" + String(day) + "/" + String(year)
   }
 
   changeHandler = (event) => {
@@ -37,10 +55,11 @@ export default class PostNews extends React.Component{
       link: this.state.link,
       image: this.state.image,
       source: this.state.source,
-      date: this.state.date,
+      date: this.getDate(),
       postedBy: this.state.postedBy,
       genre: this.state.genre      
     }
+    console.log(newPost)
     axios.post('https://mariannas-web.herokuapp.com/api/post', newPost)
       .then(() => {
         this.setState({
@@ -63,78 +82,65 @@ export default class PostNews extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className='postNews-container'>
         <form onSubmit={this.submitHandler}>
-          Title:<input name='title' 
+          <input name='title' 
+                 maxLength = '50'
                  value={this.state.title}
                  placeholder='title'
                  onChange={this.changeHandler}
-                 type='text'
-                /> 
-                <br/>
-          Teaser:<textarea name='teaser' 
-                 value={this.state.teaser}
-                 placeholder='teaser'
-                 onChange={this.changeHandler}
-                 type='text'
-                /> 
-                <br/>
-          Content:<textarea name='content' 
-                 value={this.state.content}
-                 placeholder='content'
-                 onChange={this.changeHandler}
-                 type='text'
-                /> 
-                <br/> 
-          YouTube Video:<input name='youTubeVideo' 
+                 type='text'      
+          />
+          <br/>
+          <div>{this.wordCount(this.state.title, 50)}</div>
+          
+          
+          <textarea name='teaser' 
+                    maxLength = '225'
+                    value={this.state.teaser}
+                    placeholder='teaser'
+                    onChange={this.changeHandler}
+                    type='text'
+                    id='teaser'
+          /> 
+          {this.wordCount(this.state.teaser, 225)}  
+           
+          <textarea name='content' 
+                    value={this.state.content}
+                    placeholder='content'
+                    onChange={this.changeHandler}
+                    type='text'
+          /> 
+          
+          <br/> 
+          <input name='youTubeVideo' 
                  value={this.state.youTubeVideo}
                  placeholder='You Tube Video'
                  onChange={this.changeHandler}
                  type='text'
-                /> 
-                <br/> 
-          Link:<input name='link' 
-                 value={this.state.link}
-                 placeholder='link'
-                 onChange={this.changeHandler}
-                 type='text'
-                /> 
-                <br/> 
-          Image<input name='image' 
+          /> 
+          <br/> 
+          <input name='image' 
                  value={this.state.image}
                  placeholder='image'
                  onChange={this.changeHandler}
                  type='text'
-                /> 
-                <br/> 
-          Source<input name='source' 
+          /> 
+          <br/> 
+          <input name='source' 
                  value={this.state.source}
                  placeholder='source'
                  onChange={this.changeHandler}
                  type='text'
-                /> 
-                <br/> 
-          Date<input name='date' 
-                 value={this.state.date}
-                 placeholder='date'
-                 onChange={this.changeHandler}
-                 type='text'
-                /> 
-                <br/> 
-          postedBy<input name='postedBy' 
-                 value={this.state.postedBy}
-                 placeholder='posted by'
-                 onChange={this.changeHandler}
-                 type='text'
-                /> 
-                <br/> 
-          Genre<input name='genre' 
+          /> 
+          <br/> 
+          <input name='genre' 
                  value={this.state.genre}
                  placeholder='genre'
                  onChange={this.changeHandler}
                  type='text'
-                />
-                <br/> 
+          />
+          <br/> 
           <button type='submit'>Submit</button> 
         </form>
       </div> 

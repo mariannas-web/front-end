@@ -10,23 +10,24 @@
     -1px 1px 0 rgb(80, 0, 80),
     1px 1px 0 rgb(83, 0, 83);
 }
-form{
+.form-container form{
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center; 
-    width: 90%; 
+    width: 94%; 
     text-align: center; 
     color: white; 
     font-weight: bold; 
     letter-spacing: 1px; 
 }
 
-input{
+.form-container input{
     margin: 0px 0px 25px 0px;  
     border: 2px solid rgba(94, 0, 94, 0.842);
     border-radius: 25px; 
     height: 55px; 
-    font-size: 21px;
+    color: rgb(51, 1, 51);
+    font-size: 20px;
     letter-spacing: 2px; 
     text-align: center;  
     /*background-color: rgba(0, 0, 0, 0); */
@@ -57,11 +58,11 @@ input:focus{
 
 }
 
-form h1{
+.form-container h1{
     font-size: 50px; 
 }
 
-input::placeholder{
+.form-container input::placeholder{
     text-align: center;
     font-size: 26px;  
     transform:translate3d(0,3px,0);

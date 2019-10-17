@@ -16,7 +16,7 @@ export default class Menu extends React.Component{
               <h3>Genres</h3>
               <h3>Settings</h3>
               <h3>Chat</h3>
-              <h3>About</h3>
+              <Link to='register'><h3>Sign Up/Log in</h3></Link>
               <h3>Contact</h3>
               <Link to='postNews'><h3>Post News</h3></Link>
             </div> 
