@@ -1,0 +1,24 @@
+nav{
+    display: flex; 
+    flex-wrap: wrap;  
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0px 15px;
+    background: black;   
+}
+
+.nav-header{
+    font-family: 'Alegreya Sans', 'serif';
+    font-size: 35px;
+    color: rgb(250, 244, 244); 
+    text-shadow:
+        -1px -1px 0 purple,
+        1px -1px 0 purple,
+        -1px 1px 0 purple,
+        1px 1px 0 purple;
+  }
+
+
+
+
+  

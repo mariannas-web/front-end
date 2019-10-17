@@ -1,0 +1,51 @@
+.card-container{
+    border-bottom: 2px solid black;
+    cursor: pointer; 
+    color: black;
+    font-weight: 700;
+    background: white;
+    font-family: 'Alegreya Sans', 'serif';
+
+}
+
+.title{
+    text-align: center; 
+    font-size: 30px; 
+    width: 100%; 
+}
+
+.article-image{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    min-width: 100%; 
+}
+
+img{
+    min-width: 100%; 
+    max-height: 100px; 
+}
+
+.newsCard-image{
+    min-width: 100%; 
+    max-height: 160px; 
+    border-top: 3px solid black; 
+    border-bottom: 3px solid black; 
+
+}
+
+.article-content{
+    line-height: 1.4; 
+    color: black; 
+    font-size: 18px; 
+    font-weight: bolder;
+    letter-spacing: .2px; 
+    font-size: 19px;
+    padding: 0px 5px; 
+}
+.links{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    align-items: center; 
+}

@@ -1,0 +1,113 @@
+.hamburger-container{
+    display: flex; 
+    flex-wrap: wrap; 
+    flex-direction: column;    
+}
+
+.bar{
+    height: 1px;
+    width: 38px;
+    margin: 6px 0px; 
+    box-shadow:
+    -1px -1px 0 maroon,
+    1px -1px 0 violet,
+    -1px 1px 0 purple,
+    1px 1px 0 darkslateblue;  
+}
+
+.bar1{
+    animation-name: colorwheel2; 
+    animation-duration: 1.5s; 
+    animation-timing-function: ease; 
+    animation-iteration-count: infinite;
+}
+  
+.bar2{
+    animation-name: colorwheel; 
+    animation-duration: 1s; 
+    animation-timing-function: ease; 
+    animation-iteration-count: infinite;
+}
+  
+.bar3{ 
+    animation-name: colorwheel1; 
+    animation-duration: 1s; 
+    animation-timing-function: ease; 
+    animation-iteration-count: infinite;
+}
+  
+
+@keyframes colorwheel1{
+    0%{
+        background-color: violet; 
+    }10%{
+        background-color: pink; 
+    }20%{
+        background-color: violet; 
+    }30%{
+        background-color: rgb(255, 174, 0); 
+    }40%{
+        background-color: green; 
+    }50%{
+        background-color: blue; 
+    }60%{
+        background-color: pink; 
+    }70%{
+        background-color: red; 
+    }90%{
+        background-color: turquoise; 
+    }100%{
+        background-color: pink; 
+    }
+}
+
+
+@keyframes colorwheel{
+    0%{
+        background-color: pink; 
+    }10%{
+        background-color: violet; 
+    }20%{
+        background-color: turqoise; 
+    }30%{
+        background-color: yellow; 
+    }40%{
+        background-color: green; 
+    }50%{
+        background-color: pink; 
+    } 60%{
+        background-color: blue; 
+    }70%{
+        background-color: red; 
+    }90%{
+        background-color: violet; 
+    }100%{
+        background-color: turqoise; 
+    }
+}
+
+
+
+@keyframes colorwheel2{
+    0%{
+        background-color: green; 
+    }10%{
+        background-color: red; 
+    }20%{
+        background-color: violet; 
+    }30%{
+        background-color: pink; 
+    }40%{
+        background-color: maroon; 
+    }50%{
+        background-color: pink; 
+    } 60%{
+        background-color: violet; 
+    }70%{
+        background-color: turquoise; 
+    }90%{
+        background-color: blue; 
+    }100%{
+        background-color: yellow; 
+    }
+}
