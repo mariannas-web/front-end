@@ -2,8 +2,8 @@ import React from 'react'
 import axios from 'axios'
 
 export default class LoginForm extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             username: '',
             password: ''
@@ -24,7 +24,6 @@ export default class LoginForm extends React.Component{
             username: this.state.username,
             password: this.state.password
         }
-        console.log(newPost)
         axios.post('https://mariannas-web.herokuapp.com/api/auth/login', loginInfo)
             .then( response => {
                 console.log(response)
@@ -32,6 +31,8 @@ export default class LoginForm extends React.Component{
                     username: '',
                     password: ''
                 })
+                localStorage.setItem('token', response.data.payload)
+                this.props.history.push('/postNews')
             })
             .catch(error => { console.log('There was an error registering your content')})
     }

@@ -36,6 +36,7 @@ export default class RegisterForm extends React.Component{
                     email: '',
                     password: ''
                 })
+                this.props.history.push('/login')
             })
             .catch(error => { console.log('There was an error registering your content')})
     }
