@@ -64,3 +64,10 @@
     margin-bottom: 25px; 
   
   }
+
+  .counter{
+      width: 90%;
+      display: flex;
+      justify-content: flex-end;
+      transform: translateY(-40px);
+  }

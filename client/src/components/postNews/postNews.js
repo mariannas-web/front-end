@@ -92,9 +92,10 @@ export default class PostNews extends React.Component{
                  type='text'      
           />
           <br/>
-          <div>{this.wordCount(this.state.title, 50)}</div>
-          
-          
+          <div className='counter'>
+                {this.wordCount(this.state.title, 50)}
+          </div>
+
           <textarea name='teaser' 
                     maxLength = '225'
                     value={this.state.teaser}
@@ -103,8 +104,11 @@ export default class PostNews extends React.Component{
                     type='text'
                     id='teaser'
           /> 
-          {this.wordCount(this.state.teaser, 225)}  
-           
+          <br/>
+          <div className='counter'>
+              {this.wordCount(this.state.teaser, 225)}  
+          </div> 
+
           <textarea name='content' 
                     value={this.state.content}
                     placeholder='content'
