@@ -9,6 +9,7 @@ import RegisterForm from './components/forms/register'
 import LoginForm from './components/forms/login'
 import './App.css';
 import {PrivateRoute} from './components/auth/privateRoute'
+import Chat from './components/chat/chat'
 
 export default class App extends React.Component{
 
@@ -25,6 +26,7 @@ export default class App extends React.Component{
           <Route exact path='/login' component={LoginForm} /> 
           <PrivateRoute exact path='/newsCards' component={NewsCards} /> 
           <PrivateRoute exact path='/postNews' component={PostNews} /> 
+          <PrivateRoute exact path='/chat' component={Chat} />
       </div>
     );
   }
