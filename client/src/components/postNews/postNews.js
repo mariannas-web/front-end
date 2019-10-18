@@ -18,7 +18,6 @@ export default class PostNews extends React.Component{
       genre: '',
     }
   }
-
   
   wordCount(str, max) {
       let lng = str.length;

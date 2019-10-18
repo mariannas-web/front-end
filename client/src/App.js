@@ -16,17 +16,16 @@ export default class App extends React.Component{
   activateMenu = () => {
     document.querySelector('.menu').classList.toggle('hide')
   }
-    
- //<Route path='/postNews' component={PostNews}/> 
- //<NewsCards /> 
- // 
+  
+
   render() {
     return (
       <div> 
           <Nav activateMenu={this.activateMenu}/> 
-          <Menu/> 
+          <Menu activateMenu={this.activateMenu}/> 
           <Route exact path='/register' component={RegisterForm} /> 
           <Route exact path='/login' component={LoginForm} /> 
+          <PrivateRoute exact path='/newsCards' component={NewsCards} /> 
           <PrivateRoute exact path='/postNews' component={PostNews} /> 
       </div>
     );
