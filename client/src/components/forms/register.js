@@ -28,7 +28,6 @@ export default class RegisterForm extends React.Component{
             email: this.state.email,
             password: this.state.password
         }
-        console.log(newPost)
         axios.post('https://mariannas-web.herokuapp.com/api/auth/register', newPost)
             .then( response => {
                 console.log(response)

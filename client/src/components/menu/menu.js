@@ -15,7 +15,7 @@ export default class Menu extends React.Component{
         document.querySelector('.menu').classList.toggle('hide')
     }
 
-    
+
     logoutHandler = () => {
         localStorage.removeItem('token')
         sessionStorage.removeItem('token')
@@ -26,7 +26,7 @@ export default class Menu extends React.Component{
     render(){
         return(
             <div onClick={this.clickHandler} className='menu hide'>
-              <h3  >Currents</h3> 
+              <h3>Currents</h3> 
               <h3>My Feed</h3>
               <h3>Popular Feeds</h3>
               <h3>Genres</h3>

@@ -1,10 +1,10 @@
 import React from 'react'
-import axios from 'axios'
+import axiosWithAuth from '../auth/utils'
 import '../styles/postNews/postNews.css'
 
 export default class PostNews extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
 
     this.state = {
       title: '',
@@ -58,8 +58,7 @@ export default class PostNews extends React.Component{
       postedBy: this.state.postedBy,
       genre: this.state.genre      
     }
-    console.log(newPost)
-    axios.post('https://mariannas-web.herokuapp.com/api/post', newPost)
+    axiosWithAuth().post('https://mariannas-web.herokuapp.com/api/post', newPost)
       .then(() => {
         this.setState({
           title: '',
@@ -73,6 +72,7 @@ export default class PostNews extends React.Component{
           postedBy: '',
           genre: ''
         })
+        this.props.history.push('/newsCards')
       })
       .catch(error => { 
         console.log("There was an error posting your information")
