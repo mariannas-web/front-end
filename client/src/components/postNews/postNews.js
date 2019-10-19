@@ -14,7 +14,6 @@ export default class PostNews extends React.Component{
       link: '',
       image: '',
       source: '',
-      postedBy: '',
       genre: '',
     }
   }
@@ -55,7 +54,7 @@ export default class PostNews extends React.Component{
       image: this.state.image,
       source: this.state.source,
       date: this.getDate(),
-      postedBy: this.state.postedBy,
+      postedBy: localStorage.getItem('username'),
       genre: this.state.genre      
     }
     axiosWithAuth().post('https://mariannas-web.herokuapp.com/api/post', newPost)
@@ -80,6 +79,7 @@ export default class PostNews extends React.Component{
   }
 
   render(){
+    console.log(localStorage.getItem('username'))
     return(
       <div className='postNews-container'>
         <form onSubmit={this.submitHandler}>

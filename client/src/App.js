@@ -14,7 +14,7 @@ import Chat from './components/chat/chat'
 export default class App extends React.Component{
 
   activateMenu = () => {
-    document.querySelector('.menu').classList.toggle('hide')
+      document.querySelector('.menu').classList.toggle('hide')
   }
 
   render() {
