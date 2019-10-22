@@ -27,6 +27,7 @@ export default class NewsCards extends React.Component{
         })
     }
 
+
     render(){
       return(
         <div className='newsCards'>

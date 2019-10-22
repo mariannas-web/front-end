@@ -1,5 +1,7 @@
 import React from 'react'
+import '../styles/chat/chat.css'
 import axiosWithAuth from '../auth/utils';
+
 
 export default class Chat extends React.Component{
     constructor(props){
@@ -12,10 +14,14 @@ export default class Chat extends React.Component{
     }
 
     componentDidMount(){
-        axiosWithAuth().get('')
+        this.loadComments()
+    }
+
+    loadComments = () => {
+        axiosWithAuth().get('https://mariannas-web.herokuapp.com/api/chat')
             .then(response => {
                 this.setState({
-                    post: response.data
+                    post: response.data.slice(-11)
                 })
             })
             .catch(error => {console.log('There was an error rendering your comments')})
@@ -32,28 +38,39 @@ export default class Chat extends React.Component{
         event.preventDefault()
 
         let addComment = {
-            comments: this.state.comments
+            post: this.state.comments
         }
 
-        axiosWithAuth().post('', addComment)
+        axiosWithAuth().post('https://mariannas-web.herokuapp.com/api/chat', addComment)
             .then(response => {
+                this.loadComments()
                 this.setState({
                     comments: ''
-                })
-                this.props.history.push('/chat')
+                })               
             })
             .catch(error => { console.log('There was an error posting the comment')})
+
+ 
     }
+    
 
     render(){
+        if(!this.state.post.length){return <div>Loading ...</div>} 
         return(
-            <div>
-                <div>{this.state.comments}</div> 
-                <input type='text' 
-                       name='comment'
-                       placeholder='comment'
-                       value={this.state.comments}
-                       onChange={this.changeHandler}/>
+            <div className='chat-container'>
+               <div className='chat-board'>
+                {this.state.post.map((item, index) => {
+                    return <p key={index}>{localStorage.getItem('username')}:{item.post}</p>    
+                })}
+                </div>
+                <form onSubmit={this.submitHandler}>
+                    <input type='text' 
+                           name='comments'
+                           placeholder='comment'
+                           value={this.state.comments}
+                           onChange={this.changeHandler}/>
+                    <button type='submit'>Submit</button> 
+                </form>            
             </div> 
         )
     }

@@ -3,7 +3,6 @@
     flex-wrap: wrap;
     justify-content: center; 
     font-family: 'Alegreya Sans', 'serif';
-    background: rgba(87, 0, 87, 0.308);
     text-shadow:
     -1px -1px 0 rgb(83, 1, 83),
     1px -1px 0 rgb(77, 0, 77),
@@ -14,7 +13,7 @@
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center; 
-    width: 94%; 
+    width: 96%; 
     text-align: center; 
     color: white; 
     font-weight: bold; 
@@ -54,8 +53,6 @@ input:focus{
   1px 1px 0 maroon;
   align-items: center; 
   justify-content: center;  
-  margin-bottom: 25px; 
-
 }
 
 .form-container h1{

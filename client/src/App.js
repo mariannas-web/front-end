@@ -4,6 +4,7 @@ import NewsCards from './components/news/newsCards'
 import Menu from './components/menu/menu'
 import './components/styles/menu/menu.css'
 import PostNews from './components/postNews/postNews'
+import UndergroundFeedCards from './components/undergroundFeed/feedCards'
 import {Route} from 'react-router-dom'
 import RegisterForm from './components/forms/register'
 import LoginForm from './components/forms/login'
@@ -27,6 +28,7 @@ export default class App extends React.Component{
           <PrivateRoute exact path='/newsCards' component={NewsCards} /> 
           <PrivateRoute exact path='/postNews' component={PostNews} /> 
           <PrivateRoute exact path='/chat' component={Chat} />
+          <PrivateRoute exact path='/undergroundFeed' component={UndergroundFeedCards}/>
       </div>
     );
   }
