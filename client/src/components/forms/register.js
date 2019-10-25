@@ -28,7 +28,7 @@ export default class RegisterForm extends React.Component{
             email: this.state.email,
             password: this.state.password
         }
-        axios.post('https://mariannas-web.herokuapp.com/api/auth/register', newPost)
+        axios.post(`${process.env.REACT_APP_REGISTER_API_KEY}`, newPost)
             .then( response => {
                 console.log(response)
                 this.setState({
@@ -64,7 +64,8 @@ export default class RegisterForm extends React.Component{
                            value={this.state.password}/>
                     <div className='button' onClick={this.submitHandler}> Submit</div> 
                 </form>
-                <p style={{textAlign: 'center', fontSize:'23px', textShadow: 'none'}}>Already a member? Sign in <Link to='login'>here</Link></p>
+                <hr style={{width: "90%"}}/>
+                <h3 style={{textAlign: 'center', marginTop: "5px"}}>Already a member? <br/> Sign in <Link to='login'>here</Link></h3>
             </div> 
         )
     }

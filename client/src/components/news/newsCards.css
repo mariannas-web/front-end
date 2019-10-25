@@ -7,3 +7,13 @@
     width: 100%; 
 
 }
+
+.loading-political{
+    font-size: 22px; 
+    width: 100%; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    height: 80vh; 
+    align-items: center; 
+}

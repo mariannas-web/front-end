@@ -26,17 +26,15 @@ export default class Menu extends React.Component{
     render(){
         return(
             <div onClick={this.clickHandler} className='menu hide'>
-              <Link to='newsCards'><h3>Currents</h3></Link>
-              <Link to='undergroundFeed'><h3>Underground Feed</h3></Link>
-              <h3>My Feed</h3>
-              <h3>Popular Feeds</h3>
-              <h3>Genres</h3>
-              <h3>Settings</h3>
-              <Link to='chat'><h3>Chat</h3></Link>
-              <Link to='register'><h3>Sign Up/Log in</h3></Link>
+              <Link style={{textDecoration: "none"}} to='/'><h3>Currents</h3></Link>
+              <Link style={{textDecoration: "none"}} to='undergroundFeed'><h3>Underground Feed</h3></Link>
+              <Link style={{textDecoration: "none"}} to='politicalFeed'><h3>Political Feed</h3></Link> 
+              <h3>My Web</h3>
+              <h3>The Rabbit Hole</h3>
               <h3>Contact</h3>
-              <Link to='postNews'><h3>Post News</h3></Link>
-              <Link to='login'><h3 onClick={this.logoutHandler}>Log out</h3></Link>
+              <Link style={{textDecoration: "none"}} to='postNews'><h3 className={localStorage.getItem('username') !== `${process.env.REACT_APP_ADMIN_KEY}` ? 'hidden' : 'flex'}>Post News</h3></Link>
+              <Link style={{textDecoration: "none"}} to='register'><h3>Sign Up/Log in</h3></Link>
+              <Link style={{textDecoration: "none"}} to='login'><h3 onClick={this.logoutHandler}>Log out</h3></Link>
             </div> 
         )
     }

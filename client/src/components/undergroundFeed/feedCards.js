@@ -1,5 +1,6 @@
 import React from 'react' 
 import axios from 'axios'
+import {newsPubArray} from './newsPubArray'
 import '../styles/undergroundFeed/undergroundFeed.css'
 import UndergroundFeedCard from './feedCard.js'
 
@@ -8,8 +9,7 @@ export default class UndergroundFeedCards extends React.Component{
         super()
         this.state = {
             feed: [],
-            publications: ['mint', 'zerohedge'],
-            items: ['zeroHedge', 'zeroHedge1', 'zeroHedge2']
+            items: this.shuffleNews(newsPubArray)
         }
     }
 
@@ -17,8 +17,20 @@ export default class UndergroundFeedCards extends React.Component{
         this.renderFeed()
     }
 
+    shuffleNews = (array) =>  {
+        let currentIndex = array.length, temporaryValue, randomIndex;
+        while (0 !== currentIndex) {
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+        return array;
+      }
+
     renderFeed = () => {
-        axios('https://mariannas-web.herokuapp.com/api/feed/zerohedge')
+        axios(`${process.env.REACT_APP_UNDERGROUND_API_KEY}`)
           .then(response => {
               this.setState({
                 feed: response.data.articles

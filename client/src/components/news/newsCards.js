@@ -1,6 +1,6 @@
 import React from 'react'
 import NewsCard from './newsCard'
-import '../news/newsCards.css'
+import './newsCards.css'
 import axios from 'axios'
 
 export default class NewsCards extends React.Component{
@@ -16,7 +16,7 @@ export default class NewsCards extends React.Component{
     }
 
     renderCards = () => {
-      axios.get('https://mariannas-web.herokuapp.com/api/post')
+      axios.get(`${process.env.REACT_APP_POST_API_KEY}`)
         .then(response => {
           this.setState({
             newsCards: response.data
@@ -34,6 +34,7 @@ export default class NewsCards extends React.Component{
           {this.state.newsCards.map(card => {
             return <NewsCard key={card.id} card={card}/> 
           })}
+          <h1 style={{margin: "8px auto", fontFamily: "'Alegreya Sans', 'serif'"}}>Currents</h1> 
         </div> 
       )
     }

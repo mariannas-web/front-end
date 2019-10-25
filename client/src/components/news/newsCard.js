@@ -10,7 +10,7 @@ export default class NewsCard extends React.Component{
 
 
   deleteHandler = (id) => {
-      axios.delete(`https://mariannas-web.herokuapp.com/api/post/${id}`)
+      axios.delete(`${process.env.REACT_APP_DELETE_API_KEY}/${id}`)
           .then(response => {
               console.log('the user has been deleted')
               window.location.reload()
@@ -24,19 +24,22 @@ export default class NewsCard extends React.Component{
         <div className="title">
           <p>{this.props.card.title}</p>
         </div> 
-        <div className='article-image'>
+        <div className= 'article-image' >
           <img className='newsCard-image' src={this.props.card.image} />
         </div> 
         <div className='article-content'>
           <p>{this.props.card.teaser}</p> 
         </div> 
+        <hr  style={{width: "90%", textAlign:"center"}}/> 
         <div className='links'>
           <a href={this.props.card.source}>Source</a> 
           <p>{this.props.card.date}</p>
           <p>{this.props.card.postedBy}</p> 
         </div>
-        {localStorage.getItem('username') === 'hello' ? 
-            <button onClick={() => { return this.deleteHandler(this.props.card.id)}}>delete</button> : ""}
+        <div className='delete-button'> 
+            {localStorage.getItem('username') === process.env.REACT_APP_ADMIN_KEY ? 
+                <button onClick={() => { return this.deleteHandler(this.props.card.id)}}>delete</button> : ""}
+        </div> 
       </div> 
     )
   }

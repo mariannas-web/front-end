@@ -57,7 +57,7 @@ export default class PostNews extends React.Component{
       postedBy: localStorage.getItem('username'),
       genre: this.state.genre      
     }
-    axiosWithAuth().post('https://mariannas-web.herokuapp.com/api/post', newPost)
+    axiosWithAuth().post(`${process.env.REACT_APP_POST_API_KEY}`, newPost)
       .then(() => {
         this.setState({
           title: '',
@@ -71,7 +71,7 @@ export default class PostNews extends React.Component{
           postedBy: '',
           genre: ''
         })
-        this.props.history.push('/newsCards')
+        this.props.history.push('/')
       })
       .catch(error => { 
         console.log("There was an error posting your information")

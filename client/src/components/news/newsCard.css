@@ -1,50 +1,60 @@
 .card-container{
-    border-bottom: 2px solid black;
     cursor: pointer; 
     color: black;
-    font-weight: 700;
     background: white;
     font-family: 'Alegreya Sans', 'serif';
-
+    margin:10px 0px 5px 0px; 
 }
 
 .title{
     text-align: center; 
-    font-size: 30px; 
-    width: 100%; 
+    font-size: 25px; 
+    padding: 0px 12px; 
+    font-weight: 700; 
 }
 
 .article-image{
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center; 
-    min-width: 100%; 
+    min-width: 100%;
 }
 
-img{
-    min-width: 100%; 
-}
 
 .newsCard-image{
-    min-width: 100%; 
-    max-height: 160px; 
-    border-top: 3px solid black; 
-    border-bottom: 3px solid black; 
-
+    min-width: 80%; 
+    max-width: 80%;
+    max-height: 180px; 
+    border-top: 1px solid grey; 
+    border-bottom: 1px solid grey; 
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
 }
 
 .article-content{
     line-height: 1.4; 
     color: black; 
     font-size: 18px; 
-    font-weight: bolder;
-    letter-spacing: .2px; 
     font-size: 19px;
-    padding: 0px 5px; 
+    padding: 0px 12px;
+    font-weight: 600; 
 }
 .links{
     display: flex; 
     flex-wrap: wrap; 
     justify-content: space-around;
     align-items: center; 
+    font-size: 18px; 
+    font-weight: bold; 
 }
+
+.delete-button{
+    text-align: center; 
+}
+
+.delete-button button{
+    width: 85px;
+    height: 40px; 
+}
+
+

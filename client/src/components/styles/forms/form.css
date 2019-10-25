@@ -2,27 +2,26 @@
     display: flex; 
     flex-wrap: wrap;
     justify-content: center; 
-    font-family: 'Alegreya Sans', 'serif';
-    text-shadow:
-    -1px -1px 0 rgb(83, 1, 83),
-    1px -1px 0 rgb(77, 0, 77),
-    -1px 1px 0 rgb(80, 0, 80),
-    1px 1px 0 rgb(83, 0, 83);
+    font-family: 'Roboto', sans-serif;
+    color: black; 
+    margin: 7px 0px; 
+    background: white; 
 }
+
 .form-container form{
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center; 
     width: 96%; 
     text-align: center; 
-    color: white; 
     font-weight: bold; 
     letter-spacing: 1px; 
+    margin-bottom: 10px; 
 }
 
 .form-container input{
     margin: 0px 0px 25px 0px;  
-    border: 2px solid rgba(94, 0, 94, 0.842);
+    border: 2px solid black;
     border-radius: 25px; 
     height: 55px; 
     color: rgb(51, 1, 51);
@@ -52,11 +51,12 @@ input:focus{
   -1px 1px 0 maroon,
   1px 1px 0 maroon;
   align-items: center; 
-  justify-content: center;  
+  justify-content: center; 
+  width: 150px; 
 }
 
 .form-container h1{
-    font-size: 50px; 
+    font-size: 45px; 
 }
 
 .form-container input::placeholder{
@@ -64,4 +64,9 @@ input:focus{
     font-size: 26px;  
     transform:translate3d(0,3px,0);
     color: black; 
+}
+
+.form-container h3{
+    text-shadow:none; 
+    padding: 15px 0px;
 }

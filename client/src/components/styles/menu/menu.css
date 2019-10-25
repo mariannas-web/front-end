@@ -7,11 +7,6 @@
     color: white; 
     font-family: 'Alegreya Sans', 'serif';
     letter-spacing: .5px;     
-    text-shadow:
-    -1px -1px 0 purple,
-    1px -1px 0 purple,
-    -1px 1px 0 purple,
-    1px 1px 0 purple;
 }
 
 .hide{
@@ -19,8 +14,9 @@
 }
 
 h3{
-    font-size: 28px; 
+    font-size: 25px; 
     margin: 10px 0px; 
+    text-decoration: none; 
 }
 
 h3:hover{
@@ -35,4 +31,8 @@ h3:hover{
     1px -1px 0 maroon,
     -1px 1px 0 maroon,
     1px 1px 0 maroon;
+}
+
+.hidden{
+    display: none; 
 }
