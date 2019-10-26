@@ -65,7 +65,7 @@ export default class LoginForm extends React.Component{
                     </form>
                     <hr style={{width: "90%"}} /> 
                     <div>
-                        <h3 style={{fontSize: "22px", textAlign: 'center', padding: "20px"}}>Not a member? <Link style={{textDecoration: "none"}}to='/register'>Sign Up!</Link></h3>
+                        <h3><Link style={{fontSize: '24px', textDecoration: "none", color: 'white'}}to='/register'>Sign Up!</Link></h3>
                     </div> 
                 </div> 
             </div> 

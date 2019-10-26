@@ -22,8 +22,8 @@
 
 
 .newsCard-image{
-    min-width: 91%; 
-    max-width: 80%;
+    min-width: 89%;
+    max-width: 89%;
     height: 180px; 
     border-top: 6px solid black;
     border-right: 1px solid black; 
@@ -35,7 +35,9 @@
     color: black; 
     font-size: 17px; 
     padding: 0px 13px;
+    font-weight:700;
 }
+
 .links{
     display: flex; 
     flex-wrap: wrap; 
@@ -43,6 +45,7 @@
     align-items: center; 
     font-size: 18px; 
     font-weight: bold; 
+    margin-bottom: 10px; 
 }
 
 .links a {

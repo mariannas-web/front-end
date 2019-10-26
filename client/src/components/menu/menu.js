@@ -26,6 +26,7 @@ export default class Menu extends React.Component{
     render(){
         return(
             <div onClick={this.clickHandler} className='menu hide'>
+              <h1>Mariannas Web</h1>
               <Link style={{textDecoration: "none", color: 'white'}} to='/'><h3>Currents</h3></Link>
               <Link style={{textDecoration: "none", color: 'white'}} to='undergroundFeed'><h3>Underground Feed</h3></Link>
               <Link style={{textDecoration: "none", color: 'white'}} to='politicalFeed'><h3>Political Feed</h3></Link> 

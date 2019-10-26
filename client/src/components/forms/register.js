@@ -67,7 +67,7 @@ export default class RegisterForm extends React.Component{
                         <div className='button' onClick={this.submitHandler}> Submit</div> 
                     </form>
                     <hr style={{width: "90%"}}/>
-                    <h3 style={{fontSize: "22px", textAlign: 'center', padding: "10px"}}>Already a member? <br/> Sign in <Link to='login'>here</Link></h3>
+                    <h3 style={{fontSize: "24px", textAlign: 'center', padding: "10px"}}><Link style={{textDecoration: 'none', color: 'white'}} to='login'> Sign In Here</Link></h3>
                 </div> 
             </div>
         )

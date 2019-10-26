@@ -7,7 +7,7 @@
     color: white; 
     font-family: 'Playfair Display', serif;
     letter-spacing: 1px; 
-    padding-bottom: 20px;     
+    padding-bottom: 15px;     
 }
 
 .hide{
@@ -45,4 +45,17 @@ h3:hover{
 
 .hidden{
     display: none; 
+}
+
+.menu h1{
+    font-size: 28px;
+    text-decoration: underline; 
+    margin-top: 0px;
+    font-family: 'Alegreya Sans', 'serif';
+    text-shadow:
+    -1px -1px 0 purple,
+    1px -1px 0 purple,
+    -1px 1px 0 purple,
+    1px 1px 0 purple;
+
 }
