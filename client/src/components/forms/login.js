@@ -43,27 +43,30 @@ export default class LoginForm extends React.Component{
     
     render(){
         return(
-            <div className='form-container'>
-                <form onSubmit={this.submitHandler}>
-                    <h1>Log In</h1>
-
-                    <input name='username' 
-                           placeholder="username" 
-                           type='text' 
-                           onChange={this.changeHandler} 
-                           value={this.state.username}/> 
-
-                    <input name='password' 
-                           placeholder="password" 
-                           type='password' 
-                           onChange={this.changeHandler} 
-                           value={this.state.password}/>
-
-                    <div onClick={this.submitHandler} className='button'>Submit</div> 
-                </form>
-                <hr style={{width: "90%"}} /> 
-                <div>
-                    <h3 style={{margin: "0px"}}>Not a member? <Link to='/register'>Sign Up!</Link></h3>
+            <div> 
+                <p style={{fontSize:"34px", margin: "10px 0px", textAlign: 'center', fontWeight: "bold", fontFamily: "'Alegreya Sans', 'serif'"}}> Marianna's Web </p>
+                <div className='form-container'>
+                    <form onSubmit={this.submitHandler}>
+                        <h1>Log In</h1>
+    
+                        <input name='username' 
+                               placeholder="username" 
+                               type='text' 
+                               onChange={this.changeHandler} 
+                               value={this.state.username}/> 
+    
+                        <input name='password' 
+                               placeholder="password" 
+                               type='password' 
+                               onChange={this.changeHandler} 
+                               value={this.state.password}/>
+    
+                        <div onClick={this.submitHandler} className='button'>Submit</div> 
+                    </form>
+                    <hr style={{width: "90%"}} /> 
+                    <div>
+                        <h3 style={{fontSize: "22px", textAlign: 'center', padding: "20px"}}>Not a member? <Link style={{textDecoration: "none"}}to='/register'>Sign Up!</Link></h3>
+                    </div> 
                 </div> 
             </div> 
         )

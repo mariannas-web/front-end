@@ -44,29 +44,32 @@ export default class RegisterForm extends React.Component{
     
     render(){
         return(
-            <div className='form-container'>
-                <form onSubmit={this.submitHandler}>
-                    <h1>Sign Up</h1> 
-                    <input name='username' 
-                           placeholder="username" 
-                           type='text' 
-                           onChange={this.changeHandler} 
-                           value={this.state.username}/> 
-                    <input name='email' 
-                           placeholder="email" 
-                           type='text' 
-                           onChange={this.changeHandler} 
-                           value={this.state.email}/>
-                    <input name='password' 
-                           placeholder="password" 
-                           type='password' 
-                           onChange={this.changeHandler} 
-                           value={this.state.password}/>
-                    <div className='button' onClick={this.submitHandler}> Submit</div> 
-                </form>
-                <hr style={{width: "90%"}}/>
-                <h3 style={{textAlign: 'center', marginTop: "5px"}}>Already a member? <br/> Sign in <Link to='login'>here</Link></h3>
-            </div> 
+            <div>
+                <p style={{fontSize:"34px", margin: "10px 0px", textAlign: 'center', fontWeight: "bold", fontFamily: "'Alegreya Sans', 'serif'"}}> Marianna's Web </p>
+                <div className='form-container'>
+                    <form onSubmit={this.submitHandler}>
+                        <h1>Sign Up</h1> 
+                        <input name='username' 
+                               placeholder="username" 
+                               type='text' 
+                               onChange={this.changeHandler} 
+                               value={this.state.username}/> 
+                        <input name='email' 
+                               placeholder="email" 
+                               type='text' 
+                               onChange={this.changeHandler} 
+                               value={this.state.email}/>
+                        <input name='password' 
+                               placeholder="password" 
+                               type='password' 
+                               onChange={this.changeHandler} 
+                               value={this.state.password}/>
+                        <div className='button' onClick={this.submitHandler}> Submit</div> 
+                    </form>
+                    <hr style={{width: "90%"}}/>
+                    <h3 style={{fontSize: "22px", textAlign: 'center', padding: "10px"}}>Already a member? <br/> Sign in <Link to='login'>here</Link></h3>
+                </div> 
+            </div>
         )
     }
 }

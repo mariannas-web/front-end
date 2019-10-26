@@ -5,18 +5,28 @@
     align-items: center; 
     background: black; 
     color: white; 
-    font-family: 'Alegreya Sans', 'serif';
-    letter-spacing: .5px;     
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px; 
+    padding-bottom: 20px;     
 }
 
 .hide{
     display: none; 
 }
 
-h3{
+.menu h3{
     font-size: 25px; 
+    font-weight: 700; 
+    letter-spacing: 1.5px;
     margin: 10px 0px; 
     text-decoration: none; 
+    font-family: 'Alegreya Sans', 'serif';
+    color: rgb(250, 244, 244); 
+    text-shadow:
+        -1px -1px 0 purple,
+        1px -1px 0 purple,
+        -1px 1px 0 purple,
+        1px 1px 0 purple;
 }
 
 h3:hover{

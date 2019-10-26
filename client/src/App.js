@@ -12,6 +12,7 @@ import LoginForm from './components/forms/login'
 import './App.css';
 import {PrivateRoute} from './components/auth/privateRoute'
 import Chat from './components/chat/chat'
+import LandingCards from './components/landing/landingCards'
 
 export default class App extends React.Component{
 
@@ -26,7 +27,7 @@ export default class App extends React.Component{
           <Menu activateMenu={this.activateMenu}/> 
           <Route exact path='/register' component={RegisterForm} /> 
           <Route exact path='/login' component={LoginForm} /> 
-          <Route exact path='/' component={NewsCards} /> 
+          <Route exact path='/' component={LandingCards} /> 
           <PrivateRoute exact path='/postNews' component={PostNews} /> 
           <PrivateRoute exact path='/chat' component={Chat} />
           <PrivateRoute exact path='/undergroundFeed' component={UndergroundFeedCards}/>
