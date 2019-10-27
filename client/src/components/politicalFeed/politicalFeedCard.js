@@ -27,10 +27,10 @@ export default class PoliticalFeedCard extends React.Component{
                       <p>{this.props.card.description}</p> 
                   </div> 
                   <hr  style={{width: "90%", textAlign:"center"}}/> 
-                  <div className='links'>
-                      <a href='#'>MW</a> 
-                  </div>
-              </a>
+              </a>   
+              <div className='links'>
+                  <a href='#'>MW</a> 
+              </div>
           </div> 
     )
   }

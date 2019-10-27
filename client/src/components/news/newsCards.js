@@ -29,6 +29,7 @@ export default class NewsCards extends React.Component{
 
 
     render(){
+      console.log(localStorage)
       return(
         <div className='newsCards'>
           {this.state.newsCards.map(card => {

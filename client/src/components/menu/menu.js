@@ -30,7 +30,7 @@ export default class Menu extends React.Component{
               <Link style={{textDecoration: "none", color: 'white'}} to='/'><h3>Currents</h3></Link>
               <Link style={{textDecoration: "none", color: 'white'}} to='undergroundFeed'><h3>Underground Feed</h3></Link>
               <Link style={{textDecoration: "none", color: 'white'}} to='politicalFeed'><h3>Political Feed</h3></Link> 
-              <h3>My Web</h3>
+              <Link style={{textDecoration: "none", color: 'white'}} to='/myWeb'><h3>My Web</h3></Link>
               <h3>The Rabbit Hole</h3>
               <h3>Contact</h3>
               <Link style={{textDecoration: "none", color: 'white'}} to='postNews'><h3 className={localStorage.getItem('username') !== `${process.env.REACT_APP_ADMIN_KEY}` ? 'hidden' : 'flex'}>Post News</h3></Link>
