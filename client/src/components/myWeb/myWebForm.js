@@ -2,13 +2,13 @@ import React from 'react'
 import axiosWithAuth from '../auth/utils'
 
 export default class MyWebForm extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             title: '',
             description: '',
             link: '',
-            youtube: ''
+            youtube: '',
         }
     }
 
@@ -23,20 +23,22 @@ export default class MyWebForm extends React.Component{
         event.preventDefault()
 
         const myWebPost = {
+            user_id: this.props.userid,
             title: this.state.title,
             teaser: this.state.teaser,
             link: this.state.link,
-            youtube: this.state.youtube
+            youTubeVideo: this.state.youtube,
         }
-       
-        axiosWithAuth().post(`${process.env.REACT_APP_POST_API_KEY}`, myWebPost)
+        console.log(myWebPost)
+        axiosWithAuth().post(`${process.env.REACT_APP_USERPOST_API_KEY}`, myWebPost)
             .then(response => {
                 this.setState({
                     title: '',
                     teaser: '',
                     youTubeVideo: '',
-                    link: ''
+                    link: '',
                 })
+                this.props.history.push('/myWeb')
             })
             .catch(error => {
                 console.log("There was an error posting your content")

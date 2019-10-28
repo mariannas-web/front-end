@@ -22,7 +22,6 @@ export default class Menu extends React.Component{
         console.log(localStorage)
     }
 
-
     render(){
         return(
             <div onClick={this.clickHandler} className='menu hide'>

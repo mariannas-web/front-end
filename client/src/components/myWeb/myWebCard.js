@@ -11,7 +11,7 @@ export default class MyWebCard extends React.Component{
             <div>
                 <h2>{this.props.title}</h2>
                 <p>{this.props.teaser}</p> 
-                <p>{this.props.links}</p> 
+                <p>{this.props.link}</p> 
                 <p>{this.props.youTubeVideo}</p> 
             </div> 
         )

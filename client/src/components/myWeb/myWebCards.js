@@ -6,36 +6,39 @@ import {Link} from 'react-router-dom'
 
 
 export default class MyWebCards extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            webCards: []
-        }
+            userData: [],
+        } 
     }
 
-    renderPost = () => {
-        axiosWithAuth().get()
+    componentDidMount(){
+        axiosWithAuth().get(`${process.env.REACT_APP_WEB_USER_API_KEY}${this.props.userid}`)
             .then(response => {
-                
+                console.log(response.data)
+                this.setState({
+                    userData: response.data.userPost
+                })                               
             })
-            .catch(error => {
-                console.log("There was a error rendering your data")
-            })
+            .catch(error => {console.log('There was an error posting your content')
+        })
     }
 
     render(){
-        return(
+        if(!this.state.userData){return <div>loading</div>}
+          return(
             <div>
-                <Link to='/myWebForm'>Post News</Link>
-                {this.state.webCards.map((item, index) => {
-                    return <MyWebCard 
-                                key={index} 
-                                title={item.title}
-                                teaser={item.teaser}
-                                link={item.link}
-                                youTubeVideo={item.youTubeVideo}
-                           /> 
+                <Link to='/myWebForm'><p>Post News</p></Link>
+                {this.state.userData.map((item, index) => {
+                    return <MyWebCard key={index}
+                                      title={item.title}
+                                      teaser={item.teaser}
+                                      link={item.link}
+                                      youTube={item.youTubeVideo} /> 
                 })}
+                
+          
             </div>
         )
     }

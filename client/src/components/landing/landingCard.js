@@ -1,6 +1,5 @@
 import React from 'react'
 import '../news/newsCard.css'
-const spiderWeb = require('./noun_Spider Web_1349738.png')
 
 export default class LandingCard extends React.Component{
   constructor(props){
