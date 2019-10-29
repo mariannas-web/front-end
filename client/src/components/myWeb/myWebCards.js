@@ -9,11 +9,15 @@ export default class MyWebCards extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            userData: [],
+            userData: []
         } 
     }
 
     componentDidMount(){
+        this.renderUserData()
+    }
+
+    renderUserData = () => {
         axiosWithAuth().get(`${process.env.REACT_APP_WEB_USER_API_KEY}${this.props.userid}`)
             .then(response => {
                 console.log(response.data)
@@ -26,8 +30,8 @@ export default class MyWebCards extends React.Component{
     }
 
     render(){
-        if(!this.state.userData){return <div>loading</div>}
-          return(
+        if(!this.state.userData){return <div>Loading your content...</div>}
+        return(
             <div>
                 <Link to='/myWebForm'><p>Post News</p></Link>
                 {this.state.userData.map((item, index) => {
@@ -37,8 +41,6 @@ export default class MyWebCards extends React.Component{
                                       link={item.link}
                                       youTube={item.youTubeVideo} /> 
                 })}
-                
-          
             </div>
         )
     }

@@ -54,15 +54,14 @@ export default class App extends React.Component{
           <Route exact path='/' component={LandingCards} /> 
           <Route exact path='/politicalFeed' component={PoliticalFeed}/>
 
-
           <Route exact path="/myWeb" render = {props => (
               <MyWebCards {...props} userid={this.state.userid} />
           )}/>  
 
-
           <Route exact path="/myWebForm" render = {props => (
               <MyWebForm {...props} userid={this.state.userid} />
           )}/>  
+          
           <PrivateRoute exact path='/postNews' component={PostNews} /> 
           <PrivateRoute exact path='/chat' component={Chat} />
           <PrivateRoute exact path='/undergroundFeed' component={UndergroundFeedCards}/>

@@ -8,6 +8,7 @@ nav{
 }
 
 .nav-header{
+    margin: 15px; 
     font-family: 'Alegreya Sans', 'serif';
     font-size: 35px;
     color: rgb(250, 244, 244); 

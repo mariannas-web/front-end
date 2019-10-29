@@ -7,7 +7,7 @@
 }
 
 .title{
-    font-size: 23px; 
+    font-size: 21px; 
     padding: 0px 13px; 
     font-weight: 700; 
     height: 100%; 
@@ -33,7 +33,7 @@
 .article-content{
     line-height: 1.4; 
     color: black; 
-    font-size: 17px; 
+    font-size: 16px; 
     padding: 0px 13px;
     font-weight:700;
 }

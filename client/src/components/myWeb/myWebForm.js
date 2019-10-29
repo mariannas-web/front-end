@@ -6,9 +6,9 @@ export default class MyWebForm extends React.Component{
         super(props)
         this.state = {
             title: '',
-            description: '',
+            teaser: '',
             link: '',
-            youtube: '',
+            youtube: ''
         }
     }
 
@@ -27,17 +27,12 @@ export default class MyWebForm extends React.Component{
             title: this.state.title,
             teaser: this.state.teaser,
             link: this.state.link,
-            youTubeVideo: this.state.youtube,
+            youTubeVideo: this.state.youtube
         }
+        
         console.log(myWebPost)
         axiosWithAuth().post(`${process.env.REACT_APP_USERPOST_API_KEY}`, myWebPost)
-            .then(response => {
-                this.setState({
-                    title: '',
-                    teaser: '',
-                    youTubeVideo: '',
-                    link: '',
-                })
+            .then(() => {
                 this.props.history.push('/myWeb')
             })
             .catch(error => {

@@ -1,10 +1,11 @@
 import React from 'react'
 import '../news/newsCard.css'
-
+const web = require('./web.png')
 export default class LandingCard extends React.Component{
   constructor(props){
     super(props)
   }
+
 
 
 
@@ -28,7 +29,8 @@ export default class LandingCard extends React.Component{
                   <hr  style={{width: "90%", textAlign:"center"}}/> 
                 </a>
                 <div className='links'>
-                    <a href='#'>MW</a>
+                    <a href='#'>Date</a>
+                    <a href='#'>MW</a> 
                 </div>
             </div> 
         )
