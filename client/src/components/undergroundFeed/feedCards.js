@@ -9,7 +9,7 @@ export default class UndergroundFeedCards extends React.Component{
         super()
         this.state = {
             feed: [],
-            items: this.shuffleNews(newsPubArray)
+            
         }
     }
 
@@ -30,10 +30,10 @@ export default class UndergroundFeedCards extends React.Component{
       }
 
     renderFeed = () => {
-        axios(`${process.env.REACT_APP_UNDERGROUND_API_KEY}`)
+        axios(`${process.env.REACT_APP_USERPOST_API_KEY}`)
           .then(response => {
               this.setState({
-                feed: response.data.articles
+                feed: this.shuffleNews(response.data)
               })
           })
           .catch(error => {console.log('there was an error', error)})
@@ -41,20 +41,15 @@ export default class UndergroundFeedCards extends React.Component{
 
     render(){
         if(!this.state.feed){return <div>loading</div> }
-        this.state.items.map(game => {
-            this.state.feed.map(item => {
-               console.log(item[game])
-           })
+        this.state.feed.map(item => {
+            console.log(item.title)
         })
 
         return(
             <div className='underground-card-container'>
-                {this.state.items.map(game => {
-                    return  this.state.feed.map((item, index) => {
-                        return <UndergroundFeedCard key={index} feed={item[game]}/>
-                        })
-                    })
-                }   
+                {this.state.feed.map(item => {
+                    return <UndergroundFeedCard feed={item} /> 
+                })}
             </div> 
         )
     }

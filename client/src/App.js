@@ -53,7 +53,7 @@ export default class App extends React.Component{
           <Route exact path='/login' component={LoginForm} /> 
           <Route exact path='/' component={LandingCards} /> 
           <Route exact path='/politicalFeed' component={PoliticalFeed}/>
-
+          
           <Route exact path="/myWeb" render = {props => (
               <MyWebCards {...props} userid={this.state.userid} />
           )}/>  
