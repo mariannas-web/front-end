@@ -2,6 +2,8 @@ import React from 'react'
 import axiosWithAuth from '../auth/utils';
 import MyWebCard from './myWebCard.js'
 import {Link} from 'react-router-dom'
+import '../styles/myWeb/myWebCard.css'
+const web = require('./web.png');
 
 
 
@@ -33,7 +35,11 @@ export default class MyWebCards extends React.Component{
         if(!this.state.userData){return <div>Loading your content...</div>}
         return(
             <div>
-                <Link to='/myWebForm'><p>Post News</p></Link>
+                <div className='my-web-navbar'> 
+                    <Link to='/myWebForm'>Post News</Link>
+                    <Link to='/mariannasWeb'>Mariannas</Link>
+                    <Link to='/myFeed'>My Web</Link>
+                </div> 
                 {this.state.userData.map((item, index) => {
                     return <MyWebCard key={index}
                                       title={item.title}

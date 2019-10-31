@@ -5,6 +5,7 @@ import Menu from './components/menu/menu'
 import './components/styles/menu/menu.css'
 import PostNews from './components/postNews/postNews'
 import UndergroundFeedCards from './components/undergroundFeed/feedCards'
+import MariannasWebCards from './components/mariannasWeb/mariannasWebCards'
 import {Route} from 'react-router-dom'
 import RegisterForm from './components/forms/register'
 import PoliticalFeed from './components/politicalFeed/politicalFeed'
@@ -46,7 +47,7 @@ export default class App extends React.Component{
 
   render() {
     return (
-      <div> 
+      <div className='content'> 
           <Nav activateMenu={this.activateMenu}/> 
           <Menu activateMenu={this.activateMenu}/> 
           <Route exact path='/register' component={RegisterForm} /> 
@@ -61,7 +62,7 @@ export default class App extends React.Component{
           <Route exact path="/myWebForm" render = {props => (
               <MyWebForm {...props} userid={this.state.userid} />
           )}/>  
-          
+          <Route exact path='/mariannasWeb' component={MariannasWebCards} /> 
           <PrivateRoute exact path='/postNews' component={PostNews} /> 
           <PrivateRoute exact path='/chat' component={Chat} />
           <PrivateRoute exact path='/undergroundFeed' component={UndergroundFeedCards}/>

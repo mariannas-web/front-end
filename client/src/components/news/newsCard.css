@@ -71,3 +71,16 @@ hr{
     border-bottom-color: black;  
 }
 
+.currents-banner{
+    color: black;
+    font-weight: normal;
+    font-size: 29px;
+    margin:  8px auto; 
+    font-family: 'Alegreya Sans', 'serif';
+    border-top: 1px solid black;
+    border-bottom:1px solid black;
+
+
+}
+
+

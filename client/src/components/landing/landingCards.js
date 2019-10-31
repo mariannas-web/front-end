@@ -42,7 +42,7 @@ export default class LandingCards extends React.Component{
                         }
                     }
                 })}
-               <h1 style={{fontSize: "24px", margin: "8px auto", fontFamily: "'Playfair Display', serif"}}>Currents</h1> 
+               <h1 className='currents-banner'>Currents</h1> 
             </div> 
         )
     }

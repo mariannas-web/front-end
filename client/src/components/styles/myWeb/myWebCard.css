@@ -1,0 +1,43 @@
+.my-web-navbar{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    align-items: flex-end; 
+    margin-top: 20px; 
+}
+
+
+.web-card-container{
+    border: 1px solid black; 
+    border-radius: 25px; 
+    margin: 20px 0px; 
+}
+
+.web-title{
+    font-size: 22px; 
+    color: black; 
+    padding-left: 13px; 
+}
+
+.web-article-content{
+    padding-left: 13px; 
+}
+
+.web-links{
+    display: flex; 
+    justify-content: center; 
+
+}
+
+.user-selectors{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    width: 100%;
+    padding: 10px 0px; 
+}
+
+.username-thumbnail{
+    padding-left: 13px; 
+    padding-top: 13px; 
+}

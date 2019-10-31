@@ -1,13 +1,11 @@
 import React from 'react'
 import '../news/newsCard.css'
-const web = require('./web.png')
+
+
 export default class LandingCard extends React.Component{
   constructor(props){
     super(props)
   }
-
-
-
 
     render(){
         console.log(this.props.card)
