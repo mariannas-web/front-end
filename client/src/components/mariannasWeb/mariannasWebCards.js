@@ -1,5 +1,6 @@
 import React from 'react' 
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 import '../styles/undergroundFeed/undergroundFeed.css'
 import MariannasWebCard from './mariannasWebCard.js'
 import axiosWithAuth from '../auth/utils'
@@ -41,15 +42,17 @@ export default class MariannasWebCards extends React.Component{
 
     render(){
         if(!this.state.feed){return <div>loading</div> }
-        this.state.feed.map(item => {
-            console.log(item.title)
-        })
 
         return(
-            <div className='underground-card-container'>
-                {this.state.feed.map(item => {
-                    return <MariannasWebCard feed={item} /> 
-                })}
+            <div>
+                <div>
+                    <Link to='/myWeb'>Back</Link>
+                </div> 
+                <div className='underground-card-container'>
+                    {this.state.feed.map(item => {
+                        return <MariannasWebCard feed={item} /> 
+                    })}
+                </div>
             </div> 
         )
     }

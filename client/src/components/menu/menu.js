@@ -33,7 +33,7 @@ export default class Menu extends React.Component{
               <h3>The Rabbit Hole</h3>
               <h3>Contact</h3>
               <Link style={{textDecoration: "none", color: 'white'}} to='postNews'><h3 className={localStorage.getItem('username') !== `${process.env.REACT_APP_ADMIN_KEY}` ? 'hidden' : 'flex'}>Post News</h3></Link>
-              <Link style={{textDecoration: "none", color: 'white'}} to='register'><h3>Sign Up/Log in</h3></Link>
+              <Link style={{textDecoration: "none", color: 'white'}} to='register'><h3>Log in</h3></Link>
               <Link style={{textDecoration: "none", color: 'white'}} to='login'><h3 onClick={this.logoutHandler}>Log out</h3></Link>
             </div> 
         )

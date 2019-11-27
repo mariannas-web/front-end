@@ -40,13 +40,19 @@ export default class MyWebCards extends React.Component{
                     <Link to='/mariannasWeb'>Mariannas</Link>
                     <Link to='/myFeed'>My Web</Link>
                 </div> 
-                {this.state.userData.map((item, index) => {
+                <div className='myWeb-card-container'>
+                {this.state.userData.length === 0 ? <div style={{margin: "200px auto"}}>You currently have no post</div> :
+                 this.state.userData.map((item, index) => {
                     return <MyWebCard key={index}
                                       title={item.title}
+                                      id={item.id}
                                       teaser={item.teaser}
                                       link={item.link}
-                                      youTube={item.youTubeVideo} /> 
+                                      youTube={item.youTubeVideo}
+                                      renderUserData={this.renderUserData} 
+                                      date={item.date} /> 
                 })}
+                </div>
             </div>
         )
     }

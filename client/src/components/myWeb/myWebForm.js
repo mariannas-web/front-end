@@ -1,5 +1,6 @@
 import React from 'react' 
 import axiosWithAuth from '../auth/utils'
+import '../styles/myWeb/myWebForm.css'
 
 export default class MyWebForm extends React.Component{
     constructor(props){
@@ -10,6 +11,14 @@ export default class MyWebForm extends React.Component{
             link: '',
             youtube: ''
         }
+    }
+
+    getDate = () => {
+        let currentTime = new Date()
+        let month = currentTime.getMonth() + 1
+        let day = currentTime.getDate()
+        let year = currentTime.getFullYear()
+        return month + "/" + String(day) + "/" + String(year)
     }
 
     changeHandler = (event) => {
@@ -27,7 +36,8 @@ export default class MyWebForm extends React.Component{
             title: this.state.title,
             teaser: this.state.teaser,
             link: this.state.link,
-            youTubeVideo: this.state.youtube
+            youTubeVideo: this.state.youtube,
+            date: this.getDate()
         }
         
         console.log(myWebPost)
@@ -42,7 +52,8 @@ export default class MyWebForm extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className='myWeb-form-container'>
+                <h1>Post News</h1>
                 <form onSubmit={this.submitHandler}>
                     <input name='title'
                            placeholder='title' 
@@ -64,7 +75,7 @@ export default class MyWebForm extends React.Component{
                            value={this.state.youTubeVideo}
                            onChange={this.changeHandler}
                            type='text'/> 
-                    <button type='submit'>Submit</button>
+                    <p onClick={this.submitHandler}>Submit</p>
                 </form>
             </div>
         )
