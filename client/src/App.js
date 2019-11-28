@@ -16,13 +16,15 @@ import Chat from './components/chat/chat'
 import LandingCards from './components/landing/landingCards'
 import MyWebCards from './components/myWeb/myWebCards'
 import MyWebForm from './components/myWeb/myWebForm'
+import MyWebFeedCards from './components/myWebFeed/myWebFeedCards'
 import axiosWithAuth from './components/auth/utils'
 
 export default class App extends React.Component{
     constructor(){
       super()
       this.state = {
-        userid: null
+        userid: null,
+        loggedIn: false
       }
     }
 
@@ -37,7 +39,8 @@ export default class App extends React.Component{
                response.data.map(item => {
                    if(item.username === username){
                        this.setState({
-                           userid: item.id
+                           userid: item.id,
+                           loggedIn: true
                        })                        
                    }
                })
@@ -49,7 +52,7 @@ export default class App extends React.Component{
     return (
       <div className='content'> 
           <Nav activateMenu={this.activateMenu}/> 
-          <Menu activateMenu={this.activateMenu}/> 
+          <Menu loggedIn={this.state.loggedIn} activateMenu={this.activateMenu}/> 
           <Route exact path='/register' component={RegisterForm} /> 
           <Route exact path='/login' component={LoginForm} /> 
           <Route exact path='/' component={LandingCards} /> 
@@ -66,6 +69,7 @@ export default class App extends React.Component{
           <PrivateRoute exact path='/postNews' component={PostNews} /> 
           <PrivateRoute exact path='/chat' component={Chat} />
           <PrivateRoute exact path='/undergroundFeed' component={UndergroundFeedCards}/>
+          <PrivateRoute exact path='/myWebFeed' component={MyWebFeedCards} /> 
       </div>
     );
   }

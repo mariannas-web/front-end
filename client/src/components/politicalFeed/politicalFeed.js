@@ -42,7 +42,7 @@ export default class PoliticalFeed extends React.Component{
                         }
                     }
                 })}
-               <h1 style={{margin: "8px auto", fontFamily: "'Alegreya Sans', 'serif'"}}>Political Feed</h1> 
+               <h1 style={{fontWeight: "none", fontSize: '28px', margin: "8px auto", fontFamily: "'Playfair Display', 'serif'"}}>Political Feed</h1> 
             </div> 
         )
     }

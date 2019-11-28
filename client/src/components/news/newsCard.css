@@ -4,6 +4,9 @@
     background: white;
     font-family: 'Playfair Display', serif;
     margin:10px 0px 5px 0px; 
+    border-top: 0.5px solid rgb(100, 96, 96); 
+    border-bottom: 0.5px solid rgb(100, 96, 96); 
+
 }
 
 .title{

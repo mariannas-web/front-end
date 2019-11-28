@@ -49,8 +49,8 @@ export default class MariannasWebCards extends React.Component{
                     <Link to='/myWeb'>Back</Link>
                 </div> 
                 <div className='underground-card-container'>
-                    {this.state.feed.map(item => {
-                        return <MariannasWebCard feed={item} /> 
+                    {this.state.feed.map((item, index) => {
+                        return <MariannasWebCard feed={item} key={index} /> 
                     })}
                 </div>
             </div> 

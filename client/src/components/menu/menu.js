@@ -29,12 +29,13 @@ export default class Menu extends React.Component{
               <Link style={{textDecoration: "none", color: 'white'}} to='/'><h3>Currents</h3></Link>
               <Link style={{textDecoration: "none", color: 'white'}} to='undergroundFeed'><h3>Underground Feed</h3></Link>
               <Link style={{textDecoration: "none", color: 'white'}} to='politicalFeed'><h3>Political Feed</h3></Link> 
-              <Link style={{textDecoration: "none", color: 'white'}} to='/myWeb'><h3>My Web</h3></Link>
+              <Link style={{textDecoration: "none", color: 'white'}} to='/myWeb'><h3 className={this.props.loggedIn !== true ? 'hidden':'flex'}>My Web</h3></Link>
               <h3>The Rabbit Hole</h3>
               <h3>Contact</h3>
               <Link style={{textDecoration: "none", color: 'white'}} to='postNews'><h3 className={localStorage.getItem('username') !== `${process.env.REACT_APP_ADMIN_KEY}` ? 'hidden' : 'flex'}>Post News</h3></Link>
-              <Link style={{textDecoration: "none", color: 'white'}} to='register'><h3>Log in</h3></Link>
-              <Link style={{textDecoration: "none", color: 'white'}} to='login'><h3 onClick={this.logoutHandler}>Log out</h3></Link>
+              
+              <Link style={{textDecoration: "none", color: 'white'}} to='register'><h3 className={this.props.loggedIn === true ? 'hidden':'flex'}>Log in</h3></Link>
+              <Link style={{textDecoration: "none", color: 'white'}} to='login'><h3 className={this.props.loggedIn !== true ? 'hidden':'flex'} onClick={this.logoutHandler}>Log out</h3></Link>
             </div> 
         )
     }

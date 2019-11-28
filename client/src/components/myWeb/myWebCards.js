@@ -36,9 +36,9 @@ export default class MyWebCards extends React.Component{
         return(
             <div>
                 <div className='my-web-navbar'> 
-                    <Link to='/myWebForm'>Post News</Link>
-                    <Link to='/mariannasWeb'>Mariannas</Link>
-                    <Link to='/myFeed'>My Web</Link>
+                    <Link style={{textDecoration: 'none'}} to='/myWebForm'>Post</Link>
+                    <Link style={{textDecoration: 'none'}} to='/mariannasWeb'>Mariannas Web</Link>
+                    <Link style={{textDecoration: 'none'}} to='/myWebFeed'>My Web</Link>
                 </div> 
                 <div className='myWeb-card-container'>
                 {this.state.userData.length === 0 ? <div style={{margin: "200px auto"}}>You currently have no post</div> :

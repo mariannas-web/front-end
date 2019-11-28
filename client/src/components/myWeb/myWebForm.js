@@ -21,6 +21,16 @@ export default class MyWebForm extends React.Component{
         return month + "/" + String(day) + "/" + String(year)
     }
 
+    wordCount(str, max) {
+        let lng = str.length;
+        let deduct =  max - lng
+        if(deduct === 0){
+          return "Limit Reached"
+        } else {
+        return deduct
+        }
+    }
+
     changeHandler = (event) => {
         event.preventDefault()
         this.setState({
@@ -57,14 +67,22 @@ export default class MyWebForm extends React.Component{
                 <form onSubmit={this.submitHandler}>
                     <input name='title'
                            placeholder='title' 
+                           maxLength='50'
                            value={this.state.title}
                            onChange={this.changeHandler}
                            type='text'/> 
+                    <div className='counter'>
+                        {this.wordCount(this.state.title, 50)}
+                    </div>
                     <textarea name='teaser'
                               placeholder='teaser'
+                              maxLength='225'
                               value={this.state.teaser}
                               onChange={this.changeHandler}
                               type='text' /> 
+                    <div className='counter'>
+                        {this.wordCount(this.state.teaser, 225)}
+                    </div>
                     <input name='link'
                            placeholder='link'
                            value={this.state.link}
