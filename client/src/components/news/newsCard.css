@@ -5,16 +5,56 @@
     font-family: 'Playfair Display', serif;
     margin:10px 0px 5px 0px; 
     border-top: 0.5px solid rgb(100, 96, 96); 
-    border-bottom: 0.5px solid rgb(100, 96, 96); 
-
+    border-bottom: 0.5px solid rgb(100, 96, 96);  
 }
+
+@media(min-width: 360px){
+    .card-container{
+        width: 85%;
+        box-shadow: 1px 2px 4px 2px;
+    }
+}
+
+@media(min-width: 500px){
+    .card-container{
+        width: 90%;
+        box-shadow: 1px 2px 4px 2px;
+    }
+}
+
+@media(min-width: 700px){
+    .card-container{
+        width: 40%;
+        box-shadow: 1px 2px 4px 2px;
+    }
+}
+
+@media(min-width: 1000px){
+    .card-container{
+        width: 30%;
+        box-shadow: 1px 2px 4px 2px;
+    }
+}
+
+.desktop-image-content{
+    display: flex; 
+    flex-wrap: wrap; 
+    padding-left: 35px;  
+}
+
 
 .title{
-    font-size: 21px; 
+    font-size: 19px; 
     padding: 0px 13px; 
-    font-weight: 700; 
-    height: 100%; 
+    font-weight: 800; 
 }
+
+@media(min-width: 360px){
+    .title{
+        font-size:16px; 
+    }
+}
+
 
 .article-image{
     display: flex; 
@@ -33,27 +73,75 @@
     border-left: 1px solid black; 
 }
 
+@media(min-width: 360px){
+    .newsCard-image{
+        height: 150px; 
+        min-width: 80%;
+        max-width: 80%;
+    }
+}
+
+
 .article-content{
     line-height: 1.4; 
     color: black; 
     font-size: 16px; 
-    padding: 0px 13px;
+    padding: 0px 14px;
     font-weight:700;
+}
+
+@media(min-width: 360px){
+    .article-content{
+        font-size: 13px;
+    }
+}
+
+.author{
+    padding-left: 13px; 
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+@media(min-width: 360px){
+    .author{
+        font-size: 13px;
+    }
+}
+
+.timestamp{
+    text-align: center
+}
+
+@media(min-width: 360px){
+    .timestamp{
+        font-size: 13px;
+    }
 }
 
 .links{
     display: flex; 
     flex-wrap: wrap; 
-    justify-content: space-around;
+    justify-content: center;
     align-items: center; 
     font-size: 18px; 
     font-weight: bold; 
-    margin-bottom: 10px; 
+    margin: 10px auto; 
+    border: 1px solid black; 
+    width: 90%; 
+    border-radius: 15px; 
+    height: 30px; 
 }
 
-.links a {
-    font-size: 20px; 
-    text-decoration: none; 
+.links:hover{
+    background: black; 
+    color: white; 
+}
+
+@media(min-width: 360px){
+    .links{
+        font-size: 16px;
+        height: 25px; 
+    }
 }
 
 .delete-button{
@@ -77,13 +165,37 @@ hr{
 .currents-banner{
     color: black;
     font-weight: normal;
-    font-size: 29px;
+    font-size: 28px;
     margin:  8px auto; 
-    font-family: 'Alegreya Sans', 'serif';
-    border-top: 1px solid black;
-    border-bottom:1px solid black;
-
-
+    font-family: 'Playfair Display', 'serif';
+    border-bottom: 1px solid black;
 }
 
+@media(min-width:361px){
+    .currents-banner{
+        display: none; 
+    }
+}
+
+.currents-banner-top{
+    display: none; 
+}
+
+@media(min-width: 361px){ 
+    .currents-banner-top{
+        display: block; 
+        width: 100%; 
+        font-weight: 700;
+        text-align: center; 
+        text-decoration: underline; 
+        font-family: 'Alegreya Sans', 'serif';
+        font-size: 35px;
+        color: black;
+        text-shadow:
+            -1px -1px 0 white,
+            1px -1px 0  purple,
+            -1px 1px 0 white,
+            1px 1px 0 purple;
+    }
+}
 

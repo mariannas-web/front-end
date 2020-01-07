@@ -1,5 +1,6 @@
 import React from 'react'
 import LandingCard from './landingCard'
+import LandingSidebar from './landingSidebar'
 import '../news/newsCards.css'
 import axios from 'axios'
 
@@ -34,15 +35,28 @@ export default class LandingCards extends React.Component{
             return <div className='loading-political'>Loading your currents feed...</div>
         }
         return(
-            <div className='newsCards'>
-                {this.state.currentsFeed.map(card => {
-                    for(let i = 0; i < 15; i++){
-                        if(card.category[i]){
-                            return <LandingCard key={card.id} card={card}/>  
+            <div className='desktop-landing-container'>
+                <div className='desktop-sidebar'>
+                    <h2>Feed</h2> 
+                    {this.state.currentsFeed.map((data, index) => {
+                        for(let i = 0; i < 20; i++){
+                            if(data.category[i]){
+                                return <LandingSidebar sideData={data} key={index}/>  
+                            }
                         }
-                    }
-                })}
-               <h1 className='currents-banner'>Currents</h1> 
+                    })} 
+                </div> 
+                <div className='newsCards'>
+                <h1 className='currents-banner-top'>Currents</h1>
+                    {this.state.currentsFeed.map(card => {
+                        for(let i = 0; i < 15; i++){
+                            if(card.category[i]){
+                                return <LandingCard key={card.id} card={card}/>  
+                            }
+                        }
+                    })}
+                   <h1 className='currents-banner'>Currents</h1> 
+                </div> 
             </div> 
         )
     }

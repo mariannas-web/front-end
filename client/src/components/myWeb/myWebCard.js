@@ -38,9 +38,11 @@ export default class MyWebCard extends React.Component{
                     <h5 className="web-card-username">{localStorage.getItem('username')}</h5> 
                    </div> 
                 </div> 
+                <div style={{display:"flex", justifyContent:"center"}}>
                 {!this.props.youTube ? '': 
-                    <iframe src={"https://www.youtube.com/embed/pdszgILrTr8"} style={{ height: '240px', width: '320px'}}/>
+                    <iframe src={"https://www.youtube.com/embed/pdszgILrTr8"} style={{ height: '240px', width: '92%'}}/>
                 }
+                </div> 
                 <hr style={{width: "90%", textAlign:"center"}}/>
                 <div className='web-article-content'>
                     <p>{this.props.teaser}</p> 
@@ -56,7 +58,7 @@ export default class MyWebCard extends React.Component{
                 </div> 
                 <div className='delete-button'> 
                     {localStorage.getItem('username') === process.env.REACT_APP_ADMIN_KEY ? 
-                        <button onClick={() => { return this.deleteHandler(this.props.id)}}>delete</button> : ""}
+                        <button style={{marginTop: "25px", height: "20px"}}onClick={() => { return this.deleteHandler(this.props.id)}}>delete</button> : ""}
                 </div> 
           </div>  
         )

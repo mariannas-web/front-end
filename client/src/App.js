@@ -51,7 +51,7 @@ export default class App extends React.Component{
   render() {
     return (
       <div className='content'> 
-          <Nav activateMenu={this.activateMenu}/> 
+          <Nav loggedIn={this.state.loggedIn} activateMenu={this.activateMenu}/> 
           <Menu loggedIn={this.state.loggedIn} activateMenu={this.activateMenu}/> 
           <Route exact path='/register' component={RegisterForm} /> 
           <Route exact path='/login' component={LoginForm} /> 

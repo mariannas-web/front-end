@@ -67,7 +67,7 @@ export default class UndergroundFeedCard extends React.Component{
                 </div> 
                 <div className='delete-button'> 
                     {localStorage.getItem('username') === process.env.REACT_APP_ADMIN_KEY ? 
-                        <button onClick={() => { return this.deleteHandler(this.props.id)}}>delete</button> : ""}
+                        <button style={{height:"20px", marginTop: "10px"}}onClick={() => { return this.deleteHandler(this.props.id)}}>delete</button> : ""}
                 </div> 
             </div> 
         )

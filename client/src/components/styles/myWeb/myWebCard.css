@@ -1,15 +1,17 @@
 .my-web-navbar{
     display: flex; 
     flex-wrap: wrap; 
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-end; 
-    margin-top: 20px; 
+    padding: 5px 5px; 
     font-size: 18px; 
+    background: #5f3686;
+    border: 1px solid white; 
+    box-shadow: 4px 2px 3px 1px;
 }
 
 
 .web-card-container{
-    margin: 20px 0px; 
     color: black; 
     font-weight: bold; 
     background: white; 
@@ -65,4 +67,21 @@
 
 .web-card-username{
     margin: 0px 
+}
+
+
+.loading-my-web{
+    font-size: 22px; 
+    width: 100%; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    height: 80vh; 
+    align-items: center; 
+}
+
+.my-web-navbar img{
+    border: 2px solid black;
+    border-radius: 50%; 
+    padding: 3px;  
 }

@@ -5,8 +5,26 @@
     align-items: center; 
     flex-direction: column-reverse;
     width: 100%; 
-
 }
+
+@media(min-width: 360px){
+    .newsCards{
+        width: 90%; 
+        flex-direction: row; 
+        align-items: stretch; 
+        justify-content: space-around;
+    }
+}
+
+@media(min-width: 500px){
+    .newsCards{
+        width: 75%; 
+        flex-direction: row-reverse; 
+        align-items: stretch; 
+        justify-content: space-around;
+    }
+}
+
 
 .loading-political{
     font-size: 22px; 
@@ -16,4 +34,42 @@
     justify-content: center; 
     height: 80vh; 
     align-items: center; 
+}
+
+.desktop-landing-container{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.desktop-sidebar{
+    display: none; 
+}
+
+@media(min-width: 500px){
+    .desktop-sidebar{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column; 
+        color: white; 
+        width: 25%; 
+        background: black;
+        margin-bottom: 0px;    
+    }
+}
+
+@media(min-width: 360px){
+    .desktop-sidebar h2{
+        font-weight: 500; 
+        text-align: center; 
+        letter-spacing: 1.1px; 
+        font-family: 'Alegreya Sans', 'serif';
+        font-size: 30px;
+        color: rgb(250, 244, 244); 
+        text-shadow:
+            -1px -1px 0 purple,
+            1px -1px 0 purple,
+            -1px 1px 0 purple,
+            1px 1px 0 purple;
+    }
 }

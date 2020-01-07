@@ -1,5 +1,7 @@
 import React from 'react'
 import PoliticalFeedCard from './politicalFeedCard'
+import LandingSidebar from '../landing/landingSidebar'
+import '../styles/landing/landingSidebar.css'
 import '../news/newsCards.css'
 import axios from 'axios'
 
@@ -34,16 +36,28 @@ export default class PoliticalFeed extends React.Component{
             return <div className='loading-political'>Loading your political feed...</div>
         }
         return(
-            <div className='newsCards'>
-                {this.state.politicalFeed.map(card => {
-                    for(let i = 0; i < 15; i++){
-                        if(card.category[i]){
-                            return <PoliticalFeedCard key={card.id} card={card}/>  
+            <div className='desktop-landing-container'>
+                <div className='desktop-sidebar'>
+                    <h2>Feed</h2> 
+                    {this.state.politicalFeed.map((data, index) => {
+                        for(let i = 0; i < 20; i++){
+                            if(data.category[i]){
+                                return <LandingSidebar sideData={data} key={index}/>  
+                            }
                         }
-                    }
-                })}
-               <h1 style={{fontWeight: "none", fontSize: '28px', margin: "8px auto", fontFamily: "'Playfair Display', 'serif'"}}>Political Feed</h1> 
-            </div> 
+                    })} 
+                </div> 
+                <div className='newsCards'>
+                    {this.state.politicalFeed.map(card => {
+                        for(let i = 0; i < 15; i++){
+                            if(card.category[i]){
+                                return <PoliticalFeedCard key={card.id} card={card}/>  
+                            }
+                        }
+                    })}
+                   <h1 className='currents-banner'>Political Feed</h1> 
+                </div> 
+            </div>
         )
     }
 }

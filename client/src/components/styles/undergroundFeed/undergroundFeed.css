@@ -1,9 +1,28 @@
-.underground-feed-container{
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
+.underground-header{
+    text-align: center; 
+    font-family: 'Alegreya Sans', 'serif';
 }
 
+.underground-feed-container{
+    background-color: white; 
+    padding: 0px 10px; 
+    border-bottom: 1px solid purple;
+    border-top:1px solid purple;
+    font-family: 'Alegreya Sans', 'serif';
+    margin: 15px 0px; 
+    font-weight: 700; 
+}
+
+.underground-content-container h2{
+    padding-top: 10px; 
+    text-decoration:underline;
+    font-size: 22px; 
+}
+
+.underground-feed-container p{
+    font-size: 17px; 
+    font-weight: 550; 
+}
 
 .underground-feed-image{
     min-width: 100%; 
@@ -18,21 +37,24 @@
 }
 
 
-.underground-card-container{
-    background: rgb(231, 231, 231)
-}
 
-.underground-feed-container h2{
-    text-align: center; 
-}
-
-.underground-feed-container p{
-    padding: 10px 5px; 
-    font-size: 18px; 
-}
 
 .footer{
     display: flex; 
     flex-wrap: wrap; 
-    justify-content: space-around;
+}
+
+.footer a{
+    text-align: left; 
+}
+
+.back-button{ 
+    padding: 15px 0px; 
+}
+
+
+.mariannas-web-navbar{
+    border: 2px solid black;
+    border-radius: 50%; 
+    padding: 3px;
 }

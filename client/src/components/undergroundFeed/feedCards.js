@@ -30,26 +30,26 @@ export default class UndergroundFeedCards extends React.Component{
       }
 
     renderFeed = () => {
-        axios(`${process.env.REACT_APP_USERPOST_API_KEY}`)
+        axios(`${process.env.REACT_APP_POST_API_KEY}`)
           .then(response => {
               this.setState({
-                feed: this.shuffleNews(response.data)
+                feed: response.data
               })
           })
           .catch(error => {console.log('there was an error', error)})
       }
 
     render(){
-        if(!this.state.feed){return <div>loading</div> }
-        this.state.feed.map(item => {
-            console.log(item.title)
-        })
+        if(this.state.feed.length === 0){return <div>loading your underground feed...</div> }
 
         return(
-            <div className='underground-card-container'>
-                {this.state.feed.map(item => {
-                    return <UndergroundFeedCard feed={item} /> 
-                })}
+            <div> 
+                <h2 className='underground-header'>Underground Feed</h2> 
+                <div className='underground-card-container'>
+                    {this.state.feed.map(item => {
+                        return <UndergroundFeedCard feed={item} /> 
+                    })}
+                </div> 
             </div> 
         )
     }

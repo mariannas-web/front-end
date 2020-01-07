@@ -3,8 +3,10 @@ import axiosWithAuth from '../auth/utils';
 import MyWebCard from './myWebCard.js'
 import {Link} from 'react-router-dom'
 import '../styles/myWeb/myWebCard.css'
-const web = require('./web.png');
 
+let web = require('./web1.png')
+let typewriter = require('./typewriter.png')
+let feed = require('./feed.png')
 
 
 export default class MyWebCards extends React.Component{
@@ -32,13 +34,13 @@ export default class MyWebCards extends React.Component{
     }
 
     render(){
-        if(!this.state.userData){return <div>Loading your content...</div>}
+        if(!this.state.userData){return <div className="loading-my-web">Loading your feed...</div>}
         return(
             <div>
                 <div className='my-web-navbar'> 
-                    <Link style={{textDecoration: 'none'}} to='/myWebForm'>Post</Link>
-                    <Link style={{textDecoration: 'none'}} to='/mariannasWeb'>Mariannas Web</Link>
-                    <Link style={{textDecoration: 'none'}} to='/myWebFeed'>My Web</Link>
+                    <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebForm'><img style={{width: '28px', height: '24px'}}src={typewriter}/></Link>
+                    <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/mariannasWeb'><img style={{marginTop: '3px', width: '27px', height: '23px'}}src={web}/></Link>
+                    <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebFeed'><img style={{width: '25px', height: '23px'}}src={feed}/></Link>
                 </div> 
                 <div className='myWeb-card-container'>
                 {this.state.userData.length === 0 ? <div style={{margin: "200px auto"}}>You currently have no post</div> :
