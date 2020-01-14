@@ -1,3 +1,9 @@
+.underground-card-container{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around;
+}
+
 .underground-header{
     text-align: center; 
     font-family: 'Alegreya Sans', 'serif';
@@ -11,6 +17,34 @@
     font-family: 'Alegreya Sans', 'serif';
     margin: 15px 0px; 
     font-weight: 700; 
+}
+
+@media(min-width: 360px){
+    .underground-feed-container{
+        width: 85%;
+        box-shadow: 1px 2px 4px 2px;
+    }
+}
+
+@media(min-width: 500px){
+    .underground-feed-container{
+        width: 90%;
+        box-shadow: 1px 2px 4px 2px;
+    }
+}
+
+@media(min-width: 700px){
+    .underground-feed-container{
+        width: 40%;
+        box-shadow: 1px 2px 4px 2px;
+    }
+}
+
+@media(min-width: 1000px){
+    .underground-feed-container{
+        width: 30%;
+        box-shadow: 1px 2px 4px 2px;
+    }
 }
 
 .underground-content-container h2{

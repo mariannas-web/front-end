@@ -16,18 +16,7 @@ export default class UndergroundFeedCards extends React.Component{
     componentDidMount(){
         this.renderFeed()
     }
-
-    shuffleNews = (array) =>  {
-        let currentIndex = array.length, temporaryValue, randomIndex;
-        while (0 !== currentIndex) {
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
-          temporaryValue = array[currentIndex];
-          array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
-        }
-        return array;
-      }
+    
 
     renderFeed = () => {
         axios(`${process.env.REACT_APP_POST_API_KEY}`)

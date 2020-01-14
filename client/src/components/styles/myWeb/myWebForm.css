@@ -35,10 +35,3 @@ textarea::placeholder{
     margin-top: 0px;
 }
 
-.changer{
-    display:hidden;
-}
-
-.changer:hover{
-    display: inline-block;
-}

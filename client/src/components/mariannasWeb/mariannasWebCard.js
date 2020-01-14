@@ -11,7 +11,7 @@ export default class UndergroundFeedCard extends React.Component{
     }
 
     componentDidMount(){
-        axios.get('https://mariannas-web.herokuapp.com/api/user/')
+        axios.get(process.env.REACT_APP_USER_API_KEY)
             .then(response => {
                 response.data.map(item => {
                     if(item.username === localStorage.getItem('username')){
@@ -29,7 +29,7 @@ export default class UndergroundFeedCard extends React.Component{
             user_id: this.state.currentUID,
             follow: username
         }
-        axios.post('https://mariannas-web.herokuapp.com/api/userFavs/', postFollow)
+        axios.post(process.env.REACT_APP_USER_FAVS_API_KEY, postFollow)
             .then(response => {
                 console.log(response)
             })

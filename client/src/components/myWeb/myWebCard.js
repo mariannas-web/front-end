@@ -30,18 +30,16 @@ export default class MyWebCard extends React.Component{
     render(){
         return(
             <div className='web-card-container'>
-             <div className="myWeb-box">General</div> 
-
                 <div className="web-title">
                    <div>
-                    <p>{this.props.title}</p>
-                    <h5 className="web-card-username">{localStorage.getItem('username')}</h5> 
+                       <h2 style={{fontSize: '18px'}}>{this.props.title}</h2>
+                       <p>@{localStorage.getItem('username')}</p> 
                    </div> 
                 </div> 
                 <div style={{display:"flex", justifyContent:"center"}}>
-                {!this.props.youTube ? '': 
-                    <iframe src={"https://www.youtube.com/embed/pdszgILrTr8"} style={{ height: '240px', width: '92%'}}/>
-                }
+                    {!this.props.youTube ? '': 
+                        <iframe src={"https://www.youtube.com/embed/pdszgILrTr8"} style={{ height: '240px', width: '92%'}}/>
+                    }
                 </div> 
                 <hr style={{width: "90%", textAlign:"center"}}/>
                 <div className='web-article-content'>
@@ -50,7 +48,6 @@ export default class MyWebCard extends React.Component{
                 <div className='web-links'>
                     <a href={this.props.link}>Visit Source</a>
                 </div>
-                <hr  style={{width: "90%", textAlign:"center"}}/>
                 <div className="user-selectors">
                     <a>follow</a> 
                     <a>{this.props.date}</a>

@@ -21,7 +21,7 @@ export default class MyWebFeedCards extends React.Component{
     }
 
     renderCards = () => {
-        axios.get('https://mariannas-web.herokuapp.com/api/userFavs')
+        axios.get(process.env.REACT_APP_USER_FAVS_API_KEY)
             .then(response => {
                 let myData = []
                 response.data.map(item => {
