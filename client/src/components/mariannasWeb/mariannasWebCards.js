@@ -13,8 +13,7 @@ export default class MariannasWebCards extends React.Component{
     constructor(){
         super()
         this.state = {
-            feed: [],
-            
+            feed: [],          
         }
     }
 
@@ -32,7 +31,7 @@ export default class MariannasWebCards extends React.Component{
           array[randomIndex] = temporaryValue;
         }
         return array;
-      }
+    }
 
     renderFeed = () => {
         axiosWithAuth().get(`${process.env.REACT_APP_USERPOST_API_KEY}`)
@@ -43,6 +42,8 @@ export default class MariannasWebCards extends React.Component{
           })
           .catch(error => {console.log('there was an error', error)})
       }
+
+
 
     render(){
         if(!this.state.feed){return <div>loading</div> }
@@ -56,7 +57,9 @@ export default class MariannasWebCards extends React.Component{
                 </div> 
                 <div className='underground-card-container'>
                     {this.state.feed.map((item, index) => {
-                        return <MariannasWebCard feed={item} key={index} /> 
+                        return <MariannasWebCard feed={item} 
+                                                 renderFeed={this.renderFeed} 
+                                                 key={index} /> 
                     })}
                 </div>
             </div> 

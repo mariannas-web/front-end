@@ -30,10 +30,10 @@ export default class MyWebForm extends React.Component{
         let lng = str.length;
         let deduct =  max - lng
         if(deduct === 0){
-          return "Limit Reached"
+            return "Limit Reached"
         } else {
-        return deduct
-        }
+            return deduct
+          }
     }
 
     changeHandler = (event) => {
@@ -65,7 +65,7 @@ export default class MyWebForm extends React.Component{
             })
     }
 
-    render(){
+    render(){ 
         return(
             <div> 
                 <div className='my-web-navbar'> 
@@ -87,7 +87,7 @@ export default class MyWebForm extends React.Component{
                                   maxLength='225'
                                   value={this.state.teaser}
                                   onChange={this.changeHandler}
-                                  type='text' /> 
+                                  type='text' />          
                         <input name='link'
                                placeholder='link'
                                value={this.state.link}

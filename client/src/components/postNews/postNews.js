@@ -17,6 +17,21 @@ export default class PostNews extends React.Component{
       genre: '',
     }
   }
+
+  componentDidMount(){
+      window.addEventListener('load', function() {
+          document.querySelector('input[type="file"]').addEventListener('change', function() {
+              if (this.files && this.files[0]) {
+                  let img = document.querySelector('img');  // $('img')[0]
+                  img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+                  img.onload = imageIsLoaded;     
+              }
+          })
+      })
+      function imageIsLoaded() { 
+          alert(this.src); 
+      }
+  }
   
   wordCount(str, max) {
       let lng = str.length;
@@ -78,7 +93,10 @@ export default class PostNews extends React.Component{
       })
   }
 
+
+
   render(){
+    console.log(this.state.image)
     console.log(localStorage.getItem('username'))
     return(
       <div className='postNews-container'>
@@ -122,12 +140,13 @@ export default class PostNews extends React.Component{
                  onChange={this.changeHandler}
                  type='text'
           /> 
+          <img id="myImg" src="#" alt="your image" style={{height: '200px', width:'200px'}}/>
           <br/> 
           <input name='image' 
                  value={this.state.image}
                  placeholder='image'
                  onChange={this.changeHandler}
-                 type='text'
+                 type='file'
           /> 
           <br/> 
           <input name='source' 

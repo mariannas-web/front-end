@@ -16,6 +16,7 @@
     font-weight: bold; 
     background: white; 
     font-family: 'Alegreya Sans', 'serif';
+    border-bottom: 1px solid black; 
 }
 
 @media(min-width: 360px){
@@ -47,16 +48,18 @@
     }
 }
 
-.web-title{
-    font-size: 15px; 
-    color: black; 
-    font-weight: bold; 
-    padding-left: 13px;
+.user-info{
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0px 15px;
+    margin-top: 15px; 
 }
 
 .web-article-content{
     padding-left: 13px; 
-    font-size: 13px; 
+    font-size: 16px; 
 }
 
 .web-links{
@@ -71,6 +74,7 @@
     flex-wrap: wrap; 
     justify-content: space-between; 
     margin: auto; 
+    align-items:center;
     font-size: 13px; 
 }
 
@@ -101,7 +105,8 @@
     margin: 0; 
     color: white; 
     text-align: center; 
-    font-family: 'Playfair Display', serif;
+    font-family: 'Alegreya Sans', 'serif';
+
 
 }
 
@@ -190,3 +195,39 @@
     }
 }
 
+.link-preview{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content:space-around;
+    align-items:center; 
+    padding: 0px 15px;
+}
+
+.preview-image {
+    width: 30%; 
+    height: 80px; 
+}
+
+.link-preview h3{
+    width: 65%;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.currents-banner-myWeb{
+    color: black;
+    font-weight: normal;
+    font-size: 28px;
+    margin:  8px auto; 
+    font-family: 'Playfair Display', 'serif';
+    border-bottom: 1px solid black;
+}
+
+.user-selctors a{
+    cursor: pointer; 
+}
+
+.web-card-container hr{
+    border-bottom: 0px solid black;
+}

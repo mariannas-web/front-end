@@ -4,7 +4,6 @@ import MyWebCard from './myWebCard.js'
 import {Link} from 'react-router-dom'
 import '../styles/myWeb/myWebCard.css'
 import MyWebSidebar from './myWebSidebar';
-
 import axios from 'axios'
 
 let web = require('./web1.png')
@@ -79,13 +78,13 @@ export default class MyWebCards extends React.Component{
 
     renderMariannasSidebar = () => {
         axiosWithAuth().get(`${process.env.REACT_APP_USERPOST_API_KEY}`)
-          .then(response => {
-              this.setState({
-                mariannasFeed: this.shuffleNews(response.data)
-              })
-          })
-          .catch(error => {console.log('there was an error', error)})
-      }
+            .then(response => {
+                this.setState({
+                    mariannasFeed: this.shuffleNews(response.data)
+                })
+            })
+            .catch(error => {console.log('there was an error', error)})
+    }
     
 
     render(){
@@ -95,7 +94,7 @@ export default class MyWebCards extends React.Component{
         return(
             <div className='desktop-container'>
                 <div className='myWeb-sidebar'>
-                    <h2>{localStorage.getItem('username')}'s web</h2>
+                    <h2>{localStorage.getItem('username')}'s feed</h2>
                     <div>
                         {this.state.sidebarData.map((item, index) => {
                             while(index <= 20){
@@ -111,17 +110,18 @@ export default class MyWebCards extends React.Component{
                         <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebFeed'><img style={{width: '25px', height: '23px'}}src={feed}/></Link>
                     </div> 
                     <div className='myWeb-card-container'>
-                    {this.state.userData.length === 0 ? <div style={{margin: "200px auto"}}>You currently have no post</div> :
-                     this.state.userData.map((item, index) => {
-                        return <MyWebCard key={index}
-                                          title={item.title}
-                                          id={item.id}
-                                          teaser={item.teaser}
-                                          link={item.link}
-                                          youTube={item.youTubeVideo}
-                                          renderUserData={this.renderUserData} 
-                                          date={item.date} /> 
-                    })}
+                        {this.state.userData.length === 0 ? <div style={{margin: "200px auto"}}>You currently have no post</div> :
+                            this.state.userData.map((item, index) => {
+                               return <MyWebCard key={index}
+                                                 title={item.title}
+                                                 id={item.id}
+                                                 teaser={item.teaser}
+                                                 link={item.link}
+                                                 youTube={item.youTubeVideo}
+                                                 renderUserData={this.renderUserData} 
+                                                 date={item.date} /> 
+                        })}
+                        <h1 className='currents-banner-myWeb'>{localStorage.getItem('username')}'s Post</h1>
                     </div>
                 </div> 
             </div>
