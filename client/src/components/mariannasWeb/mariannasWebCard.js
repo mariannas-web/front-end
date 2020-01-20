@@ -8,11 +8,12 @@ export default class UndergroundFeedCard extends React.Component{
         super(props)
         this.state = {
             currentUID: 0,
-            isFollowed: false,
             title: '',
             image: '',
             description: '',
-            url: ''
+            url: '',
+            favs: [],
+            isFollowed: false
         }
     }
 
@@ -28,23 +29,72 @@ export default class UndergroundFeedCard extends React.Component{
                     }
                 })
             })
+        this.renderFavs()
+    }
+
+
+    renderFavs = () => {
+        axiosWithAuth().get(process.env.REACT_APP_USER_FAVS_API_KEY)
+            .then(response => {
+                this.setState({
+                    favs: response.data
+                })
+                this.state.favs.map(item => {
+                    if(item['user.username'] === localStorage.getItem('username') && item.follow === this.props.feed['user.username']){
+                        this.setState({
+                            isFollowed: true
+                        })
+                    }
+                })
+            })  
+            .catch(error => {
+                console.log('There was an error retrieving data', error)
+            })
     }
 
 
     followHandler = (username) => {
         let postFollow = {
             user_id: this.state.currentUID,
-            follow: username
+            follow: username,
+        } 
+        if(!this.state.favs.length){
+            axios.post(process.env.REACT_APP_USER_FAVS_API_KEY, postFollow)
+                .then(response => {
+                    console.log(response)
+                })
+                .catch(error => {
+                    console.log("there was an error posting the user", error)
+                })           
         }
-        axios.post(process.env.REACT_APP_USER_FAVS_API_KEY, postFollow)
-            .then(response => {
-                console.log(response)
-            })
-            .catch(error => {
-                console.log("there was an error posting the user", error)
-            })
+        this.state.favs.map(item => {
+            if(item['user.username'] === localStorage.getItem('username') && item.follow !== username){
+                axios.post(process.env.REACT_APP_USER_FAVS_API_KEY, postFollow)
+                    .then(response => {
+                        console.log(response)
+                    })
+                    .catch(error => {
+                        console.log("there was an error posting the user", error)
+                    })
+            }   
+            console.log('fuck off')
+        })
     }
 
+    followDeleteHandler = (username) => {
+        console.log(username)
+        this.state.favs.map(item => {
+            if(item['user.username'] === localStorage.getItem('username') && item.follow === username){
+                axiosWithAuth().delete(`${process.env.REACT_APP_USERPOST_API_KEY}/${item.id}`)
+                    .then(() => {
+                        return this.props.renderFeed()
+                    })
+                    .catch(error => {
+                        console.log("there was an error deleting the post", error)
+                    })
+            }
+        })
+    }
 
     deleteHandler = (id) => {
         axiosWithAuth().delete(`${process.env.REACT_APP_USERPOST_API_KEY}/${id}`)
@@ -68,6 +118,7 @@ export default class UndergroundFeedCard extends React.Component{
     }
     
     render(){
+        console.log(this.state.favs)
         return(
             <div className='web-card-container'>           
                 <div>
@@ -78,12 +129,12 @@ export default class UndergroundFeedCard extends React.Component{
                 </div>                 
                 <hr style={{width: "90%", textAlign:"center"}}/>
                 {this.props.feed.youTube ? '' : 
-                <a href={this.state.url}>
-                    <div className='link-preview'> 
-                        {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img className='preview-image' src={this.state.image}/>}                                       
-                        <h3>{this.state.title}</h3>                   
-                    </div> 
-                </a>
+                    <a href={this.state.url}>
+                        <div className='link-preview'> 
+                            {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img className='preview-image' src={this.state.image}/>}                                       
+                            <h3>{this.state.title}</h3>                   
+                        </div> 
+                    </a>
                 }
                 <div style={{display:"flex", justifyContent:"center"}}>
                     {!this.props.feed.youTube ? '': 
@@ -95,7 +146,8 @@ export default class UndergroundFeedCard extends React.Component{
                     <p>{this.props.feed.teaser}</p> 
                 </div>
                 <div className="user-selectors">
-                    <a onClick={() => {this.followHandler(this.props.feed['user.username'])}}>follow</a> 
+                    {!this.state.isFollowed ? <a className='followHandler' onClick={() => {this.followHandler(this.props.feed['user.username'])}}>follow</a> : <a onClick={() => {this.followDeleteHandler(this.props.feed['user.username'])}}>Unfollow</a>}
+                    
                     <div className='delete-button'> 
                         {localStorage.getItem('username') === process.env.REACT_APP_ADMIN_KEY ? 
                             <button style={{height: "20px", marginBottom: '5px'}}onClick={() => { return this.deleteHandler(this.props.feed.id)}}>delete</button> : ""}               

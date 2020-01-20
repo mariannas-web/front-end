@@ -17,6 +17,7 @@
     background: white; 
     font-family: 'Alegreya Sans', 'serif';
     border-bottom: 1px solid black; 
+    width: 100%;
 }
 
 @media(min-width: 360px){
