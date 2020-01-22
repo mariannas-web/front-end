@@ -225,6 +225,34 @@
     border-bottom: 1px solid black;
 }
 
+@media(min-width:361px){
+    .currents-banner-myWeb{
+        display: none; 
+    }
+}
+
+.currents-banner-myWeb-top{
+    display: none; 
+}
+
+@media(min-width: 361px){ 
+    .currents-banner-myWeb-top{
+        display: block; 
+        width: 100%; 
+        font-weight: 700;
+        text-align: center; 
+        text-decoration: underline; 
+        font-family: 'Alegreya Sans', 'serif';
+        font-size: 35px;
+        color: black;
+        text-shadow:
+            -1px -1px 0 white,
+            1px -1px 0  purple,
+            -1px 1px 0 white,
+            1px 1px 0 purple;
+    }
+}
+
 .user-selctors a{
     cursor: pointer; 
 }

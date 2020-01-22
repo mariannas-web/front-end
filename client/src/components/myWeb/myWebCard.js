@@ -1,6 +1,7 @@
 import React from 'react'
 import axiosWithAuth from '../auth/utils';
 import '../styles/myWeb/myWebCard.css'
+
 import {Redirect} from 'react-router-dom'
 
 
@@ -61,12 +62,12 @@ export default class MyWebCard extends React.Component{
                 </div>                 
                 <hr style={{width: "90%", textAlign:"center"}}/>
                 {this.props.youTube ? '' : 
-                <a href={this.state.url}>
-                    <div className='link-preview'> 
-                        {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img className='preview-image' src={this.state.image}/>}                                       
-                        <h3>{this.state.title}</h3>                   
-                    </div> 
-                </a>
+                    <a href={this.state.url}>
+                        <div className='link-preview'> 
+                            {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img className='preview-image' src={this.state.image}/>}                                       
+                            <h3>{this.state.title}</h3>                   
+                        </div> 
+                    </a>
                 }
                 <div style={{display:"flex", justifyContent:"center"}}>
                     {!this.props.youTube ? '': 

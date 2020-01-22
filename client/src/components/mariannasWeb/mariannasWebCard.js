@@ -3,7 +3,7 @@ import axiosWithAuth from '../auth/utils';
 import axios from 'axios'
 import '../styles/mariannasWeb/mariannasWeb.css'
 
-export default class UndergroundFeedCard extends React.Component{
+export default class MariannasWebCard extends React.Component{
     constructor(props){
         super(props)
         this.state = {
@@ -62,6 +62,7 @@ export default class UndergroundFeedCard extends React.Component{
             axios.post(process.env.REACT_APP_USER_FAVS_API_KEY, postFollow)
                 .then(response => {
                     console.log(response)
+                    this.props.renderFeed()
                 })
                 .catch(error => {
                     console.log("there was an error posting the user", error)
@@ -72,6 +73,7 @@ export default class UndergroundFeedCard extends React.Component{
                 axios.post(process.env.REACT_APP_USER_FAVS_API_KEY, postFollow)
                     .then(response => {
                         console.log(response)
+                        this.props.renderFeed()
                     })
                     .catch(error => {
                         console.log("there was an error posting the user", error)
@@ -125,7 +127,7 @@ export default class UndergroundFeedCard extends React.Component{
                     <h2 style={{padding: '0px 15px', marginBottom: '0px', fontSize: '19px'}}>{this.props.feed.title}</h2>   
                 </div>    
                 <div className="user-info">
-                    <h5 className="web-card-username">{this.props.feed['user.username']}</h5> 
+                    <a href='#' className="web-card-username">@{this.props.feed['user.username']}</a> 
                 </div>                 
                 <hr style={{width: "90%", textAlign:"center"}}/>
                 {this.props.feed.youTube ? '' : 

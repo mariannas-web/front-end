@@ -65,10 +65,10 @@ export default class MyWebFeedCards extends React.Component{
                     <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebForm'><img style={{width: '28px', height: '24px'}}src={typewriter}/></Link>
                     <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/mariannasWeb'><img style={{marginTop: '3px', width: '27px', height: '23px'}}src={web}/></Link>
                 </div>  
-                <div>
+                <div className='underground-card-container'>
                     {this.state.data.map((item, index) => {
                         return <MyWebFeedCard key={index}
-                                              data={item}/> 
+                                              feed={item}/> 
                     })}
                 </div> 
             </div>
