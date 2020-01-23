@@ -87,7 +87,7 @@ export default class MariannasWebCards extends React.Component{
 
     render(){
         if(!this.state.feed){return <div>loading</div> }
-        //ldkfjalskdjf
+        
         return(
             <div className='desktop-container'>
                 <div className='myWeb-sidebar'>
@@ -107,7 +107,7 @@ export default class MariannasWebCards extends React.Component{
                     <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebFeed'><img style={{width: '25px', height: '23px'}}src={feed}/></Link>              
                 </div> 
                 <div className='underground-card-container'>
-                <h1 className='currents-banner-myWeb-top'>Mariannas Web</h1>
+                    <h1 className='currents-banner-myWeb-top'>Mariannas Web</h1>
 
                     {this.state.feed.map((item, index) => {
                         return <MariannasWebCard feed={item} 

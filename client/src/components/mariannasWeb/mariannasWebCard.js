@@ -87,7 +87,7 @@ export default class MariannasWebCard extends React.Component{
         console.log(username)
         this.state.favs.map(item => {
             if(item['user.username'] === localStorage.getItem('username') && item.follow === username){
-                axiosWithAuth().delete(`${process.env.REACT_APP_USERPOST_API_KEY}/${item.id}`)
+                axiosWithAuth().delete(`${process.env.REACT_APP_USER_FAVS_API_KEY}/${item.id}`)
                     .then(() => {
                         return this.props.renderFeed()
                     })
@@ -131,7 +131,7 @@ export default class MariannasWebCard extends React.Component{
                 </div>                 
                 <hr style={{width: "90%", textAlign:"center"}}/>
                 {this.props.feed.youTube ? '' : 
-                    <a href={this.state.url}>
+                    <a style={{textDecoration: 'none'}} href={this.state.url}>
                         <div className='link-preview'> 
                             {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img className='preview-image' src={this.state.image}/>}                                       
                             <h3>{this.state.title}</h3>                   
@@ -148,13 +148,13 @@ export default class MariannasWebCard extends React.Component{
                     <p>{this.props.feed.teaser}</p> 
                 </div>
                 <div className="user-selectors">
-                    {!this.state.isFollowed ? <a className='followHandler' onClick={() => {this.followHandler(this.props.feed['user.username'])}}>follow</a> : <a onClick={() => {this.followDeleteHandler(this.props.feed['user.username'])}}>Unfollow</a>}
+                    {!this.state.isFollowed ? <a style={{marginBottom: '0px'}} className='followHandler' onClick={() => {this.followHandler(this.props.feed['user.username'])}}>Subscribe</a> : <a onClick={() => {this.followDeleteHandler(this.props.feed['user.username'])}}>Unsubscribe</a>}
                     
                     <div className='delete-button'> 
                         {localStorage.getItem('username') === process.env.REACT_APP_ADMIN_KEY ? 
-                            <button style={{height: "20px", marginBottom: '5px'}}onClick={() => { return this.deleteHandler(this.props.feed.id)}}>delete</button> : ""}               
+                            <button style={{height: "20px"}}onClick={() => { return this.deleteHandler(this.props.feed.id)}}>delete</button> : ""}               
                     </div> 
-                    <a><p>{this.props.feed.date}</p></a>
+                    <a><p style={{marginBottom: '0px'}}>{this.props.feed.date}</p></a>
                 </div>                 
             </div> 
         )

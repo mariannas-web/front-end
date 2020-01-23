@@ -7,6 +7,19 @@ export default class LandingCard extends React.Component{
     super(props)
   }
 
+checkContent = (item) => {
+    let dog = item.split(' ')
+    
+    for(let i = 0; i < dog.length; i++){
+      if(dog[i] == 'document.getElementById("linkPremium").innerHTML = cont; (function (v, i){ });' ){
+       item = dog[i] = 'hey'
+          return item
+        } else {
+            return item
+        }
+    }
+}
+
     render(){
         console.log(this.props.card)
         return(
@@ -24,7 +37,7 @@ export default class LandingCard extends React.Component{
                   </div> 
                   <div className='timestamp'>{this.props.card.published.slice(0, -5)}</div> 
                   <div className='article-content'>
-                      <p>{this.props.card.description}</p> 
+                      <p>{this.checkContent(this.props.card.description)}</p> 
                   </div> 
                   <hr  style={{position: "relative", bottom: "0", width: "90%", textAlign:"center"}}/> 
                 </a>

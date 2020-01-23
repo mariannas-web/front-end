@@ -18,6 +18,7 @@
     font-family: 'Alegreya Sans', 'serif';
     border-bottom: 1px solid black; 
     width: 100%;
+    margin: 10px 0px 5px 0px;
 }
 
 @media(min-width: 360px){
@@ -58,8 +59,16 @@
     margin-top: 15px; 
 }
 
+.user-info a{
+    font-size: 16px; 
+}
+
 .web-article-content{
     padding-left: 13px; 
+    font-size: 17px; 
+}
+
+.web-article-content p{
     font-size: 16px; 
 }
 
@@ -75,8 +84,13 @@
     flex-wrap: wrap; 
     justify-content: space-between; 
     margin: auto; 
-    align-items:center;
+    align-items: flex-end;
     font-size: 13px; 
+    padding: 10px; 
+}
+
+.userSelectors a p{
+    margin-bottom: 0px; 
 }
 
 .username-thumbnail{
@@ -124,6 +138,7 @@
     justify-content: center; 
     height: 80vh; 
     align-items: center; 
+    
 }
 
 .my-web-navbar img{
@@ -214,13 +229,21 @@
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center; 
+    font-size: 16px;
+    text-decoration: none; 
+}
+
+@media(min-width: 360px){
+    .link-preview h3{
+        font-size: 14px; 
+    }
 }
 
 .currents-banner-myWeb{
     color: black;
     font-weight: normal;
     font-size: 28px;
-    margin:  8px auto; 
+    margin: 12px auto; 
     font-family: 'Playfair Display', 'serif';
     border-bottom: 1px solid black;
 }
@@ -253,8 +276,12 @@
     }
 }
 
-.user-selctors a{
-    cursor: pointer; 
+.user-selectors a{
+    cursor: pointer;
+}
+
+.user-selectors p{
+    font-size: 17px;
 }
 
 .web-card-container hr{
