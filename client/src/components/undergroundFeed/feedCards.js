@@ -32,7 +32,7 @@ export default class UndergroundFeedCards extends React.Component{
 
 
     render(){
-        if(this.state.feed.length === 0){return <div>loading your underground feed...</div> }
+        if(this.state.feed.length === 0){return <div className='loading-political'>loading your underground feed...</div> }
 
         return(
             <div className='desktop-container'>

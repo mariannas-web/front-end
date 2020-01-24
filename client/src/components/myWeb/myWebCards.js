@@ -112,7 +112,7 @@ export default class MyWebCards extends React.Component{
                     </div> 
                     <div className='myWeb-card-container'>
                     <h1 className='currents-banner-myWeb-top'>{localStorage.getItem('username')}'s Post</h1>
-                        {this.state.userData.length === 0 ? <div style={{margin: "200px auto"}}>You currently have no post</div> :
+                        {this.state.userData.length === 0 ? <div style={{margin: "160px auto"}}>You currently have no post</div> :
                             this.state.userData.map((item, index) => {
                                return <MyWebCard key={index}
                                                  title={item.title}

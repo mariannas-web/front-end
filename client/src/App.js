@@ -18,6 +18,7 @@ import MyWebCards from './components/myWeb/myWebCards'
 import MyWebForm from './components/myWeb/myWebForm'
 import MyWebFeedCards from './components/myWebFeed/myWebFeedCards'
 import axiosWithAuth from './components/auth/utils'
+import Credits from './components/credits/credits.js'
 
 
 export default class App extends React.Component{
@@ -71,6 +72,7 @@ export default class App extends React.Component{
                 <PrivateRoute exact path='/chat' component={Chat} />
                 <PrivateRoute exact path='/undergroundFeed' component={UndergroundFeedCards}/>
                 <PrivateRoute exact path='/myWebFeed' component={MyWebFeedCards} /> 
+                <Route exact path='/credits' component={Credits} /> 
             </div>
         );
     }
