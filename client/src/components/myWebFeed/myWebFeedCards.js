@@ -34,7 +34,7 @@ export default class MyWebFeedCards extends React.Component{
                 this.renderUserPost(myData)
             })
             .catch(error => {
-                console.log("there was an error rendering your data")
+                console.log("There was an error rendering your data", error)
             })
     }
 
@@ -48,7 +48,7 @@ export default class MyWebFeedCards extends React.Component{
                            data.push(item)
                         }
                         this.setState({
-                           data
+                            data
                         })
                     })
                 })
@@ -72,21 +72,20 @@ export default class MyWebFeedCards extends React.Component{
                         })}
                     </div> 
                 </div>
-            <div className='navbar-myWebCards-container'>
-                <div className='my-web-navbar'>
-                    <Link to='/myWeb'><img className='mariannas-web-navbar' style={{width: '26px', height: '23px'}} src={backArrow}/></Link>
-                    <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebForm'><img style={{width: '28px', height: '24px'}}src={typewriter}/></Link>
-                    <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/mariannasWeb'><img style={{marginTop: '3px', width: '27px', height: '23px'}}src={web}/></Link>
-                </div>  
-                <div className='underground-card-container'>
-                    <h1 className='currents-banner-myWeb-top'>{localStorage.getItem('username')}'s feed</h1>
-
-                    {this.state.data.map((item, index) => {
-                        return <MyWebFeedCard key={index}
-                                              feed={item}
-                                              renderFeed={this.renderUserPost}/> 
-                    })}
-                    <h1 className='currents-banner-myWeb'>{localStorage.getItem('username')}'s feed</h1>
+                <div className='navbar-myWebCards-container'>
+                    <div className='my-web-navbar'>
+                        <Link to='/myWeb'><img className='mariannas-web-navbar' style={{width: '26px', height: '23px'}} src={backArrow}/></Link>
+                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebForm'><img style={{width: '28px', height: '24px'}}src={typewriter}/></Link>
+                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/mariannasWeb'><img style={{marginTop: '3px', width: '27px', height: '23px'}}src={web}/></Link>
+                    </div>  
+                    <div className='underground-card-container'>
+                        <h1 className='currents-banner-myWeb-top'>{localStorage.getItem('username')}'s feed</h1>
+                        {this.state.data.map((item, index) => {
+                            return <MyWebFeedCard key={index}
+                                                  feed={item}
+                                                  renderFeed={this.renderUserPost}/> 
+                        })}
+                        <h1 className='currents-banner-myWeb'>{localStorage.getItem('username')}'s feed</h1>
                     </div>
                 </div> 
             </div>

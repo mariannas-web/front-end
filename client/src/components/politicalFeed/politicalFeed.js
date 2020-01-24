@@ -8,14 +8,14 @@ import axios from 'axios'
 
 export default class PoliticalFeed extends React.Component{
     constructor(props){
-      super(props);   
-      this.state = {
-        politicalFeed: []
-      }
+        super(props);   
+        this.state = {
+            politicalFeed: []
+        }
     }
 
     componentDidMount(){
-      this.renderPoliticalFeed()
+        this.renderPoliticalFeed()
     }
 
     renderPoliticalFeed = () => {
@@ -26,7 +26,7 @@ export default class PoliticalFeed extends React.Component{
                 })
             })
             .catch(error => { 
-                console.log("There was an error loading your content")
+                console.log("There was an error loading your content", error)
            })
     }
 

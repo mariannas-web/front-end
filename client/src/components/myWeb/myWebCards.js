@@ -23,8 +23,7 @@ export default class MyWebCards extends React.Component{
 
     componentDidMount(){
         this.renderSidebarData()
-        this.renderUserData()
-        
+        this.renderUserData()       
     }
 
     renderUserData = () => {
@@ -35,10 +34,10 @@ export default class MyWebCards extends React.Component{
                     userData: response.data.userPost
                 })                               
             })
-            .catch(error => {console.log('There was an error posting your content')
-        })
+            .catch(error => {
+                console.log('There was an error posting your content', error)
+            })
     }
-
 
     renderSidebarData = () => {
         axios.get(process.env.REACT_APP_USER_FAVS_API_KEY)
@@ -52,7 +51,7 @@ export default class MyWebCards extends React.Component{
                 this.renderUserPost(myData)
             })
             .catch(error => {
-                console.log("there was an error rendering your data")
+                console.log("There was an error rendering your data", error)
             })
     }
 
@@ -83,7 +82,9 @@ export default class MyWebCards extends React.Component{
                     mariannasFeed: this.shuffleNews(response.data)
                 })
             })
-            .catch(error => {console.log('there was an error', error)})
+            .catch(error => {
+                console.log('There was an error rendering the data', error)
+            })
     }
     
 
@@ -111,7 +112,6 @@ export default class MyWebCards extends React.Component{
                     </div> 
                     <div className='myWeb-card-container'>
                     <h1 className='currents-banner-myWeb-top'>{localStorage.getItem('username')}'s Post</h1>
-
                         {this.state.userData.length === 0 ? <div style={{margin: "200px auto"}}>You currently have no post</div> :
                             this.state.userData.map((item, index) => {
                                return <MyWebCard key={index}

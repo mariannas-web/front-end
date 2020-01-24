@@ -45,7 +45,6 @@ export default class MyWebForm extends React.Component{
    
     submitHandler = (event) => {
         event.preventDefault()
-
         const myWebPost = {
             user_id: this.props.userid,
             title: this.state.title,
@@ -55,13 +54,12 @@ export default class MyWebForm extends React.Component{
             date: this.getDate()
         }
         
-        console.log(myWebPost)
         axiosWithAuth().post(`${process.env.REACT_APP_USERPOST_API_KEY}`, myWebPost)
             .then(() => {
                 this.props.history.push('/myWeb')
             })
             .catch(error => {
-                console.log("There was an error posting your content")
+                console.log("There was an error posting your content", error)
             })
     }
 

@@ -20,13 +20,15 @@ export default class UndergroundFeedCards extends React.Component{
     
     renderFeed = () => {
         axios(`${process.env.REACT_APP_POST_API_KEY}`)
-          .then(response => {
-              this.setState({
-                feed: response.data
-              })
-          })
-          .catch(error => {console.log('there was an error', error)})
-      }
+            .then(response => {
+                this.setState({
+                  feed: response.data
+                })
+            })
+            .catch(error => {
+                console.log('there was an error', error)
+            })
+    }
 
 
     render(){
@@ -45,13 +47,13 @@ export default class UndergroundFeedCards extends React.Component{
                     </div> 
                 </div> 
                 <div className='navbar-myWebCards-container'> 
-                <div className='underground-card-container'> 
-                    <h1 className='currents-banner-myWeb-top'>Underground Feed</h1>
-                        {this.state.feed.map(item => {
-                            return <UndergroundFeedCard feed={item} /> 
-                        })}
-                    <h1 className='currents-banner-myWeb'>Underground Feed</h1>          
-                </div> 
+                    <div className='underground-card-container'> 
+                        <h1 className='currents-banner-myWeb-top'>Underground Feed</h1>
+                            {this.state.feed.map(item => {
+                                return <UndergroundFeedCard feed={item} /> 
+                            })}
+                        <h1 className='currents-banner-myWeb'>Underground Feed</h1>          
+                    </div> 
                 </div> 
             </div> 
         )

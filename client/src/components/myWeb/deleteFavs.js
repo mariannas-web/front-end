@@ -39,9 +39,9 @@ export default class DeleteFavs extends React.Component{
             <div>
                 {this.state.myFavs.map((item, key) => {
                     return <div>
-                        <div>{item.follow}</div> 
-                        <button onClick={() => {this.deleteFavs(item.id)}}>delete</button> 
-                    </div>
+                                <div>{item.follow}</div> 
+                                <button onClick={() => {this.deleteFavs(item.id)}}>delete</button> 
+                            </div>
                 })}
             </div> 
         )

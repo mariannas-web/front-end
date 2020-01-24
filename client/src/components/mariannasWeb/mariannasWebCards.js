@@ -28,23 +28,23 @@ export default class MariannasWebCards extends React.Component{
     shuffleNews = (array) =>  {
         let currentIndex = array.length, temporaryValue, randomIndex;
         while (0 !== currentIndex) {
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
-          temporaryValue = array[currentIndex];
-          array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
         }
         return array;
     }
 
     renderFeed = () => {
         axiosWithAuth().get(`${process.env.REACT_APP_USERPOST_API_KEY}`)
-          .then(response => {
-              this.setState({
-                feed: this.shuffleNews(response.data)
-              })
-          })
-          .catch(error => {console.log('there was an error', error)})
+            .then(response => {
+                this.setState({
+                    feed: this.shuffleNews(response.data)
+                })
+            })
+            .catch(error => {console.log('there was an error', error)})
     }
 
     renderSidebarData = () => {
@@ -59,7 +59,7 @@ export default class MariannasWebCards extends React.Component{
                 this.renderUserPost(myData)
             })
             .catch(error => {
-                console.log("there was an error rendering your data")
+                console.log("There was an error rendering your data", error)
             })
     }
 
@@ -70,10 +70,10 @@ export default class MariannasWebCards extends React.Component{
                 .then(response => {
                     response.data.map(item => {
                         if(item['user.username'] === favorite){
-                           sidebarData.push(item)
+                            sidebarData.push(item)
                         }
                         this.setState({
-                           sidebarData
+                            sidebarData
                         })
                     })
                 })
@@ -84,9 +84,8 @@ export default class MariannasWebCards extends React.Component{
     }
 
 
-
     render(){
-        if(!this.state.feed){return <div>loading</div> }
+        if(!this.state.feed){return <div>loading</div>}
         
         return(
             <div className='desktop-container'>
@@ -100,24 +99,22 @@ export default class MariannasWebCards extends React.Component{
                         })}
                     </div> 
                 </div> 
-            <div className='navbar-myWebCards-container'>
-                <div className='my-web-navbar'>
-                    <Link to='/myWeb'><img className='mariannas-web-navbar' style={{width: '26px', height: '23px'}} src={backArrow}/></Link>
-                    <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebForm'><img style={{width: '28px', height: '24px'}}src={typewriter}/></Link>
-                    <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebFeed'><img style={{width: '25px', height: '23px'}}src={feed}/></Link>              
+                <div className='navbar-myWebCards-container'>
+                    <div className='my-web-navbar'>
+                        <Link to='/myWeb'><img className='mariannas-web-navbar' style={{width: '26px', height: '23px'}} src={backArrow}/></Link>
+                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebForm'><img style={{width: '28px', height: '24px'}}src={typewriter}/></Link>
+                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebFeed'><img style={{width: '25px', height: '23px'}}src={feed}/></Link>              
+                    </div> 
+                    <div className='underground-card-container'>
+                        <h1 className='currents-banner-myWeb-top'>Mariannas Web</h1>
+                        {this.state.feed.map((item, index) => {
+                            return <MariannasWebCard feed={item} 
+                                                     renderFeed={this.renderFeed} 
+                                                     key={index} /> 
+                        })}
+                        <h1 className='currents-banner-myWeb'>Mariannas Web</h1>
+                    </div>
                 </div> 
-                <div className='underground-card-container'>
-                    <h1 className='currents-banner-myWeb-top'>Mariannas Web</h1>
-
-                    {this.state.feed.map((item, index) => {
-                        return <MariannasWebCard feed={item} 
-                                                 renderFeed={this.renderFeed} 
-                                                 key={index} /> 
-                    })}
-                    <h1 className='currents-banner-myWeb'>Mariannas Web</h1>
-
-                </div>
-            </div> 
             </div>
         )
     }

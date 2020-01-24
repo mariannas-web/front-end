@@ -54,7 +54,6 @@ export default class MyWebFeedCard extends React.Component{
             })
     }
 
-
     followHandler = (username) => {
         let postFollow = {
             user_id: this.state.currentUID,
@@ -81,7 +80,7 @@ export default class MyWebFeedCard extends React.Component{
                         console.log("there was an error posting the user", error)
                     })
             }   
-            console.log('fuck off')
+            console.log('Successfully Unsubscribed')
         })
     }
 
@@ -94,7 +93,7 @@ export default class MyWebFeedCard extends React.Component{
                         return this.props.renderFeed()
                     })
                     .catch(error => {
-                        console.log("there was an error deleting the post", error)
+                        console.log("There was an error deleting the post", error)
                     })
             }
         })
@@ -149,8 +148,7 @@ export default class MyWebFeedCard extends React.Component{
                     <p>{this.props.feed.teaser}</p> 
                 </div>
                 <div className="user-selectors">
-                    {!this.state.isFollowed ? <a className='followHandler' onClick={() => {this.followHandler(this.props.feed['user.username'])}}>Subscribe</a> : <a onClick={() => {this.followDeleteHandler(this.props.feed['user.username'])}}>Unsubscribe</a>}
-                    
+                    {!this.state.isFollowed ? <a className='followHandler' onClick={() => {this.followHandler(this.props.feed['user.username'])}}>Subscribe</a> : <a onClick={() => {this.followDeleteHandler(this.props.feed['user.username'])}}>Unsubscribe</a>}                    
                     <div className='delete-button'> 
                         {localStorage.getItem('username') === process.env.REACT_APP_ADMIN_KEY ? 
                             <button style={{height: "20px"}}onClick={() => { return this.deleteHandler(this.props.feed.id)}}>delete</button> : ""}               

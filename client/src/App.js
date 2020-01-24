@@ -22,57 +22,57 @@ import axiosWithAuth from './components/auth/utils'
 
 export default class App extends React.Component{
     constructor(){
-      super()
-      this.state = {
-        userid: null,
-        loggedIn: false
-      }
+        super()
+        this.state = {
+            userid: null,
+            loggedIn: false
+        }
     }
 
-  activateMenu = () => {
-      document.querySelector('.menu').classList.toggle('hide')
-  }
+    activateMenu = () => {
+        document.querySelector('.menu').classList.toggle('hide')
+    }
 
-  componentDidMount(){
-      axiosWithAuth().get(`${process.env.REACT_APP_USER_API_KEY}`)
-           .then(response => {
-               const username = localStorage.getItem('username')
-               response.data.map(item => {
-                   if(item.username === username){
-                       this.setState({
-                           userid: item.id,
-                           loggedIn: true
-                       })                        
-                   }
-               })
-           })
-           .catch(error => {console.log('There was an error posting your content')})
-  }
+    componentDidMount(){
+        axiosWithAuth().get(`${process.env.REACT_APP_USER_API_KEY}`)
+            .then(response => {
+                const username = localStorage.getItem('username')
+                response.data.map(item => {
+                    if(item.username === username){
+                        this.setState({
+                            userid: item.id,
+                            loggedIn: true
+                        })                        
+                    }
+                })
+            })
+            .catch(error => {
+                console.log('There was an error posting your content', error)
+            })
+    }
 
-  render() {
-    return (
-      <div className='content'> 
-          <Nav loggedIn={this.state.loggedIn} activateMenu={this.activateMenu}/> 
-          <Menu loggedIn={this.state.loggedIn} activateMenu={this.activateMenu}/> 
-          <Route exact path='/register' component={RegisterForm} /> 
-          <Route exact path='/login' component={LoginForm} /> 
-          <Route exact path='/' component={LandingCards} /> 
-          <Route exact path='/politicalFeed' component={PoliticalFeed}/>
-          
-          <Route exact path="/myWeb" render = {props => (
-              <MyWebCards {...props} userid={this.state.userid} />
-          )}/>  
-
-          <Route exact path="/myWebForm" render = {props => (
-              <MyWebForm {...props} userid={this.state.userid} />
-          )}/>  
-          <Route exact path='/mariannasWeb' component={MariannasWebCards} /> 
-          <PrivateRoute exact path='/postNews' component={PostNews} /> 
-          <PrivateRoute exact path='/chat' component={Chat} />
-          <PrivateRoute exact path='/undergroundFeed' component={UndergroundFeedCards}/>
-          <PrivateRoute exact path='/myWebFeed' component={MyWebFeedCards} /> 
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className='content'> 
+                <Nav loggedIn={this.state.loggedIn} activateMenu={this.activateMenu}/> 
+                <Menu loggedIn={this.state.loggedIn} activateMenu={this.activateMenu}/> 
+                <Route exact path='/register' component={RegisterForm} /> 
+                <Route exact path='/login' component={LoginForm} /> 
+                <Route exact path='/' component={LandingCards} /> 
+                <Route exact path='/politicalFeed' component={PoliticalFeed}/>               
+                <Route exact path="/myWeb" render = {props => (
+                    <MyWebCards {...props} userid={this.state.userid} />
+                )}/>       
+                <Route exact path="/myWebForm" render = {props => (
+                    <MyWebForm {...props} userid={this.state.userid} />
+                )}/>  
+                <Route exact path='/mariannasWeb' component={MariannasWebCards} /> 
+                <PrivateRoute exact path='/postNews' component={PostNews} /> 
+                <PrivateRoute exact path='/chat' component={Chat} />
+                <PrivateRoute exact path='/undergroundFeed' component={UndergroundFeedCards}/>
+                <PrivateRoute exact path='/myWebFeed' component={MyWebFeedCards} /> 
+            </div>
+        );
+    }
 }
 

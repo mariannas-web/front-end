@@ -5,14 +5,14 @@ import axios from 'axios'
 
 export default class NewsCards extends React.Component{
     constructor(props){
-      super(props);   
-      this.state = {
-        newsCards: []
-      }
+        super(props);   
+        this.state = {
+            newsCards: []
+        }
     }
 
     componentDidMount(){
-      this.renderCards()
+        this.renderCards()
     }
 
 
@@ -35,13 +35,13 @@ export default class NewsCards extends React.Component{
 
 
     render(){
-      return(
-        <div className='newsCards'>
-          { [].concat.apply([],this.state.newsCards).map((card, index)=> {         //turning two arrays into one
-            return <NewsCard key={index} card={card}/> 
-          })}
-          <h1 style={{margin: "8px auto", fontFamily: "'Alegreya Sans', 'serif'"}}>Currents</h1> 
-        </div> 
-      )
+        return(
+            <div className='newsCards'>
+                {[].concat.apply([],this.state.newsCards).map((card, index)=> {      //turning two arrays into one
+                    return <NewsCard key={index} card={card}/> 
+                })}
+                <h1 style={{margin: "8px auto", fontFamily: "'Alegreya Sans', 'serif'"}}>Currents</h1> 
+            </div> 
+        )
     }
 }

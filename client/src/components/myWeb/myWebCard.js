@@ -18,8 +18,7 @@ export default class MyWebCard extends React.Component{
     }
 
     componentDidMount(){
-        this.getPreview(this.props.link)
-        
+        this.getPreview(this.props.link)       
     }
 
     deleteHandler = (id) => {
@@ -27,7 +26,9 @@ export default class MyWebCard extends React.Component{
             .then(() => {
                 return this.props.renderUserData()
             })
-            .catch(error => {console.log("there was an error deleting the post")}
+            .catch(error => {
+                console.log("There was an error deleting the post", error)
+            }
         )
     }
 

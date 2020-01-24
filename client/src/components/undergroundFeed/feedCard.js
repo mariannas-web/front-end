@@ -13,8 +13,7 @@ export default class UndergroundFeedCard extends React.Component{
             url: ''
         }
     }
-
-        
+    
     getPreview = (link) => {
         axiosWithAuth().get(`http://api.linkpreview.net/?key=${process.env.REACT_APP_LINK_PREVIEW}=${link}`)
             .then(response => {
@@ -57,8 +56,7 @@ export default class UndergroundFeedCard extends React.Component{
                     <p>{this.props.feed.teaser}</p> 
                 </div>
                 <div className="user-selectors">
-                    {!this.state.isFollowed ? <a style={{marginBottom: '0px'}} className='followHandler' onClick={() => {this.followHandler(this.props.feed['user.username'])}}>Subscribe</a> : <a onClick={() => {this.followDeleteHandler(this.props.feed['user.username'])}}>Unsubscribe</a>}
-                    
+                    {!this.state.isFollowed ? <a style={{marginBottom: '0px'}} className='followHandler' onClick={() => {this.followHandler(this.props.feed['user.username'])}}>Subscribe</a> : <a onClick={() => {this.followDeleteHandler(this.props.feed['user.username'])}}>Unsubscribe</a>}                   
                     <div className='delete-button'> 
                         {localStorage.getItem('username') === process.env.REACT_APP_ADMIN_KEY ? 
                             <button style={{height: "20px"}}onClick={() => { return this.deleteHandler(this.props.feed.id)}}>delete</button> : ""}               

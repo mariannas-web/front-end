@@ -7,14 +7,14 @@ import axios from 'axios'
 
 export default class LandingCards extends React.Component{
     constructor(props){
-      super(props);   
-      this.state = {
-        currentsFeed: []
-      }
+        super(props);   
+        this.state = {
+            currentsFeed: []
+        }
     }
 
     componentDidMount(){
-      this.renderPoliticalFeed()
+        this.renderPoliticalFeed()
     }
 
     renderPoliticalFeed = () => {
@@ -26,7 +26,7 @@ export default class LandingCards extends React.Component{
             })
             .catch(error => { 
                 console.log("There was an error loading your content")
-           })
+            })
     }
 
 
@@ -47,7 +47,7 @@ export default class LandingCards extends React.Component{
                     })} 
                 </div> 
                 <div className='newsCards'>
-                <h1 className='currents-banner-top'>Currents</h1>
+                    <h1 className='currents-banner-top'>Currents</h1>
                     {this.state.currentsFeed.map(card => {
                         for(let i = 0; i < 15; i++){
                             if(card.category[i]){
