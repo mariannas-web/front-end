@@ -55,7 +55,7 @@ export default class MyWebCard extends React.Component{
         return(
             <div className='web-card-container'>           
                 <div>
-                    <p style={{padding: '0px 15px', marginBottom: '0px', fontSize: '21px'}}>{this.props.title}</p>   
+                    <p className='card-title'>{this.props.title}</p>   
                 </div>    
                 <div className="user-info">
                     <a href='#'>@{localStorage.getItem('username')}</a>

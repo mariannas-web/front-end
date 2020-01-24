@@ -124,7 +124,7 @@ export default class MariannasWebCard extends React.Component{
         return(
             <div className='web-card-container'>           
                 <div>
-                    <h2 style={{padding: '0px 15px', marginBottom: '0px', fontSize: '19px'}}>{this.props.feed.title}</h2>   
+                    <h2 className='card-title'>{this.props.feed.title}</h2>   
                 </div>    
                 <div className="user-info">
                     <a href='#' className="web-card-username">@{this.props.feed['user.username']}</a> 

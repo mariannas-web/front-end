@@ -63,6 +63,24 @@
     font-size: 16px; 
 }
 
+@media(min-width:360px){
+    .user-info a{
+        font-size: 14px;
+    }
+}
+
+.card-title{
+    padding: 0px 15px;
+    margin-bottom: 0px;
+    font-size: 21px;
+}
+
+@media(min-width: 360px){
+    .card-title{
+        font-size: 16px;
+    }
+}
+
 .web-article-content{
     padding-left: 13px; 
     font-size: 17px; 
@@ -70,6 +88,12 @@
 
 .web-article-content p{
     font-size: 16px; 
+}
+
+@media(min-width:360px){
+    .web-article-content p{
+        font-size: 14px;
+    }
 }
 
 .web-links{
@@ -224,6 +248,13 @@
     height: 80px; 
 }
 
+@media(min-width: 360px){
+    .preview-image{
+        height: 70px;
+        width: 35%;
+    }
+}
+
 .link-preview h3{
     width: 65%;
     display: flex; 
@@ -235,7 +266,8 @@
 
 @media(min-width: 360px){
     .link-preview h3{
-        font-size: 14px; 
+        font-size: 14px;
+        width: 60%; 
     }
 }
 
@@ -268,11 +300,6 @@
         font-family: 'Alegreya Sans', 'serif';
         font-size: 35px;
         color: black;
-        text-shadow:
-            -1px -1px 0 white,
-            1px -1px 0  purple,
-            -1px 1px 0 white,
-            1px 1px 0 purple;
     }
 }
 
@@ -282,6 +309,12 @@
 
 .user-selectors p{
     font-size: 17px;
+}
+
+@media(min-width:360px){
+    .user-selectors p{
+        font-size: 13px;
+    }
 }
 
 .web-card-container hr{

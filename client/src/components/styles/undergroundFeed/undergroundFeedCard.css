@@ -1,0 +1,12 @@
+.underground-container{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    flex-direction: column-reverse;
+}
+
+@media(min-width: 360px){
+    .underground-container{
+        flex-direction: row-reverse;
+    }
+}
