@@ -106,9 +106,9 @@ export default class MyWebCards extends React.Component{
                 </div> 
                 <div className='navbar-myWebCards-container'>
                     <div className='my-web-navbar'> 
-                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebForm'><img style={{width: '28px', height: '24px'}}src={typewriter}/></Link>
-                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/mariannasWeb'><img style={{marginTop: '3px', width: '27px', height: '23px'}}src={web}/></Link>
-                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebFeed'><img style={{width: '25px', height: '23px'}}src={feed}/></Link>
+                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebForm'><img style={{width: '28px', height: '24px'}} src={typewriter}/></Link>
+                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/mariannasWeb'><img style={{marginTop: '3px', width: '27px', height: '23px'}} src={web}/></Link>
+                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebFeed'><img style={{width: '25px', height: '23px'}} src={feed}/></Link>
                     </div> 
                     <div className='myWeb-card-container'>
                     <h1 className='currents-banner-myWeb-top'>{localStorage.getItem('username')}'s Post</h1>
