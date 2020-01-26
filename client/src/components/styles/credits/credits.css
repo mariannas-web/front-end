@@ -21,6 +21,18 @@
     font-weight: bold;
 }
 
-.disclaimer p{
+.disclaimer p{    
     margin-top: 0px;
+    max-width: 280px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.credits-banner{
+    color: black;
+    font-weight: normal;
+    font-size: 28px;
+    margin:  8px auto; 
+    font-family: 'Playfair Display', 'serif';
+    border-bottom: 1px solid black;
 }

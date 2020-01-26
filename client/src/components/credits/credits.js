@@ -8,7 +8,7 @@ export default class Credits extends React.Component{
         return(
             <div>
                 <div className='credits-header'> 
-                    <h1 className='currents-banner'>Credits</h1> 
+                    <h1 className='credits-banner'>Credits</h1> 
                 </div>
                 <br/>
                 <div className='credits'> 
@@ -25,7 +25,7 @@ export default class Credits extends React.Component{
                     <p>Created by unknown From Noun Project</p>
                     <br/>
                 </div> 
-                <hr style={{width: '94%', border: '1px solid black'}}/>
+                <hr style={{width: '94%', border: '1px solid black', maxWidth: '300px'}} />
                 <div className='disclaimer'>
                     <p>I do not own the rights to these icons and have been provided the ability to use them through the courtesy of Noun Project and the listed creators</p>
                 </div>
