@@ -77,7 +77,7 @@ export default class MyWebCard extends React.Component{
                 </div> 
                 <hr style={{width: "90%", textAlign:"center"}}/>         
                 <div className='web-article-content'>
-                    <p>{this.props.teaser}</p> 
+                    <p className='content-padding'>{this.props.teaser}</p> 
                 </div>
                 <div className="user-selectors">
                     <a><p style={{marginBottom: '0px'}}>Subscribe</p></a> 

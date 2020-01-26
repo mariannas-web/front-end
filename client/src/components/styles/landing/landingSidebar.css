@@ -16,7 +16,6 @@
         1px -1px 0 purple,
         -1px 1px 0 purple,
         1px 1px 0 purple;
-
 }
 
 .sidebar-container h4{
@@ -33,9 +32,7 @@
         1px 1px 0 purple;
 }
 
-
 .sidebar-container a{ 
     text-decoration: none; 
     color: rgb(113, 113, 252); 
-
 }

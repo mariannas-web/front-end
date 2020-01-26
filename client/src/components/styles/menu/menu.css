@@ -33,6 +33,7 @@
     color: purple; 
     font-size: 28px;
     transition: 0.2s; 
+    cursor: pointer;
     text-shadow:
     -1px -1px 0 maroon,
     1px -1px 0 maroon,

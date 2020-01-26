@@ -35,9 +35,9 @@ export default class LandingCard extends React.Component{
                         <div className='article-content'>
                             <p>{this.checkContent(this.props.card.description)}</p>
                         </div> 
-                        <hr  style={{position: "relative", bottom: "0", width: "90%", textAlign:"center"}}/> 
+                        <hr  style={{position: "relative", bottom: "0", width: "90%", textAlign:"center"}}/>                     
+                        <div className='links'>View Article</div>
                     </a>
-                    <div className='links'>View Article</div>
                 </div> 
             </div> 
         )

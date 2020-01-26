@@ -10,12 +10,12 @@
     box-shadow: 4px 2px 3px 1px;
 }
 
-
 .web-card-container{
     color: black; 
     font-weight: bold; 
     background: white; 
     font-family: 'Alegreya Sans', 'serif';
+    border-top: 1px solid black;
     border-bottom: 1px solid black; 
     width: 100%;
     margin: 10px 0px 5px 0px;
@@ -135,7 +135,6 @@
     }
 }
 
-
 .myWeb-box{
     height: 20px; 
     width: 100%; 
@@ -150,7 +149,6 @@
     margin: 0px 
 }
 
-
 .loading-my-web{
     font-size: 22px; 
     width: 100%; 
@@ -159,7 +157,6 @@
     justify-content: center; 
     height: 80vh; 
     align-items: center; 
-    
 }
 
 .my-web-navbar img{
@@ -316,4 +313,8 @@
 
 .web-card-container hr{
     border-bottom: 0px solid black;
+}
+
+.content-padding{
+    padding: 0px 2px; 
 }

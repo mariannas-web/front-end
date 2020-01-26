@@ -145,7 +145,7 @@ export default class MyWebFeedCard extends React.Component{
                 </div> 
                 <hr style={{width: "90%", textAlign:"center"}}/>         
                 <div className='web-article-content'>
-                    <p>{this.props.feed.teaser}</p> 
+                    <p style='content-padding'>{this.props.feed.teaser}</p> 
                 </div>
                 <div className="user-selectors">
                     {!this.state.isFollowed ? <a className='followHandler' onClick={() => {this.followHandler(this.props.feed['user.username'])}}>Subscribe</a> : <a onClick={() => {this.followDeleteHandler(this.props.feed['user.username'])}}>Unsubscribe</a>}                    
