@@ -41,10 +41,12 @@ export default class MariannasWebCards extends React.Component{
         axiosWithAuth().get(`${process.env.REACT_APP_USERPOST_API_KEY}`)
             .then(response => {
                 this.setState({
-                    feed: this.shuffleNews(response.data)
-                })
+                    feed: response.data
+                })             
             })
-            .catch(error => {console.log('there was an error', error)})
+            .catch(error => {
+                console.log('there was an error', error)
+            })       
     }
 
     renderSidebarData = () => {
@@ -86,7 +88,7 @@ export default class MariannasWebCards extends React.Component{
 
     render(){
         if(!this.state.feed){return <div>loading</div>}
-        
+        console.log(this.state.feed)
         return(
             <div className='desktop-container'>
                 <div className='myWeb-sidebar'>

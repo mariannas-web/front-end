@@ -47,6 +47,22 @@ export default class MyWebForm extends React.Component{
         this.setState({
             [event.target.name]: event.target.value
         })
+        this.youTubeHandler(this.state.youtube)
+    }
+
+    youTubeHandler = (url) => {
+        let youTubeArray = []
+        url = url.split('')
+        for(let i = 0; i < url.length; i++){
+            if(i < 24){
+                youTubeArray.push(url[i])
+            } else if( i === 32){
+               youTubeArray.push('embed/')
+            } else if(i > 32){
+              youTubeArray.push(url[i])
+            }           
+        }
+        return youTubeArray.join('')
     }
    
     submitHandler = (event) => {
@@ -56,7 +72,7 @@ export default class MyWebForm extends React.Component{
             title: this.state.title,
             teaser: this.state.teaser,
             link: this.state.link,
-            youTubeVideo: this.state.youtube,
+            youTubeVideo: this.youTubeHandler(this.state.youtube),
             date: this.getDate()
         }
         

@@ -130,7 +130,7 @@ export default class MyWebFeedCard extends React.Component{
                     <a href='#' className="web-card-username">{this.props.feed['user.username']}</a> 
                 </div>                 
                 <hr style={{width: "90%", textAlign:"center"}}/>
-                {this.props.feed.youTube ? '' : 
+                {this.props.feed.youTubeVideo ? '' : 
                     <a style={{textDecoration: 'none'}} href={this.state.url}>
                         <div className='link-preview'> 
                             {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img className='preview-image' src={this.state.image}/>}                                       
@@ -139,13 +139,13 @@ export default class MyWebFeedCard extends React.Component{
                     </a>
                 }
                 <div style={{display:"flex", justifyContent:"center"}}>
-                    {!this.props.feed.youTube ? '': 
-                        <iframe src={"https://www.youtube.com/embed/pdszgILrTr8"} style={{ height: '240px', width: '92%'}}/>
+                    {!this.props.feed.youTubeVideo ? '': 
+                        <iframe src={this.props.feed.youTubeVideo} style={{ height: '240px', width: '92%'}}/>
                     }
                 </div> 
                 <hr style={{width: "90%", textAlign:"center"}}/>         
                 <div className='web-article-content'>
-                    <p style='content-padding'>{this.props.feed.teaser}</p> 
+                    <p className='content-padding'>{this.props.feed.teaser}</p> 
                 </div>
                 <div className="user-selectors">
                     {!this.state.isFollowed ? <a className='followHandler' onClick={() => {this.followHandler(this.props.feed['user.username'])}}>Subscribe</a> : <a onClick={() => {this.followDeleteHandler(this.props.feed['user.username'])}}>Unsubscribe</a>}                    

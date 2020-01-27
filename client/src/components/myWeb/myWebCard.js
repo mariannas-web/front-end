@@ -51,8 +51,10 @@ export default class MyWebCard extends React.Component{
                 })
             })
     }
+
     
     render(){
+        console.log(this.props.youTube)
         return(
             <div className='web-card-container'>           
                 <div>
@@ -72,7 +74,7 @@ export default class MyWebCard extends React.Component{
                 }
                 <div style={{display:"flex", justifyContent:"center"}}>
                     {!this.props.youTube ? '': 
-                        <iframe src={"https://www.youtube.com/embed/pdszgILrTr8"} style={{ height: '240px', width: '92%'}}/>
+                        <iframe src={this.props.youTube} style={{ height: '240px', width: '92%'}}/>
                     }
                 </div> 
                 <hr style={{width: "90%", textAlign:"center"}}/>         
