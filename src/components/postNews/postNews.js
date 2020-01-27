@@ -80,7 +80,6 @@ export default class PostNews extends React.Component{
 
     
     render(){
-        console.log(this.state.genre)
         return(
             <div className='underground-form-container input-container'>
                 <h1 className='post-underground-header'>Post to Underground</h1>

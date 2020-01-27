@@ -44,27 +44,26 @@ export default class UndergroundFeedCard extends React.Component{
         
 
     render(){
-        console.log(this.props.feed.genre)
         return( 
             <div className='web-card-container'>           
                 <div>
                     <h2 style={{padding: '0px 15px', marginBottom: '0px', fontSize: '19px'}}>{this.props.feed.title}</h2>   
                 </div>    
                 <div className="user-info">
-                    <a href='#' className="web-card-username">@{localStorage.getItem('username')}</a> 
+                    <a href='https://www.rlmclaughlin.com/' className="web-card-username">@{localStorage.getItem('username')}</a> 
                 </div>                 
                 <hr style={{width: "90%", textAlign:"center"}}/>
                 {this.props.feed.youTube ? '' : 
                     <a style={{textDecoration: 'none'}} href={this.state.url}>
                         <div className='link-preview'> 
-                            {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img className='preview-image' src={this.state.image}/>}                                       
+                            {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img alt='preview thumbnail' className='preview-image' src={this.state.image}/>}                                       
                             <h3>{this.state.title}</h3>                   
                         </div> 
                     </a>
                 }
                 <div style={{display:"flex", justifyContent:"center"}}>
                     {!this.props.feed.youTube ? '': 
-                        <iframe src={"https://www.youtube.com/embed/pdszgILrTr8"} style={{ height: '240px', width: '92%'}}/>
+                        <iframe title='youtube thumbnail' src={"https://www.youtube.com/embed/pdszgILrTr8"} style={{ height: '240px', width: '92%'}}/>
                     }
                 </div> 
                 <hr style={{width: "90%", textAlign:"center"}}/>         
@@ -77,7 +76,7 @@ export default class UndergroundFeedCard extends React.Component{
                         {localStorage.getItem('username') === process.env.REACT_APP_ADMIN_KEY ? 
                             <button style={{height: "20px"}}onClick={() => { return this.deleteHandler(this.props.feed.id)}}>delete</button> : ""}               
                     </div> 
-                    <a><p style={{marginBottom: '0px'}}>{this.props.feed.date}</p></a>
+                    <p style={{marginBottom: '0px'}}>{this.props.feed.date}</p>
                 </div>                 
             </div> 
         )

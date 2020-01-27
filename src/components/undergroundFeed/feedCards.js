@@ -48,8 +48,8 @@ export default class UndergroundFeedCards extends React.Component{
                 <div className='navbar-myWebCards-container'> 
                     <div className='underground-card-container'> 
                         <h1 className='currents-banner-myWeb-top'>Underground Feed</h1>
-                            {this.state.feed.map(item => {
-                                return <UndergroundFeedCard feed={item} renderFeed={this.renderFeed} /> 
+                            {this.state.feed.map((item, index) => {
+                                return <UndergroundFeedCard feed={item} renderFeed={this.renderFeed} key={index} /> 
                             })}
                         <h1 className='currents-banner-myWeb'>Underground Feed</h1>          
                     </div> 

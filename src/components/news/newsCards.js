@@ -19,7 +19,7 @@ export default class NewsCards extends React.Component{
     renderCards = () => {
         let newsCards = []
         let myLinks = [`${process.env.REACT_APP_POST_API_KEY}`,`${process.env.REACT_APP_USERPOST_API_KEY}` ]
-            myLinks.map(item => {
+            myLinks.map(item => (
                 axios.get(item)
                     .then(response => {
                         newsCards.push(response.data)
@@ -27,7 +27,7 @@ export default class NewsCards extends React.Component{
                     .catch(error => { 
                         console.log("There was an error loading your content")
                     })   
-            })
+            ))
             this.setState({
                 newsCards
             })

@@ -10,7 +10,7 @@ export default class LandingCard extends React.Component{
     checkContent = (item) => {
         let splitItem = item.split(' ')
         for(let i = 0; i < splitItem.length; i++){
-            if(splitItem[i] == 'document.getElementById("linkPremium").innerHTML'){
+            if(splitItem[i] === 'document.getElementById("linkPremium").innerHTML'){
                 item = 'Click on article for additional information'
             }
         } 
@@ -18,7 +18,6 @@ export default class LandingCard extends React.Component{
     }
 
     render(){
-        console.log(this.props.card)
         return(
             <div className='card-container'>
                 <div className="mobile-container"> 
@@ -29,7 +28,7 @@ export default class LandingCard extends React.Component{
                         <p className='author'>{this.props.card.author}</p> 
                         <hr  style={{width: "90%", textAlign:"center"}}/> 
                         <div className='article-image'>
-                            <img className={this.props.card.image === 'null' || this.props.card.image === "None" ? 'hidden':'newsCard-image'} src={this.props.card.image} />
+                            <img alt='newscard thumbnail' className={this.props.card.image === 'null' || this.props.card.image === "None" ? 'hidden':'newsCard-image'} src={this.props.card.image} />
                         </div> 
                         <div className='timestamp'>{this.props.card.published.slice(0, -5)}</div> 
                         <div className='article-content'>

@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from './components/nav/nav'
-import NewsCards from './components/news/newsCards'
 import Menu from './components/menu/menu'
 import './components/styles/menu/menu.css'
 import PostNews from './components/postNews/postNews'
@@ -39,7 +38,7 @@ export default class App extends React.Component{
         axiosWithAuth().get(`${process.env.REACT_APP_USER_API_KEY}`)
             .then(response => {
                 const username = localStorage.getItem('username')
-                response.data.map(item => {
+                response.data.forEach(item => {
                     if(item.username === username){
                         this.setState({
                             userid: item.id,

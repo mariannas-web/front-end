@@ -20,15 +20,15 @@ export default class MariannasWebCard extends React.Component{
     componentDidMount(){
         this.getPreview(this.props.feed.link)
         axios.get(process.env.REACT_APP_USER_API_KEY)
-            .then(response => {
-                response.data.map(item => {
+            .then(response => (
+                response.data.forEach(item => {
                     if(item.username === localStorage.getItem('username')){
                         this.setState({
                             currentUID: item.id
                         })
                     }
                 })
-            })
+            ))
         this.renderFavs()
     }
 
@@ -39,7 +39,7 @@ export default class MariannasWebCard extends React.Component{
                 this.setState({
                     favs: response.data
                 })
-                this.state.favs.map(item => {
+                this.state.favs.forEach(item => {
                     if(item['user.username'] === localStorage.getItem('username') && item.follow === this.props.feed['user.username']){
                         this.setState({
                             isFollowed: true
@@ -122,28 +122,26 @@ export default class MariannasWebCard extends React.Component{
     }
     
     render(){
-        console.log(this.state.favs)
-        console.log(this.props.feed.youTubeVideo)
         return(
             <div className='web-card-container'>           
                 <div>
                     <h2 className='card-title'>{this.props.feed.title}</h2>   
                 </div>    
                 <div className="user-info">
-                    <a href='#' className="web-card-username">@{this.props.feed['user.username']}</a> 
+                    <a href='https://www.rlmclaughlin.com/' className="web-card-username">@{this.props.feed['user.username']}</a> 
                 </div>                 
                 <hr style={{width: "90%", textAlign:"center"}}/>
                 {this.props.feed.youTubeVideo ? '' : 
                     <a style={{textDecoration: 'none'}} href={this.state.url}>
                         <div className='link-preview'> 
-                            {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img className='preview-image' src={this.state.image}/>}                                       
+                            {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img alt='preview thumbnail' className='preview-image' src={this.state.image}/>}                                       
                             <h3>{this.state.title}</h3>                   
                         </div> 
                     </a>
                 }
                 <div style={{display:"flex", justifyContent:"center"}}>
                     {!this.props.feed.youTubeVideo ? '': 
-                        <iframe src={this.props.feed.youTubeVideo} style={{ height: '240px', width: '92%'}}/>
+                        <iframe title='youtube link' src={this.props.feed.youTubeVideo} style={{ height: '240px', width: '92%'}}/>
                     }
                 </div> 
                 <hr style={{width: "90%", textAlign:"center"}}/>         
@@ -156,7 +154,7 @@ export default class MariannasWebCard extends React.Component{
                         {localStorage.getItem('username') === process.env.REACT_APP_ADMIN_KEY ? 
                             <button style={{height: "20px"}}onClick={() => { return this.deleteHandler(this.props.feed.id)}}>delete</button> : ""}               
                     </div> 
-                    <a><p style={{marginBottom: '0px'}}>{this.props.feed.date}</p></a>
+                    <p style={{marginBottom: '0px'}}>{this.props.feed.date}</p>
                 </div>                 
             </div> 
         )

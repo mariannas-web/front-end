@@ -104,18 +104,17 @@ export default class MyWebForm extends React.Component{
                 <div className='myWeb-sidebar'>
                     <h2>{localStorage.getItem('username')}'s Posts</h2>
                     <div>
-                        {this.state.userData.map((item, index) => {
-                            while(index <= 20){
-                                return <MyWebFormSidebar sideData={item} key={index}/> 
-                            }
-                        })}
+                        {this.state.userData.map((item, index) => (
+                           index <= 20 ?
+                                <MyWebFormSidebar sideData={item} key={index}/> : ''
+                        ))}
                     </div> 
                 </div> 
                 <div className='navbar-myWebCards-container'> 
                     <div className='my-web-navbar'> 
-                        <Link to='/myWeb'><img className='mariannas-web-navbar' style={{width: '26px', height: '23px'}} src={backArrow}/></Link>
-                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/mariannasWeb'><img style={{marginTop: '3px', width: '27px', height: '23px'}}src={web}/></Link>
-                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebFeed'><img style={{width: '25px', height: '23px'}}src={feed}/></Link>
+                        <Link to='/myWeb'><img alt='back arrow' className='mariannas-web-navbar' style={{width: '26px', height: '23px'}} src={backArrow}/></Link>
+                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/mariannasWeb'><img alt='spider web' style={{marginTop: '3px', width: '27px', height: '23px'}}src={web}/></Link>
+                        <Link style={{color: "black", fontWeight: "bold", textDecoration: 'none'}} to='/myWebFeed'><img alt='newspaper' style={{width: '25px', height: '23px'}}src={feed}/></Link>
                     </div> 
                     <div className='myWeb-form-container'>
                         <h1 className='post-news-header'>Post News</h1>

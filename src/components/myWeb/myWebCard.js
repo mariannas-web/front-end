@@ -54,27 +54,26 @@ export default class MyWebCard extends React.Component{
 
     
     render(){
-        console.log(this.props.youTube)
         return(
             <div className='web-card-container'>           
                 <div>
                     <p className='card-title'>{this.props.title}</p>   
                 </div>    
                 <div className="user-info">
-                    <a href='#'>@{localStorage.getItem('username')}</a>
+                    <a href='https://www.rlmclaughlin.com/'>@{localStorage.getItem('username')}</a>
                 </div>                 
                 <hr style={{width: "90%", textAlign:"center"}}/>
                 {this.props.youTube ? '' : 
                     <a style={{textDecoration: 'none'}}href={this.state.url}>
                         <div className='link-preview'> 
-                            {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img className='preview-image' src={this.state.image}/>}                                       
+                            {this.state.image === '' ? <div style={{position: 'relative', top: '20px'}}>Loading Link Preview...</div> : <img alt='thumbnail preview' className='preview-image' src={this.state.image}/>}                                       
                             <h3>{this.state.title}</h3>                   
                         </div> 
                     </a>
                 }
                 <div style={{display:"flex", justifyContent:"center"}}>
                     {!this.props.youTube ? '': 
-                        <iframe src={this.props.youTube} style={{ height: '240px', width: '92%'}}/>
+                        <iframe title='youtube link' src={this.props.youTube} style={{ height: '240px', width: '92%'}}/>
                     }
                 </div> 
                 <hr style={{width: "90%", textAlign:"center"}}/>         
@@ -87,7 +86,7 @@ export default class MyWebCard extends React.Component{
                         {localStorage.getItem('username') === process.env.REACT_APP_ADMIN_KEY ? 
                             <button style={{height: "20px"}}onClick={() => { return this.deleteHandler(this.props.id)}}>delete</button> : ""}               
                     </div> 
-                    <a><p style={{marginBottom: '0px'}}>{this.props.date}</p></a>
+                    <p style={{marginBottom: '0px'}}>{this.props.date}</p>
                 </div>                 
             </div>  
         )

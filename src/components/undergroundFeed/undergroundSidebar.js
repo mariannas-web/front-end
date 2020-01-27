@@ -1,5 +1,4 @@
 import React from 'react' 
-import axios from 'axios'
 import '../styles/landing/landingSidebar.css'
 
 export default class UndergroundSidebar extends React.Component{

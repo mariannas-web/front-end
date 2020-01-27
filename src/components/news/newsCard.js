@@ -27,7 +27,7 @@ export default class NewsCard extends React.Component{
                     <p>{this.props.card.title}</p>
                 </div> 
                 <div className= 'article-image' >
-                    <img className='newsCard-image' src={this.props.card.image} />
+                    <img alt='card thumbnail' className='newsCard-image' src={this.props.card.image} />
                 </div> 
                 <div className='article-content'>
                     <p>{this.props.card.teaser}</p> 
