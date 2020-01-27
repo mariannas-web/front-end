@@ -19,6 +19,7 @@ import MyWebForm from './components/myWeb/myWebForm'
 import MyWebFeedCards from './components/myWebFeed/myWebFeedCards'
 import axiosWithAuth from './components/auth/utils'
 import Credits from './components/credits/credits.js'
+import ScienceFeedCards from './components/scienceFeed/scienceFeedCards'
 
 
 export default class App extends React.Component{
@@ -73,6 +74,7 @@ export default class App extends React.Component{
                 <PrivateRoute exact path='/undergroundFeed' component={UndergroundFeedCards}/>
                 <PrivateRoute exact path='/myWebFeed' component={MyWebFeedCards} /> 
                 <Route exact path='/credits' component={Credits} /> 
+                <Route exact path='/science' component={ScienceFeedCards} />
             </div>
         );
     }
