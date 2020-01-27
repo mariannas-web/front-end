@@ -82,11 +82,11 @@ export default class PostNews extends React.Component{
     render(){
         console.log(this.state.genre)
         return(
-            <div className='myWeb-form-container input-container'>
+            <div className='underground-form-container input-container'>
                 <h1 className='post-underground-header'>Post to Underground</h1>
                 <form onSubmit={this.submitHandler}>
                     <input name='title' 
-                           maxLength = '50'
+                           maxLength = '70'
                            value={this.state.title}
                            placeholder='title'
                            onChange={this.changeHandler}
@@ -94,7 +94,7 @@ export default class PostNews extends React.Component{
                     />
                     <br/>
                     <div className='counter'>
-                        {this.wordCount(this.state.title, 50)}
+                        {this.wordCount(this.state.title, 70)}
                     </div>     
                     <textarea name='teaser' 
                               maxLength = '225'
