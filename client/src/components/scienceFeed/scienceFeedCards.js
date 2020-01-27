@@ -38,7 +38,7 @@ export default class ScienceFeedCards extends React.Component{
         return(
             <div className='desktop-landing-container'>
                 <div className='desktop-sidebar'>
-                    <h2>Feed</h2> 
+                    <h2>Science Feed</h2> 
                     {this.state.scienceFeed.map((data, index) => {
                         for(let i = 0; i < 20; i++){
                             if(data.category[i]){

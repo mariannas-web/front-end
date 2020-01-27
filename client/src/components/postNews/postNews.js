@@ -17,20 +17,6 @@ export default class PostNews extends React.Component{
         }
     }
 
-    componentDidMount(){
-        window.addEventListener('load', function() {
-            document.querySelector('input[type="file"]').addEventListener('change', function() {
-                if (this.files && this.files[0]) {
-                    let img = document.querySelector('img');  // $('img')[0]
-                    img.src = URL.createObjectURL(this.files[0]); // set src to blob url
-                    img.onload = imageIsLoaded;     
-                }
-            })
-        })
-        function imageIsLoaded() { 
-            alert(this.src); 
-        }
-    }
   
     wordCount(str, max) {
         let lng = str.length;
@@ -85,7 +71,7 @@ export default class PostNews extends React.Component{
                     postedBy: '',
                     genre: ''
                 })
-                this.props.history.push('/')
+                this.props.history.push('/undergroundFeed')
             })
             .catch(error => { 
                 console.log("There was an error posting your information", error)
@@ -94,9 +80,10 @@ export default class PostNews extends React.Component{
 
     
     render(){
-        console.log(this.state.image)
+        console.log(this.state.genre)
         return(
-            <div className='postNews-container'>
+            <div className='myWeb-form-container input-container'>
+                <h1 className='post-underground-header'>Post to Underground</h1>
                 <form onSubmit={this.submitHandler}>
                     <input name='title' 
                            maxLength = '50'
@@ -116,17 +103,12 @@ export default class PostNews extends React.Component{
                               onChange={this.changeHandler}
                               type='text'
                               id='teaser'
+                              className='post-underground-textarea'
                     /> 
                     <br/>
                     <div className='counter'>
                         {this.wordCount(this.state.teaser, 225)}  
-                    </div>        
-                    <textarea name='content' 
-                            value={this.state.content}
-                            placeholder='content'
-                            onChange={this.changeHandler}
-                            type='text'
-                    />                
+                    </div>                       
                     <br/> 
                     <input name='youTubeVideo' 
                            value={this.state.youTubeVideo}
@@ -134,13 +116,12 @@ export default class PostNews extends React.Component{
                            onChange={this.changeHandler}
                            type='text'
                     /> 
-                    <img id="myImg" src="#" alt="your image" style={{height: '200px', width:'200px'}}/>
                     <br/> 
-                    <input name='image' 
-                           value={this.state.image}
-                           placeholder='image'
+                    <input name='link' 
+                           value={this.state.link}
+                           placeholder='link'
                            onChange={this.changeHandler}
-                           type='file'
+                           type='text'
                     /> 
                     <br/> 
                     <input name='source' 
@@ -150,12 +131,28 @@ export default class PostNews extends React.Component{
                            type='text'
                     /> 
                     <br/> 
-                    <input name='genre' 
-                           value={this.state.genre}
-                           placeholder='genre'
-                           onChange={this.changeHandler}
-                           type='text'
-                    />
+                    <div className='select-container'>                        
+                        <h2>Select A Genre: </h2>
+                        <select name='genre' 
+                                value={this.state.genre}
+                                placeholder='genre'
+                                onChange={this.changeHandler}
+                                type='text'>
+                            <option value="breaking news">Breaking News</option>
+                            <option value="politics">Politics</option>
+                            <option value="world">World</option>
+                            <option value="science">Science</option>
+                            <option value="technology">Technology</option>
+                            <option value="underground">Underground</option>
+                            <option value="strange/weird">Strange/Weird</option>
+                            <option value="business">Business</option>
+                            <option value="war">War</option>
+                            <option value="weather">Weather</option>
+                            <option value="editorial">Editorial</option>
+                            <option value="music">Music</option>
+                            <option value="entertainment">Entertainment</option>
+                        </select>                      
+                    </div>
                     <br/> 
                     <button type='submit'>Submit</button> 
                 </form>

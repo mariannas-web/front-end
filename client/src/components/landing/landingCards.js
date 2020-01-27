@@ -37,7 +37,7 @@ export default class LandingCards extends React.Component{
         return(
             <div className='desktop-landing-container'>
                 <div className='desktop-sidebar'>
-                    <h2>Feed</h2> 
+                    <h2>Currents Feed</h2> 
                     {this.state.currentsFeed.map((data, index) => {
                         for(let i = 0; i < 20; i++){
                             if(data.category[i]){
@@ -47,7 +47,6 @@ export default class LandingCards extends React.Component{
                     })} 
                 </div> 
                 <div className='newsCards'>
-                    <h1 className='currents-banner-top'>Currents</h1>
                     {this.state.currentsFeed.map(card => {
                         for(let i = 0; i < 15; i++){
                             if(card.category[i]){

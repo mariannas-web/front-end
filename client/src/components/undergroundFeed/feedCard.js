@@ -13,6 +13,11 @@ export default class UndergroundFeedCard extends React.Component{
             url: ''
         }
     }
+
+    componentDidMount(){
+        this.getPreview(this.props.feed.link)
+
+    }
     
     getPreview = (link) => {
         axiosWithAuth().get(`http://api.linkpreview.net/?key=${process.env.REACT_APP_LINK_PREVIEW}=${link}`)
@@ -25,10 +30,21 @@ export default class UndergroundFeedCard extends React.Component{
                 })
             })
     }
+
+    deleteHandler = (id) => {
+        axiosWithAuth().delete(`${process.env.REACT_APP_POST_API_KEY}/${id}`)
+            .then(() => {
+                return this.props.renderFeed()
+            })
+            .catch(error => {
+                console.log("there was an error deleting the post", error)
+            }
+        )
+    }
         
 
     render(){
-        console.log(this.props.feed.image)
+        console.log(this.props.feed.genre)
         return( 
             <div className='web-card-container'>           
                 <div>

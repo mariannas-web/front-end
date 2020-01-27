@@ -33,7 +33,6 @@ export default class UndergroundFeedCards extends React.Component{
 
     render(){
         if(this.state.feed.length === 0){return <div className='loading-political'>loading your underground feed...</div> }
-
         return(
             <div className='desktop-container'>
                 <div className='myWeb-sidebar'>
@@ -50,7 +49,7 @@ export default class UndergroundFeedCards extends React.Component{
                     <div className='underground-card-container'> 
                         <h1 className='currents-banner-myWeb-top'>Underground Feed</h1>
                             {this.state.feed.map(item => {
-                                return <UndergroundFeedCard feed={item} /> 
+                                return <UndergroundFeedCard feed={item} renderFeed={this.renderFeed} /> 
                             })}
                         <h1 className='currents-banner-myWeb'>Underground Feed</h1>          
                     </div> 

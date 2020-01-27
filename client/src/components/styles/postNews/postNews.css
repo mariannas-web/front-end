@@ -7,13 +7,16 @@
     align-items: center; 
 }
 
-.postNews-container input{
-    margin-top: 20px;
-    padding: 10px 0px; 
-    width: 95%; 
-    border: 3px solid maroon; 
-    font-size: 18px; 
-    padding-left: 5px; 
+.input-container input{
+    max-width: 280px;
+    width: 87%; 
+    height: 35px; 
+    margin-bottom: 20px; 
+    text-align: center; 
+}
+
+.input-container input:last-of-type{
+    margin-bottom: 0px; 
 }
 
 .postNews-container input::placeholder{
@@ -30,38 +33,49 @@
     font-size: 22px; 
 }
 
-.postNews-container textarea{
-    width: 95%; 
-    margin-top: 20px;
-    font-size: 16px; 
-    border: 3px solid maroon; 
-    padding-top: 5px; 
-    padding-left: 5px; 
-    padding-bottom: 50px; 
+.post-underground-textarea{
+    max-width: 280px;
+    width: 86%; 
+    height: 120px; 
+    margin-bottom: 20px; 
 }
 
-.postNews-container .button{
-    background-color: rgba(94, 0, 94, 0.842);  
-    border: 2px solid white;
-    font-size: 32px; 
-    padding: 10px; 
-    border-radius: 10px;  
-    display: flex; 
-    letter-spacing: 2px; 
-    color: white; 
-    text-shadow:
-    -1px -1px 0 maroon,
-    1px -1px 0 maroon,
-    -1px 1px 0 maroon,
-    1px 1px 0 maroon;
-    align-items: center; 
-    justify-content: center;  
-    margin-bottom: 25px; 
-  }
+.counter{
+    max-width: 284px;
+    width: 88%;
+    display: flex;
+    justify-content: flex-end;
+    transform: translateY(-20px);
+    font-size: 14px;
+    background: rgb(182, 123, 182);
+    font-weight: 700;
+    font-family: 'Alegreya Sans', 'serif';
+}
 
-  .counter{
-      width: 90%;
-      display: flex;
-      justify-content: flex-end;
-      transform: translateY(-40px);
-  }
+  .post-underground-header{
+    border-bottom: 1px solid black;
+    display: inline-block;
+    font-weight: 500; 
+}
+
+.select-container{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-evenly; 
+    width: 100%; 
+    align-items: center; 
+    font-family: 'Alegreya Sans', 'serif';
+    max-width: 300px; 
+}
+
+.select-container select{
+    height: 40px; 
+    min-width: 120px; 
+}
+
+.input-container button{
+    max-width: 280px;
+    width: 88%;
+    padding: 8px; 
+    margin-bottom: 20px; 
+}
