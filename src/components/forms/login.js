@@ -63,9 +63,10 @@ export default class LoginForm extends React.Component{
     
                         <div onClick={this.submitHandler} className='button'>Submit</div> 
                     </form>
-                    <hr style={{width: "90%"}} /> 
+                    <hr className='form-hr' /> 
+                    <h4 style={{margin: "5px 0px"}}>Not A Member?</h4>
                     <div>
-                        <h3><Link style={{fontSize: '24px', textDecoration: "none", color: 'white'}}to='/register'>Sign Up!</Link></h3>
+                        <h3><Link style={{fontSize: '18px', textDecoration: "none", color: 'white'}}to='/register'>Sign Up!</Link></h3>
                     </div> 
                 </div> 
             </div> 
