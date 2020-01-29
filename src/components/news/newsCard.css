@@ -13,7 +13,6 @@
     .card-container{
         margin: 12px 0px 7px 0px; 
         box-shadow: 1px 2px 4px 2px;
-        width: 95%; 
     }
 }
 
@@ -97,7 +96,7 @@
 
 @media(min-width: 360px){
     .newsCard-image{
-        height: 105px;
+        height: 125px;
         min-width: 90%;
         max-width: 90%;
     }
