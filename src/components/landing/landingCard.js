@@ -26,7 +26,7 @@ export default class LandingCard extends React.Component{
                             <p>{this.props.card.title}</p>
                         </div> 
                         <p className='author'>{this.props.card.author}</p> 
-                        <hr  style={{width: "90%", textAlign:"center"}}/> 
+                        <hr className='feeds-hr'/> 
                         <div className='article-image'>
                             <img alt='newscard thumbnail' className={this.props.card.image === 'null' || this.props.card.image === "None" ? 'hidden':'newsCard-image'} src={this.props.card.image} />
                         </div> 
@@ -34,7 +34,7 @@ export default class LandingCard extends React.Component{
                         <div className='article-content'>
                             <p>{this.checkContent(this.props.card.description)}</p>
                         </div> 
-                        <hr  style={{position: "relative", bottom: "0", width: "90%", textAlign:"center"}}/>                     
+                        <hr className='feeds-hr'/>                     
                         <div className='links'>View Article</div>
                     </a>
                 </div> 
