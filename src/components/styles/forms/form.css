@@ -120,6 +120,12 @@ input:focus{
     width: 86%;
 }
 
+@media(min-width: 360px){
+    .form-hr{
+        width: 265px; 
+    }
+}
+
 @media(min-width: 595px){
     .form-hr{
         width: 225px; 
