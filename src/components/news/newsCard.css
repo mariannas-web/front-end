@@ -68,10 +68,21 @@
 
 
 .article-image{
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    min-width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    float: right;
+    padding-right: 11px;
+    padding-top: 5px;
+}
+
+@media(min-width: 500px){
+    .article-image{
+        width: 100%;
+        float: none;
+    }
 }
 
 
@@ -86,7 +97,7 @@
 
 @media(min-width: 360px){
     .newsCard-image{
-        height: 175px; 
+        height: 105px;
         min-width: 90%;
         max-width: 90%;
     }
