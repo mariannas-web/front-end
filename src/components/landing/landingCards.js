@@ -25,7 +25,7 @@ export default class LandingCards extends React.Component{
                 })
             })
             .catch(error => { 
-                console.log("There was an error loading your content")
+                console.log("There was an error loading your content", error)
             })
     }
 

@@ -51,7 +51,7 @@
 
 @media(min-width: 350px){
     .title{
-        font-size: 18px; 
+        font-size: 19px; 
     }
     .title p{
         margin-bottom: 10px; 
@@ -172,7 +172,7 @@ p.author{
     font-weight: bold; 
     margin: 10px auto; 
     border: 1px solid black; 
-    width: 90%; 
+    width: 125px; 
     border-radius: 15px; 
     height: 30px; 
 }
