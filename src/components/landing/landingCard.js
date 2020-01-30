@@ -25,15 +25,16 @@ export default class LandingCard extends React.Component{
                         <div className="title">
                             <p>{this.props.card.title}</p>
                         </div> 
-                        <p className='author'>{this.props.card.author}</p> 
+                        <div className='author-timestamp-container'> 
+                            <p className='author'>{this.props.card.author}</p> 
+                            <div className='timestamp'>{this.props.card.published.slice(0, -14)}</div> 
+                        </div> 
                         <hr className='feeds-hr'/> 
                         <div className='cat'>
                             <div className='article-image'> 
                                     <img alt='newscard thumbnail' className={this.props.card.image === 'null' || this.props.card.image === "None" ? 'hidden':'newsCard-image'} src={this.props.card.image} />
                                  
                             </div> 
-                            <div className='timestamp'>{this.props.card.published.slice(0, -5)}</div> 
-
                             <div className='article-content'>
                                 <p>{this.checkContent(this.props.card.description)}</p>
                             </div> 

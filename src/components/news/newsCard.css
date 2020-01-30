@@ -1,8 +1,13 @@
+@font-face{
+    font-family: zeit;
+    src: url(Zeit-Light.otf);
+}
+
 .card-container{
     cursor: pointer; 
     color: black;
     background: white;
-    font-family: 'Playfair Display', serif;
+    font-family: zeit;
     margin:10px 0px 5px 0px; 
     border-top: 0.5px solid rgb(100, 96, 96); 
     border-bottom: 0.5px solid rgb(100, 96, 96);  
@@ -71,10 +76,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 50%;
+    width: 45%;
     float: right;
     padding-right: 11px;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 @media(min-width: 500px){
@@ -156,11 +161,12 @@
 
 p.author{
     margin-top: 0px; 
+    margin-bottom: 0px; 
 }
 
 .timestamp{
-    padding-left: 15px; 
-    display: inline-block;
+    padding-right: 14px; 
+    
 }
 
 @media(min-width: 350px){
@@ -238,7 +244,7 @@ hr{
     font-weight: normal;
     font-size: 28px;
     margin:  8px auto; 
-    font-family: 'Playfair Display', 'serif';
+    font-family: zeit; 
     border-bottom: 1px solid black;
 }
 
@@ -266,7 +272,7 @@ hr{
         font-weight: 700;
         text-align: center; 
         text-decoration: underline; 
-        font-family: 'Alegreya Sans', 'serif';
+        font-family: zeit;
         font-size: 35px;
         color: black;
         text-shadow:
@@ -286,3 +292,10 @@ hr{
     font-size: 13px;
 }
 
+.author-timestamp-container{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center;
+    padding-top: 5px;   
+}
