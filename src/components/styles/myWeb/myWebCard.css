@@ -5,7 +5,7 @@
     align-items: flex-end; 
     padding: 5px 5px; 
     font-size: 18px; 
-    background: #f1e1ff;
+    background: white; 
     border: 1px solid white; 
     box-shadow: 4px 2px 3px 1px;
 }
@@ -198,7 +198,7 @@
 }
 
 .my-web-navbar img{
-    border: 2px solid black;
+    border: 2px solid rgb(39, 0, 51);
     border-radius: 50%; 
     padding: 3px;  
 }
