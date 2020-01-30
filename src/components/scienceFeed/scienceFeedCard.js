@@ -26,10 +26,10 @@ export default class ScienceFeedCard extends React.Component{
                     </div> 
                     <p className='author'>{this.props.card.author}</p> 
                     <hr className='feeds-hr'/> 
+                    <div className='timestamp'>{this.props.card.published.slice(0, -5)}</div> 
                     <div className='article-image'>
                         <img alt='science thumbnail' className={this.props.card.image === 'null' || this.props.card.image === "None" ? 'hidden':'newsCard-image'} src={this.props.card.image} />
                     </div> 
-                    <div className='timestamp'>{this.props.card.published.slice(0, -5)}</div> 
                     <div className='article-content'>
                         <p>{this.checkContent(this.props.card.description)}</p> 
                     </div> 

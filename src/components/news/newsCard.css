@@ -74,7 +74,7 @@
     width: 50%;
     float: right;
     padding-right: 11px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 @media(min-width: 500px){
@@ -120,6 +120,7 @@
 @media(min-width: 350px){
     .article-content{
         font-size: 14px;
+        padding-bottom: 5px; 
     }
 }
 
@@ -154,7 +155,8 @@ p.author{
 }
 
 .timestamp{
-    text-align: center
+    padding-left: 15px; 
+    display: inline-block;
 }
 
 @media(min-width: 350px){
@@ -216,6 +218,7 @@ hr{
 .feeds-hr{
     width: 90%; 
     text-align: center; 
+    margin-bottom: 5px; 
 }
 
 @media(min-width: 500px){
