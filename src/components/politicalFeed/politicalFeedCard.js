@@ -35,9 +35,7 @@ export default class PoliticalFeedCard extends React.Component{
                     </div> 
                     <hr className='feeds-hr'/> 
                 </a>   
-                <div className='links'>
-                    <a href={this.props.card.url}>View Article</a> 
-                </div>
+                <div className='links'>View Article</div>
             </div> 
         )
     }
