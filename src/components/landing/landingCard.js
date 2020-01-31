@@ -5,6 +5,9 @@ import '../news/newsCard.css'
 export default class LandingCard extends React.Component{
     constructor(props){
     super(props)
+    this.state = {
+        viewTeaser: false
+    }
     }
 
     checkContent = (item) => {
@@ -17,6 +20,18 @@ export default class LandingCard extends React.Component{
         return item
     }
 
+    teaserHandler = () => {
+       if(this.state.viewTeaser === false){
+           this.setState({
+               viewTeaser: true
+           })
+       } else {
+           this.setState({
+               viewTeaser: false
+           })
+       }
+    }
+
     render(){        
         return(
             <div className='card-container'>
@@ -27,14 +42,17 @@ export default class LandingCard extends React.Component{
                     </div>                    
                     <div className='image-content-container'>
                         <div className='article-image'> 
-                            <img alt='newscard thumbnail' className={this.props.card.image === 'null' || this.props.card.image === "None" ? 'hidden':'newsCard-image'} src={this.props.card.image} />
+                            <img alt='newscard thumbnail' className={this.props.card.image === "None" || this.props.card.image === "null" ? 'hidden':'newsCard-image'} src={this.props.card.image} />
                         </div> 
-                        <div className='title-links-container'>
+                        <div className={this.props.card.image === "None" || this.props.card.image === "null" ? 'title-links-nopic': 'title-links-container'}>
                             <div className="title">
                                 <p>{this.props.card.title}</p>
                             </div> 
-                            <div className='links'>View Article</div>
+                            <div onClick={this.teaserHandler} className='links'>View Teaser</div>
                         </div> 
+                    </div> 
+                    <div className={this.state.viewTeaser === true ? 'article-content' : 'article-content-teaser'}>
+                        <p >{this.checkContent(this.props.card.description)}</p> 
                     </div> 
                 </div> 
             </div> 
