@@ -46,7 +46,9 @@ export default class LandingCard extends React.Component{
                         </div> 
                         <div className={this.props.card.image === "None" || this.props.card.image === "null" ? 'title-links-nopic': 'title-links-container'}>
                             <div className="title">
-                                <p>{this.props.card.title}</p>
+                                <a href={this.props.card.url} style={{textDecoration: 'none'}}>
+                                    <p>{this.props.card.title}</p>
+                                </a>
                             </div> 
                             <div onClick={this.teaserHandler} className='links'>View Teaser</div>
                         </div> 
