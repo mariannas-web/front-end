@@ -11,20 +11,11 @@
 .card-container{
     cursor: pointer; 
     color: black;
-    background: white;
     font-family: zeit;
-    margin:10px 0px 5px 0px; 
-    border-top: 0.5px solid rgb(100, 96, 96); 
-    border-bottom: 0.5px solid rgb(100, 96, 96);  
+    border-bottom: 0.5px solid rgb(99, 96, 100); 
+    background: rgba(249, 247, 250, 0.301);
+    width: 100%; 
 }
-
-@media(min-width: 350px){
-    .card-container{
-        margin: 12px 0px 7px 0px; 
-        box-shadow: 1px 2px 4px 2px;
-    }
-}
-
 
 @media(min-width: 500px){
     .card-container{
@@ -53,20 +44,27 @@
 
 
 .title{
-    font-size: 24px; 
-    padding: 0px 15px; 
+    font-size: 14px; 
     font-weight: 800; 
+    width: 100%;  
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
 }
 
 @media(min-width: 350px){
     .title p{
-        margin-bottom: 10px; 
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; 
+        margin-top: 7px;
+        font-size:15px; 
+        color: rgb(1, 1, 155); 
     }
 }
 
 @media(min-width: 500px){
     .title{
-        font-size:14px; 
         padding: 0px 13px;
     }
 }
@@ -76,12 +74,10 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column; 
     justify-content: center;
-    width: 60%;
-    float: right;
-    padding-right: 11px;
-    padding-top: 5px;
-    padding-bottom: 10px; 
+    width: 38%;
+    padding: 8px 10px; 
 }
 
 @media(min-width: 500px){
@@ -93,9 +89,9 @@
 
 
 .newsCard-image{
-    min-width: 89%;
-    max-width: 89%;
-    height: 145px; 
+    min-width: 100%;
+    max-width: 100%;
+    height: 100px; 
     border-top: 6px solid black;
     border-right: 1px solid black; 
     border-left: 1px solid black; 
@@ -103,9 +99,7 @@
 
 @media(min-width: 360px){
     .newsCard-image{
-        height: 145px;
-        min-width: 90%;
-        max-width: 90%;
+        height: 100px;
     }
 }
 
@@ -142,17 +136,18 @@
     }
 }
 
-.author{
-    padding-left: 16px; 
-    margin-bottom: 5px;
-    color: blue; 
+.image-content-container{
+    width: 100%;
+    display: flex; 
+    flex-wrap: wrap; 
 }
 
-@media(min-width: 350px){
-    .author{
-        font-size: 14px;
-    }
+.author{
+    color: rgb(125, 125, 252); 
+    font-weight: 700;
+    font-size: 15px; 
 }
+
 
 @media(min-width: 500px){
     .author{
@@ -167,28 +162,22 @@ p.author{
 }
 
 .timestamp{
-    padding-right: 17px; 
-    
+    font-size: 12px;
+    margin: 0px; 
 }
 
-@media(min-width: 350px){
-    .timestamp{
-        font-size: 12px;
-    }
-}
 
 .links{
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center;
     align-items: center; 
-    font-size: 14px; 
+    font-size: 12px; 
     font-weight: bold; 
-    margin: 10px auto; 
-    border: 1px solid black; 
-    background: rgb(207, 207, 255); 
-    width: 125px; 
-    height: 30px; 
+    border: 2px solid rgb(104, 1, 136); 
+    background: rgba(248, 246, 248, 0.37); 
+    width: 90px; 
+    height: 20px; 
 }
 
 .links:hover{
@@ -245,16 +234,19 @@ hr{
 .currents-banner{
     color: black;
     font-weight: normal;
-    font-size: 28px;
-    margin:  8px auto; 
+    font-size: 32px; 
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    text-align: center;
+    margin: 0px; 
     font-family: zeit; 
-    border-bottom: 1px solid black;
+    background: rgba(255, 255, 255, 0.774);
+    width: 100%; 
 }
 
 @media(min-width:350px){
     .currents-banner{
-        font-size: 30px;  
-        margin:  10px auto; 
+        font-size: 30px; 
     }
 }
 
@@ -300,5 +292,17 @@ hr{
     flex-wrap: wrap; 
     justify-content: space-between; 
     align-items: center;
-    padding-top: 5px;   
+    padding: 2px 9px;    
+    background: rgba(128, 0, 128, 0.425);
+}
+
+.title-links-container{
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: space-between; 
+    height: 113.5px;
+    overflow: hidden; 
 }

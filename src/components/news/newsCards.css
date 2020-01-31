@@ -7,8 +7,6 @@
     width: 100%; 
 }
 
-
-
 @media(min-width: 460px){
     .newsCards{
         width: 90%; 

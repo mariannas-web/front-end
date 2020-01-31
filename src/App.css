@@ -3,7 +3,14 @@ html {
 }
 
 body{
-  height: 100%;
-  margin: 0;
-  background: rgb(238, 235, 235); 
+    margin: 0;
+    height: 100%; 
+    background: url(purple-smoke.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
 }
+
+
+

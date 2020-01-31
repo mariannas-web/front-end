@@ -17,31 +17,25 @@ export default class LandingCard extends React.Component{
         return item
     }
 
-    render(){
+    render(){        
         return(
             <div className='card-container'>
                 <div className="mobile-container"> 
-                    <a href={this.props.card.url} style={{textDecoration:'none', color: 'black'}}>
-                        <div className="title">
-                            <p>{this.props.card.title}</p>
+                    <div className='author-timestamp-container'> 
+                        <p className='author'>@{this.props.card.author}</p> 
+                        <p className='timestamp'>{this.props.card.published.slice(0, -14)}</p> 
+                    </div>                    
+                    <div className='image-content-container'>
+                        <div className='article-image'> 
+                            <img alt='newscard thumbnail' className={this.props.card.image === 'null' || this.props.card.image === "None" ? 'hidden':'newsCard-image'} src={this.props.card.image} />
                         </div> 
-                        <div className='author-timestamp-container'> 
-                            <p className='author'>{this.props.card.author}</p> 
-                            <div className='timestamp'>{this.props.card.published.slice(0, -14)}</div> 
-                        </div> 
-                        <hr className='feeds-hr'/> 
-                        <div className='cat'>
-                            <div className='article-image'> 
-                                    <img alt='newscard thumbnail' className={this.props.card.image === 'null' || this.props.card.image === "None" ? 'hidden':'newsCard-image'} src={this.props.card.image} />
-                                 
+                        <div className='title-links-container'>
+                            <div className="title">
+                                <p>{this.props.card.title}</p>
                             </div> 
-                            <div className='article-content'>
-                                <p>{this.checkContent(this.props.card.description)}</p>
-                            </div> 
+                            <div className='links'>View Article</div>
                         </div> 
-                        <hr className='feeds-hr'/>                     
-                        <div className='links'>View Article</div>
-                    </a>
+                    </div> 
                 </div> 
             </div> 
         )

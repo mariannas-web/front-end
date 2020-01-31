@@ -54,7 +54,7 @@ export default class LandingCards extends React.Component{
                             }
                         }
                     })}
-                    <h1 className='currents-banner'>Currents</h1> 
+                <h1 className='currents-banner'>Currents</h1>
                 </div> 
             </div> 
         )
