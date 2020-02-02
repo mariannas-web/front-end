@@ -12,8 +12,10 @@
     cursor: pointer; 
     color: black;
     font-family: zeit;
-    border-bottom: 0.5px solid rgb(99, 96, 100); 
-    background: rgba(249, 247, 250, 0.432);
+    background: url(./purple-smoke.jpg);
+    background-repeat: no-repeat; 
+    background-position:center; 
+    background-size: cover; 
     width: 100%; 
 }
 
@@ -60,7 +62,7 @@
         margin-top: 7px;
         padding: 5px;
         font-size: 14px;
-        color: rgb(1, 1, 155); 
+        color: rgb(0, 0, 180); 
         background: #ffffff6b;
         margin-bottom:0px;
         border-radius: 5px; 
@@ -127,6 +129,7 @@
         font-size: 14px; 
         padding: 0px 10px;
         font-weight:700;
+        margin-bottom: 10px
 }
 
     .article-content p {
@@ -142,10 +145,6 @@
 }
 
 
-
-
-
-
 @media(min-width: 500px){
     .article-content{
         font-size: 12px;
@@ -157,10 +156,11 @@
     width: 100%;
     display: flex; 
     flex-wrap: wrap; 
+    background-repeat: no-repeat;
 }
 
 .author{
-    color: rgb(125, 125, 252); 
+    color: rgb(0, 0, 180); 
     font-weight: 700;
     font-size: 15px; 
 }
@@ -190,15 +190,18 @@ p.author{
     justify-content: center;
     align-items: center; 
     font-size: 12px; 
-    font-weight: bold; 
-    border: 2px solid rgb(104, 1, 136); 
-    background: rgba(248, 246, 248, 0.37); 
+    color: rgb(14, 13, 13); 
+    background: #ff343491;
+    font-family: zeit; 
+    font-weight: 100;
+    border: 2px solid #5d046f;
     width: 90px; 
     height: 20px; 
+
 }
 
 .links:hover{
-    background: black; 
+    background: rgba(124, 0, 161, 0.651); 
     color: white; 
 }
 
@@ -257,7 +260,11 @@ hr{
     text-align: center;
     margin: 0px; 
     font-family: zeit; 
-    background: rgba(255, 255, 255, 0.774);
+    width: 100%;
+    background: url(./purple-smoke.jpg);
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: cover; 
     width: 100%; 
 }
 
@@ -310,7 +317,7 @@ hr{
     justify-content: space-between; 
     align-items: center;
     padding: 2px 9px;    
-    background: rgba(128, 0, 128, 0.425);
+    background: #ffffff6b;
 }
 
 .title-links-container{
