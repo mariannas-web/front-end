@@ -7,8 +7,17 @@ input{
     max-width: 280px;
     width: 90%; 
     height: 40px; 
+    border: 2px solid rgb(250, 249, 249);
+    background: rgba(255, 255, 255, 0.24); 
     margin-bottom: 20px; 
-    text-align: center; 
+    color: white;
+    font-size: 19px;
+    letter-spacing: 2px; 
+    text-align: center;  
+}
+
+input::placeholder{
+    color: white; 
 }
 
 textarea{
@@ -16,12 +25,22 @@ textarea{
     width: 90%; 
     height: 120px; 
     margin-bottom: 20px; 
+    background: rgba(255, 255, 255, 0.24); 
+    border: 2px solid rgb(250, 249, 249);
+    color: white; 
+    font-size: 17px; 
+    border-radius: 4px; 
 }
 
 textarea::placeholder{
     text-align: center;  
-    padding-top: 60px; 
+    color: white;
+    padding-top: 50px; 
+    font-size: 20px; 
+    font-family: Arial;
+    letter-spacing: 1.5px; 
 }
+
 
 .myWeb-form-container form{
     width: 100%; 
@@ -38,11 +57,19 @@ textarea::placeholder{
 }
 
 .myWeb-form-container p{
-    max-width: 269px;
-    width: 87%; 
-    border: 1px solid black; 
-    padding: 7px; 
     margin-top: 0px;
+    padding: 11px; 
+    font-family: Arial; 
+    background: white; 
+    font-size: 18px; 
+    letter-spacing: 2px; 
+    color: purple;  
+    margin: auto; 
+    border: 2px solid rgb(66, 0, 100);
+    border-radius: 4px; 
+    font-weight: bold; 
+    max-width: 280px;
+    width: 90%;
 }
 
 .post-news-header{
