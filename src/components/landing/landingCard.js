@@ -8,7 +8,7 @@ export default class LandingCard extends React.Component{
     this.state = {
         viewTeaser: false
     }
-    }
+}
 
     checkContent = (item) => {
         let splitItem = item.split(' ')

@@ -4,6 +4,9 @@ import '../news/newsCard.css'
 export default class PoliticalFeedCard extends React.Component{
     constructor(props){
         super(props)
+        this.state = {
+            viewTeaser: false
+        }
   }
 
 
@@ -17,28 +20,45 @@ export default class PoliticalFeedCard extends React.Component{
         return item
     }
 
+    teaserHandler = () => {
+        if(this.state.viewTeaser === false){
+            this.setState({
+                viewTeaser: true
+            })
+        } else {
+            this.setState({
+                viewTeaser: false
+            })
+        }
+     }
+
     render(){
         return(
             <div className='card-container'>
-                <a href={this.props.card.url} style={{textDecoration:'none', color: 'black'}}>
-                    <div className="title">
-                        <p>{this.props.card.title}</p>
+                <div className="mobile-container"> 
+                    <div className='author-timestamp-container'> 
+                        <p className='author'>@{this.props.card.author}</p> 
+                        <p className='timestamp'>{this.props.card.published.slice(0, -14)}</p> 
+                    </div>                    
+                    <div className='image-content-container'>
+                        <div className='article-image'> 
+                            <img alt='newscard thumbnail' className={this.props.card.image === "None" || this.props.card.image === "null" ? 'hidden':'newsCard-image'} src={this.props.card.image} />
+                        </div> 
+                        <div className={this.props.card.image === "None" || this.props.card.image === "null" ? 'title-links-nopic': 'title-links-container'}>
+                            <div className="title">
+                                <a href={this.props.card.url} style={{textDecoration: 'none'}}>
+                                    <p>{this.props.card.title}</p>
+                                </a>
+                            </div> 
+                            {this.state.viewTeaser === false ? <div onClick={this.teaserHandler} className='links'>Open Teaser</div> : <div onClick={this.teaserHandler} className='links'>Close Teaser</div>  }
+                            
+                        </div> 
                     </div> 
-                    <div className='author-timestamp-container'>
-                        <p className='author'>{this.props.card.author}</p> 
-                        <div className='timestamp'>{this.props.card.published.slice(0, -5)}</div> 
-                    </div> 
-                    <hr className='feeds-hr'/> 
-                    <div className='article-image'>
-                        <img alt='political thumbnail' className='newsCard-image' src={this.props.card.image} />
-                    </div> 
-                    <div className='article-content'>
+                    <div className={this.state.viewTeaser === true ? 'article-content' : 'article-content-teaser'}>
                         <p>{this.checkContent(this.props.card.description)}</p> 
                     </div> 
-                    <hr className='feeds-hr'/> 
-                </a>   
-                <div className='links'>View Article</div>
-            </div> 
+                </div> 
+            </div>         
         )
     }
 }
