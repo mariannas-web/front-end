@@ -9,11 +9,12 @@ input{
     height: 40px; 
     border: 2px solid rgb(250, 249, 249);
     background: rgba(255, 255, 255, 0.24); 
-    margin-bottom: 20px; 
+    margin-bottom: 25px; 
     color: white;
     font-size: 19px;
     letter-spacing: 2px; 
     text-align: center;  
+    border-radius: 4px; 
 }
 
 input::placeholder{
@@ -21,10 +22,10 @@ input::placeholder{
 }
 
 textarea{
-    max-width: 280px;
+    max-width: 300px;
     width: 90%; 
     height: 120px; 
-    margin-bottom: 20px; 
+    margin-bottom: 25px; 
     background: rgba(255, 255, 255, 0.24); 
     border: 2px solid rgb(250, 249, 249);
     color: white; 
@@ -73,7 +74,10 @@ textarea::placeholder{
 }
 
 .post-news-header{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(253, 252, 252);
     display: inline-block;
+    font-family: Arial; 
+    color: white; 
+    margin-bottom: 30px; 
 }
 
