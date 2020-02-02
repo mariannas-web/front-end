@@ -1,6 +1,8 @@
 import React from 'react'
 import '../news/newsCard.css'
 
+let altImage = require('./marianna.jpg')
+
 export default class PoliticalFeedCard extends React.Component{
     constructor(props){
         super(props)
@@ -42,9 +44,12 @@ export default class PoliticalFeedCard extends React.Component{
                     </div>                    
                     <div className='image-content-container'>
                         <div className='article-image'> 
-                            <img alt='newscard thumbnail' className={this.props.card.image === "None" || this.props.card.image === "null" ? 'hidden':'newsCard-image'} src={this.props.card.image} />
+                            {this.props.card.image === "None" || this.props.card.image === "null" ? 
+                                <img alt='newscard thumbnail' className='newsCard-image' src={altImage} /> :
+                                <img alt='newscard thumbnail' className='newsCard-image' src={this.props.card.image} />
+                            }
                         </div> 
-                        <div className={this.props.card.image === "None" || this.props.card.image === "null" ? 'title-links-nopic': 'title-links-container'}>
+                        <div className='title-links-container'>
                             <div className="title">
                                 <a href={this.props.card.url} style={{textDecoration: 'none'}}>
                                     <p>{this.props.card.title}</p>
