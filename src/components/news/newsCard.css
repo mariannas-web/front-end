@@ -12,7 +12,6 @@
     cursor: pointer; 
     color: black;
     font-family: zeit;
-    background: url(./purple-smoke.jpg);
     background-repeat: no-repeat; 
     background-position:center; 
     background-size: cover; 
@@ -338,5 +337,5 @@ hr{
 
 .title-links-nopic p{
     margin-bottom: 15px; 
-    font-size: 18px; 
+    font-size: 16px; 
 }

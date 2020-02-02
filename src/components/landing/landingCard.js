@@ -50,11 +50,12 @@ export default class LandingCard extends React.Component{
                                     <p>{this.props.card.title}</p>
                                 </a>
                             </div> 
-                            <div onClick={this.teaserHandler} className='links'>View Teaser</div>
+                            {this.state.viewTeaser === false ? <div onClick={this.teaserHandler} className='links'>Open Teaser</div> : <div onClick={this.teaserHandler} className='links'>Close Teaser</div>  }
+                            
                         </div> 
                     </div> 
                     <div className={this.state.viewTeaser === true ? 'article-content' : 'article-content-teaser'}>
-                        <p >{this.checkContent(this.props.card.description)}</p> 
+                        <p>{this.checkContent(this.props.card.description)}</p> 
                     </div> 
                 </div> 
             </div> 
