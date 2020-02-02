@@ -5,7 +5,6 @@ html {
 
 body{
   margin: 0;
- 
 }
 
 .content{
@@ -18,7 +17,14 @@ body{
   background-position: center;
   overflow: scroll; 
   scroll-behavior: smooth; 
+}
 
+@media(min-width:500px){
+  .content{
+    background-attachment: fixed; 
+    position: none; 
+    overflow:scroll; 
+  }
 }
 
 

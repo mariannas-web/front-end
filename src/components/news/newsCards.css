@@ -28,6 +28,15 @@
 @media(min-width: 700px){
     .newsCards{
         width: 75%; 
+        flex-direction: column-reverse;
+        align-items:center; 
+    }
+}
+
+@media(min-width:900px){
+    .newsCards{
+        flex-direction: row; 
+        
     }
 }
 
