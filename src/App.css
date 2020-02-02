@@ -9,12 +9,14 @@ body{
 
 .content{
   height: 100%; 
+  width: 100%; 
   background: url(purple-smoke.jpg);
   position: fixed; 
   background-repeat: no-repeat; 
   background-size: cover; 
   background-position: center;
   overflow: scroll; 
+  scroll-behavior: smooth; 
 
 }
 

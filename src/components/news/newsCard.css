@@ -201,7 +201,8 @@ p.author{
 
 .links:hover{
     background: rgba(124, 0, 161, 0.651); 
-    color: white; 
+    color: #ff3434; 
+    font-weight: 800;
 }
 
 @media(min-width: 460px){
@@ -259,11 +260,6 @@ hr{
     text-align: center;
     margin: 0px; 
     font-family: zeit; 
-    width: 100%;
-    background: url(./purple-smoke.jpg);
-    background-repeat: no-repeat; 
-    background-position: center; 
-    background-size: cover; 
     width: 100%; 
 }
 
