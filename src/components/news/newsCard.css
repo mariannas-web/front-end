@@ -11,7 +11,7 @@
 .card-container{
     cursor: pointer; 
     color: black;
-    font-family: zeit;
+    font-family: 'Alegreya Sans', 'serif';
     background-repeat: no-repeat; 
     background-position:center; 
     background-size: cover; 
@@ -60,12 +60,13 @@
         justify-content: center; 
         margin-top: 7px;
         padding: 5px;
-        font-size: 14px;
+        font-size: 15px;
+        font-weight: 800; 
         color: rgb(0, 0, 180); 
         background: #ffffffb5;
         margin-bottom:0px;
         border-radius: 5px; 
-        text-decoration: underline
+        border: 2px solid #fffdfd; 
 
     }
 }
@@ -95,10 +96,8 @@
     min-width: 100%;
     max-width: 100%;
     height: 100px; 
-    border-top: 6px solid black;
-    border-right: 1px solid black; 
-    border-left: 1px solid black; 
-    border-bottom: 6px solid black; 
+    border-top: 6px solid rgb(248, 246, 246);
+    border-bottom: 6px solid rgb(252, 249, 249); 
 }
 
 @media(min-width: 360px){
@@ -120,7 +119,8 @@
         font-size: 14px; 
         padding: 0px 10px;
         font-weight:700;
-        margin-bottom: 10px
+        margin-bottom: 10px;
+        border: 2px solid #ffffffb5;
 }
 
 @media(min-width: 700px){
@@ -169,7 +169,7 @@ p.author{
 }
 
 .timestamp{
-    font-size: 12px;
+    font-size: 14px;
     margin: 0px; 
 }
 
@@ -187,6 +187,7 @@ p.author{
     border: 2px solid #5d046f;
     width: 90px; 
     height: 20px; 
+    border-radius: 5px; 
 
 }
 
@@ -221,11 +222,12 @@ hr{
 
 
 .currents-banner{
-    color: black;
+    color: white;
     font-weight: normal;
-    font-size: 32px; 
+    font-size: 35px; 
     padding-top: 15px; 
     padding-bottom: 15px; 
+    text-shadow: 1px 1px 2px rgb(82, 0, 99), 0 0 25px #f14247, 0 0 5px #c42fff;
     text-align: center;
     margin: 0px; 
     font-family: zeit; 
@@ -234,7 +236,7 @@ hr{
 
 @media(min-width:350px){
     .currents-banner{
-        font-size: 30px; 
+        font-size: 45px; 
     }
 }
 
@@ -282,6 +284,8 @@ hr{
     align-items: center;
     padding: 2px 9px;    
     background: #ffffffb5;
+    border-top: 2px solid white; 
+    border-bottom: 2px solid white; 
 }
 
 @media(min-width:700px){
@@ -300,7 +304,7 @@ hr{
     align-items:flex-start;
     justify-content: space-between; 
     height: 120px;
-    overflow: hidden; 
+    overflow: scroll; 
 }
 
 .title-links-nopic{
