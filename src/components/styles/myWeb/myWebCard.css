@@ -5,7 +5,7 @@
     align-items: flex-end; 
     padding: 5px 5px; 
     font-size: 18px; 
-    background: white; 
+    background: #ffffffb8;
     border: 1px solid white; 
     box-shadow: 4px 2px 3px 1px rgb(56, 0, 56);
 }
@@ -164,13 +164,7 @@
     display: flex; 
     flex-wrap: wrap; 
     flex-direction: column-reverse;
-}
-
-@media(min-width: 360px){
-    .myWeb-card-container{
-        flex-direction: row-reverse;
-        justify-content:space-around;
-    }
+    align-items:center; 
 }
 
 .myWeb-box{
@@ -304,25 +298,24 @@
 }
 
 .currents-banner-myWeb{
-    color: black;
+    color: white;
     font-weight: normal;
-    font-size: 28px;
-    margin: 12px auto; 
-    font-family: 'Playfair Display', 'serif';
-    border-bottom: 1px solid black;
-}
-
-@media(min-width:361px){
-    .currents-banner-myWeb{
-        display: none; 
-    }
+    font-family: "'Alegreya Sans', 'serif'";
+    font-size: 35px; 
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    text-shadow: 1px 1px 2px rgb(82, 0, 99), 0 0 25px #f14247, 0 0 5px #c42fff;
+    text-align: center;
+    margin: 0px; 
+    font-family: zeit; 
+    width: 100%; 
 }
 
 .currents-banner-myWeb-top{
     display: none; 
 }
 
-@media(min-width: 361px){ 
+@media(min-width: 961px){ 
     .currents-banner-myWeb-top{
         display: block; 
         width: 100%; 
