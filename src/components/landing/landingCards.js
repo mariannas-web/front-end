@@ -47,10 +47,10 @@ export default class LandingCards extends React.Component{
                     })} 
                 </div> 
                 <div className='newsCards'>
-                    {this.state.currentsFeed.map(card => {
+                    {this.state.currentsFeed.map((card, index) => {
                         for(let i = 0; i < 15; i++){
                             if(card.category[i]){
-                                return <LandingCard key={card.id} card={card}/>  
+                                return <LandingCard key={card.id} card={card} count={index}/>  
                             }
                         }
                     })}
