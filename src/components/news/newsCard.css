@@ -22,6 +22,11 @@
 
 .background-selector{
     background: #8000802b;
+    width: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+    align-items:center; 
+    padding: 4px 0px;
 }
 
 
