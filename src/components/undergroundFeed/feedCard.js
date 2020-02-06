@@ -29,6 +29,9 @@ export default class UndergroundFeedCard extends React.Component{
                     url: response.data.url
                 })
             })
+            .catch(error => {
+                console.log("there was an error gathering the data", error)
+            })
     }
 
     deleteHandler = (id) => {

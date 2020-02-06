@@ -50,6 +50,9 @@ export default class MyWebCard extends React.Component{
                     url: response.data.url
                 })
             })
+            .catch(error => {
+                console.log('error loading your content', error)
+           })
     }
 
     

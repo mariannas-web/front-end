@@ -119,6 +119,9 @@ export default class MariannasWebCard extends React.Component{
                     url: response.data.url
                 })
             })
+            .catch(error => {
+                console.log("there was an error gathering your data", error)
+            })
     }
     
     render(){
