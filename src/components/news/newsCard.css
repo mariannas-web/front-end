@@ -10,8 +10,9 @@
 
 .card-container{
     cursor: pointer; 
+    font-family: 'Cabin', sans-serif;
+
     color: black;
-    font-family: 'Alegreya Sans', 'serif';
     background-repeat: no-repeat; 
     background-position:center; 
     background-size: cover; 
