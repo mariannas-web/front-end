@@ -109,7 +109,7 @@ export default class MyWebFeedCard extends React.Component{
     }
 
     getPreview = (link) => {
-        axiosWithAuth().get(`http://api.linkpreview.net/?key=${process.env.REACT_APP_LINK_PREVIEW}=${link}`)
+        axiosWithAuth().get(`https://api.linkpreview.net/?key=${process.env.REACT_APP_LINK_PREVIEW}=${link}`)
             .then(response => {
                 this.setState({
                     title: response.data.title,

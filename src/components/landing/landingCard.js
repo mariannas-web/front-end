@@ -34,8 +34,7 @@ export default class LandingCard extends React.Component{
        }
     }
 
-
-    render(){
+    render(){        
         return(
             <div className='card-container'>
                 <div className="mobile-container"> 
