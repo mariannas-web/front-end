@@ -36,7 +36,7 @@ export default class ScienceFeedCard extends React.Component{
 
 
 
-    render(){
+     render(){
         return(
             <div className='card-container'>
                 <div className="mobile-container"> 
@@ -57,7 +57,7 @@ export default class ScienceFeedCard extends React.Component{
                                     <p>{this.props.card.title}</p>
                                 </a>
                             </div> 
-                            {this.state.viewTeaser === false ? <div onClick={this.teaserHandler} className='links'>Open Teaser</div> : <div onClick={this.teaserHandler} className='links'>Close Teaser</div>  }
+                            {this.state.viewTeaser === false ? <p onClick={this.teaserHandler} className='links'>+</p> : <p onClick={this.teaserHandler} className='links'>-</p>  }
                             
                         </div> 
                     </div> 
@@ -65,7 +65,8 @@ export default class ScienceFeedCard extends React.Component{
                         <p>{this.checkContent(this.props.card.description)}</p> 
                     </div> 
                 </div> 
-            </div> 
+                <hr style={{width: '95%'}}/> 
+            </div>         
         )
     }
 }

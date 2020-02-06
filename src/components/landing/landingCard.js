@@ -34,37 +34,38 @@ export default class LandingCard extends React.Component{
        }
     }
 
-    render(){        
+
+    render(){
         return(
             <div className='card-container'>
                 <div className="mobile-container"> 
-                    
+                    <div className='author-timestamp-container'> 
+                        <p className='author'>@{this.props.card.author}</p> 
+                        <p className='timestamp'>{this.props.card.published.slice(0, -14)}</p> 
+                    </div>                    
                     <div className='image-content-container'>
                         <div className='article-image'> 
-
                             {this.props.card.image === "None" || this.props.card.image === "null" ? 
                                 <img alt='newscard thumbnail' className='newsCard-image' src={altImage} /> :
                                 <img alt='newscard thumbnail' className='newsCard-image' src={this.props.card.image} />
                             }
-                         </div> 
+                        </div> 
                         <div className='title-links-container'>
                             <div className="title">
                                 <a href={this.props.card.url} style={{textDecoration: 'none'}}>
                                     <p>{this.props.card.title}</p>
                                 </a>
                             </div> 
-                            <div className='author-genre-container'> 
-                               <p className='author'>@{this.props.card.author}</p> 
-                               {this.state.viewTeaser === false ? <p onClick={this.teaserHandler} style={{margin: '0px', fontSize: '22px'}}>+</p> : <p onClick={this.teaserHandler} style={{margin: '0px', fontSize: '22px'}}>-</p>  }
-                            </div> 
+                            {this.state.viewTeaser === false ? <p onClick={this.teaserHandler} className='links'>+</p> : <p onClick={this.teaserHandler} className='links'>-</p>  }
+                            
                         </div> 
                     </div> 
-                    <div className={this.state.viewTeaser === true || this.props.key % 1 === 0 ?  'article-content' : 'article-content-teaser'}>
+                    <div className={this.state.viewTeaser === true ? 'article-content' : 'article-content-teaser'}>
                         <p>{this.checkContent(this.props.card.description)}</p> 
                     </div> 
                 </div> 
                 <hr style={{width: '95%'}}/> 
-            </div> 
+            </div>         
         )
     }
 }
