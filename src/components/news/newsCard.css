@@ -21,7 +21,7 @@
 
 @media(min-width: 700px){
     .card-container{
-        width: 75%;
+        width: 90%;
         max-width: 490px; 
     }
 }
@@ -62,7 +62,6 @@
         flex-wrap: wrap; 
         justify-content: center; 
         align-items:center; 
-        height: 82px; 
         font-size: 15px;
         font-weight: 800; 
         color: rgb(0, 0, 0); 
@@ -82,14 +81,9 @@
     flex-direction: column; 
     justify-content: center;
     width: 35%;
-    padding: 0px 10px; 
 }
 
-@media(min-width:700px){
-    .article-image{
-        padding: 8px 10px 8px 0px; 
-    }
-}
+
 
 
 
@@ -108,6 +102,17 @@
     }
 }
 
+@media (min-width: 500px){
+    .newsCard-image {
+        height: 87px;
+    }
+}
+
+@media (min-width: 700px){
+    .newsCard-image {
+        height: 100px;
+    }
+}
 
 .hidden{
     display: none; 
@@ -150,7 +155,9 @@
 .image-content-container{
     width: 100%;
     display: flex; 
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgb(197, 197, 197);
+
 }
 
 .author{
@@ -175,21 +182,16 @@ p.author{
 
 
 .links{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
     font-size: 20px;
     color: rgb(14, 13, 13);
+    line-height: 0.7;
     font-family: zeit;
     font-weight: 800;
-    width: 100%;
     margin-bottom: 0px;
     margin-top:0px; 
 }
 
-.links:hover{
 
-}
 
 
 
@@ -211,8 +213,8 @@ p.author{
 hr{
     border-bottom-color: rgb(197, 197, 197);
     margin-bottom: 0px;
-    margin-top: 4px; 
-    width: 95%; 
+    margin-top: 0px; 
+    width: 100%; 
 }
 
 
@@ -284,25 +286,26 @@ hr{
     flex-wrap: wrap; 
     justify-content: space-between; 
     align-items: center;
-    padding: 2px 9px;   
+    width: 100%;
 }
 
 @media(min-width:700px){
     .author-timestamp-container{
         max-width: 480px;
-        width: 94%;
-        padding: 2px 3px; 
+        
     }
 }
 
 .title-links-container{
-    width: 57%;
+    width: 60%;
     display: flex;
     flex-wrap: wrap; 
     flex-direction: column;
     align-items:flex-start;
     justify-content: space-between; 
-    height: 109px; 
+    padding-left: 10px;
+    padding-top:3px;
+    padding-bottom:3px; 
 }
 
 .title-links-nopic{
