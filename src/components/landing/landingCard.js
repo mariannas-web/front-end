@@ -36,7 +36,7 @@ export default class LandingCard extends React.Component{
 
     render(){        
         return(
-            <div className='card-container'>
+            <div className={this.props.count % 2 === 0 ? 'background-selector' : 'card-container'}>
                 <div className="mobile-container">                     
                     <div className='image-content-container'>
                         <div className='article-image'> 
