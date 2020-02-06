@@ -169,7 +169,8 @@ p.author{
 
 .timestamp{
     font-size: 14px;
-    margin: 0px; 
+    margin-top: 0px;
+    margin-bottom: 0px;  
 }
 
 
@@ -295,7 +296,7 @@ hr{
 }
 
 .title-links-container{
-    width: 55%;
+    width: 57%;
     display: flex;
     flex-wrap: wrap; 
     flex-direction: column;
