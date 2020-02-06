@@ -58,6 +58,7 @@ export default class LandingCard extends React.Component{
                         </div> 
                     </div> 
                     <div className={this.state.viewTeaser === true ? 'article-content' : 'article-content-teaser'}>
+                        <p className='timestamp'>{this.props.card.published.slice(0, -14)}</p> 
                         <p>{this.checkContent(this.props.card.description)}</p> 
                     </div> 
                 </div> 

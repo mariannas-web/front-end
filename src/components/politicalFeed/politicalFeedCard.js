@@ -34,14 +34,10 @@ export default class PoliticalFeedCard extends React.Component{
         }
      }
 
-    render(){
+     render(){        
         return(
             <div className='card-container'>
-                <div className="mobile-container"> 
-                    <div className='author-timestamp-container'> 
-                        <p className='author'>@{this.props.card.author}</p> 
-                        <p className='timestamp'>{this.props.card.published.slice(0, -14)}</p> 
-                    </div>                    
+                <div className="mobile-container">                     
                     <div className='image-content-container'>
                         <div className='article-image'> 
                             {this.props.card.image === "None" || this.props.card.image === "null" ? 
@@ -55,15 +51,17 @@ export default class PoliticalFeedCard extends React.Component{
                                     <p>{this.props.card.title}</p>
                                 </a>
                             </div> 
-                            {this.state.viewTeaser === false ? <p onClick={this.teaserHandler} className='links'>+</p> : <p onClick={this.teaserHandler} className='links'>-</p>  }
-                            
+                            <div className='author-timestamp-container'>
+                                <p className='author'>@{this.props.card.author}</p> 
+                                {this.state.viewTeaser === false ? <p onClick={this.teaserHandler} className='links'>+</p> : <p onClick={this.teaserHandler} className='links'>-</p>  }
+                            </div> 
                         </div> 
                     </div> 
                     <div className={this.state.viewTeaser === true ? 'article-content' : 'article-content-teaser'}>
+                        <p className='timestamp'>{this.props.card.published.slice(0, -14)}</p> 
                         <p>{this.checkContent(this.props.card.description)}</p> 
                     </div> 
                 </div> 
-                <hr style={{width: '95%'}}/> 
             </div>         
         )
     }
