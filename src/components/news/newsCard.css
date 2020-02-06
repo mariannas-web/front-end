@@ -156,7 +156,7 @@
 .author{
     color: rgb(0, 0, 180); 
     font-weight: 700;
-    font-size: 15px; 
+    font-size: 13px; 
 }
 
 
@@ -168,7 +168,7 @@ p.author{
 }
 
 .timestamp{
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 0px;
     margin-bottom: 0px;  
 }
