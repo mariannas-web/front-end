@@ -9,10 +9,7 @@
 
 
 @media(min-width: 460px){
-    .newsCards{
-        width: 90%; 
-        
-    }
+
 }
 
 @media(min-width: 500px){

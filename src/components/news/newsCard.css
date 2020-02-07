@@ -22,7 +22,7 @@
 
 .background-selector{
     width: 100%;
-    background: white;
+    background: #72018e1a;
     display: flex; 
     flex-wrap: wrap;
     align-items:center; 
@@ -32,7 +32,7 @@
 
 @media(min-width: 700px){
     .card-container{
-        width: 90%;
+        width: 97%;
         max-width: 490px; 
     }
 }
@@ -80,7 +80,18 @@
         border-radius: 5px; 
         margin-top: 0px;
         margin-bottom: 0px;
+    }
+}
 
+@media(min-width: 450px){
+    .title p{
+        font-size: 19px;
+    }
+}
+
+@media(min-width: 500px){
+    .title p{
+        font-size: 14px;
     }
 }
 
@@ -112,20 +123,24 @@
 
 }
 
-@media(min-width: 360px){
+@media(min-width: 450px){
     .newsCard-image{
+        min-height: 135px;
+        max-height: 143px;
     }
 }
 
 @media (min-width: 500px){
     .newsCard-image {
-        height: 87px;
+        min-height: 90px;
+        max-height: 90px;
     }
 }
 
 @media (min-width: 700px){
     .newsCard-image {
-        height: 100px;
+        min-height: 130px;
+        max-height: 130px;
     }
 }
 
@@ -173,14 +188,25 @@
     flex-wrap: wrap;
     align-items:center; 
     padding: 4px 0px;
-    background: #5f00725d;
-
+    background: #4a005826
 }
 
 .author{
     color: rgb(0, 0, 180); 
     font-weight: 700;
     font-size: 13px; 
+}
+
+@media(min-width: 450px){
+    .author{
+        font-size:17px; 
+    }
+}
+
+@media(min-width: 500px){
+    .author{
+        font-size:13px; 
+    }
 }
 
 
@@ -209,9 +235,17 @@ p.author{
 }
 
 
+@media(min-width: 450px){
+    .links{
+        font-size: 25px;
+    }
+}
 
-
-
+@media(min-width: 500px){
+    .links{
+        font-size: 20px;
+    }
+}
 
 .delete-button{
     text-align: center; 
