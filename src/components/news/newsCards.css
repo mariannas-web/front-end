@@ -8,9 +8,7 @@
 }
 
 
-@media(min-width: 460px){
 
-}
 
 @media(min-width: 500px){
     .newsCards{
@@ -32,8 +30,20 @@
 
 @media(min-width:900px){
     .newsCards{
-        flex-direction: row; 
-        
+        flex-direction: row;         
+    }
+}
+
+@media(min-width:1000px){
+    .newsCards{
+        align-items: initial;
+        margin-top: 10px;     
+    }
+}
+
+@media(min-width:1100px){
+    .newsCards{
+        width: 72%;     
     }
 }
 
@@ -83,6 +93,12 @@
 @media(min-width: 700px){
     .desktop-sidebar{
        width: 35%;
+    }
+}
+
+@media(min-width: 1100px){
+    .desktop-sidebar{
+       width: 28%;
     }
 }
 
