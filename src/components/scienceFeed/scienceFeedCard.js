@@ -36,7 +36,7 @@ export default class ScienceFeedCard extends React.Component{
 
 
 
-    render(){        
+     render(){        
         return(
             <div className='card-container'>
                 <div className='desktop-container-main'>
@@ -54,8 +54,9 @@ export default class ScienceFeedCard extends React.Component{
                     </div>
                     <p className='desktop-content'>{this.checkContent(this.props.card.description)}</p> 
                 </div> 
+
                 <div className="mobile-container">                     
-                    <div className='image-content-container'>
+                    <div className={this.props.count % 2 === 0 ? 'background-selector' :'image-content-container'}>
                         <div className='article-image'> 
                             {this.props.card.image === "None" || this.props.card.image === "null" ? 
                                 <img alt='newscard thumbnail' className='newsCard-image' src={altImage} /> :

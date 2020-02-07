@@ -48,10 +48,10 @@ export default class ScienceFeedCards extends React.Component{
                     })} 
                 </div> 
                 <div className='newsCards'>
-                    {this.state.scienceFeed.map(card => {
+                    {this.state.scienceFeed.map((card, index) => {
                         for(let i = 0; i < 15; i++){
                             if(card.category[i]){
-                                return <ScienceFeedCard key={card.id} card={card}/>  
+                                return <ScienceFeedCard key={card.id} card={card} count={index}/>  
                             }
                         }
                     })}
