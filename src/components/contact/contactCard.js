@@ -28,12 +28,11 @@ export default class ContactCard extends React.Component{
                     <p>{this.props.message.date}</p> 
                     <p>{this.props.message.name}</p> 
                 </div> 
-                {this.state.messageOpen === false ? '' : 
-                    <div>
-                        <p>{this.props.message.email}</p>
-                        <p>{this.props.message.message}</p> 
-                    </div>                       
-                }               
+                <div className={this.state.messageOpen === true ? 'message-open' : 'message-closed'}>
+                    <p>{this.props.message.email}</p>
+                    <p>{this.props.message.message}</p> 
+                </div>                       
+                              
             </div> 
         )
     }
