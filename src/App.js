@@ -20,6 +20,7 @@ import axiosWithAuth from './components/auth/utils'
 import Credits from './components/credits/credits.js'
 import ScienceFeedCards from './components/scienceFeed/scienceFeedCards'
 import ContactForm from './components/contact/contactForm'
+import ContactCards from './components/contact/contactCards'
 
 
 export default class App extends React.Component{
@@ -76,6 +77,7 @@ export default class App extends React.Component{
                 <Route exact path='/credits' component={Credits} /> 
                 <Route exact path='/science' component={ScienceFeedCards} />
                 <Route exact path='/contact' component={ContactForm} /> 
+                <PrivateRoute exact path='/contactCards' component={ContactCards} /> 
             </div>
         );
     }
