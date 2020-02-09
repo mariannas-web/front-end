@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/forms/form.css'
 import axios from 'axios'
 
 export default class Contact extends React.Component{
@@ -20,12 +21,14 @@ export default class Contact extends React.Component{
        
     submitHandler = (event) => {
         event.preventDefault()
+        console.log(this.state)
     }
 
     render(){
         return(
-            <div>
-                <form type='submit'>
+            <div className='form-container'>
+                <h1 id='contact-header'>Contact</h1>
+                <form className='contact-form' type='submit'>
                     <input type='text'
                            placeholder='name'
                            value={this.state.name}
@@ -44,7 +47,7 @@ export default class Contact extends React.Component{
                            name='message'
                            onChange={this.changeHandler}
                     />  
-                    <button onClick={this.submitHandler}>Submit</button>                       
+                    <p className='button' onClick={this.submitHandler}>Submit</p>                       
                 </form> 
             </div> 
         )

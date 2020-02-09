@@ -138,4 +138,13 @@ input:focus{
     }
 }
 
+#contact-header{
+    font-size: 45px; 
+    margin-bottom: 40px; 
+}
+
+.contact-form input{
+    margin-bottom: 25px; 
+}
+
 
