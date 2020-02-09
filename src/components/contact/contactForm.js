@@ -1,8 +1,8 @@
 import React from 'react'
-import '../styles/forms/form.css'
+import '../styles/myWeb/myWebForm.css'
 import axios from 'axios'
 
-export default class Contact extends React.Component{
+export default class ContactForm extends React.Component{
     constructor(){
         super()
         this.state = {
@@ -21,7 +21,31 @@ export default class Contact extends React.Component{
        
     submitHandler = (event) => {
         event.preventDefault()
-        console.log(this.state)
+        let contactMessage = {
+            name: this.state.name,
+            email: this.state.email,
+            message: this.state.message,
+            date: this.getDate()
+        }
+        axios.post(`${process.env.REACT_APP_CONTACT}`, contactMessage)
+            .then(response => {
+                this.setState({
+                    name: '',
+                    email:'',
+                    message:''
+                })
+            })
+            .catch(error => {
+                console.log("there was an error sending the message", error)
+            })
+    }
+
+    getDate = () => {
+        let currentTime = new Date()
+        let month = currentTime.getMonth() + 1
+        let day = currentTime.getDate()
+        let year = currentTime.getFullYear()
+        return month + "/" + String(day) + "/" + String(year)
     }
 
     render(){
