@@ -13,4 +13,5 @@ fs.writeFileSync('./.env', `REACT_APP_API_KEY=${process.env.REACT_APP_API_KEY}\n
                             REACT_APP_WEB_USER_API_KEY=${process.env.REACT_APP_WEB_USER_API_KEY}\n
                             REACT_APP_USER_FAVS_API_KEY=${process.env.REACT_APP_USER_FAVS_API_KEY}\n
                             REACT_APP_LINK_PREVIEW=${process.env.REACT_APP_LINK_PREVIEW}\n
+                            REACT_APP_CONTACT=${process.env.REACT_APP_CONTACT}\n
                 `)
