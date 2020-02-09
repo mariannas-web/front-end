@@ -22,8 +22,12 @@ export default class ContactCard extends React.Component{
 
     render(){
         return(
-            <div onClick={this.expandHandler}>
-                <p>{this.props.message.name}</p> 
+            <div onClick={this.expandHandler}> 
+                <div className='message-info'> 
+                    <p>{this.props.count}</p> 
+                    <p>{this.props.message.date}</p> 
+                    <p>{this.props.message.name}</p> 
+                </div> 
                 {this.state.messageOpen === false ? '' : 
                     <div>
                         <p>{this.props.message.email}</p>

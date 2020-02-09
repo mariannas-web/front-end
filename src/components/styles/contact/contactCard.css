@@ -1,0 +1,8 @@
+.message-info{
+    color: white; 
+    display: flex; 
+    flex-wrap: wrap; 
+    color: white; 
+    justify-content: space-evenly;
+    border-bottom: 1px solid white; 
+}

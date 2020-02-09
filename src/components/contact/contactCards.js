@@ -36,6 +36,7 @@ export default class ContactCards extends React.Component{
                 {this.state.contactInfo.map((item, index) => {
                     return <ContactCard message={item}
                                         key={index}
+                                        count={index}
                            />
                })}
             </div> 
