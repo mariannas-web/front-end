@@ -4,7 +4,7 @@
 }
 
 .message-info{
-    width: 80%;
+    width: 100%;
     display: flex; 
     flex-wrap: wrap; 
     color: white; 
@@ -12,12 +12,13 @@
 }
 
 .message-info div{
+    width: 90%; 
     display: flex; 
     flex-wrap: wrap; 
 }
 
 .message-info div p{
-    padding-left: 25px; 
+    padding-left: 45px; 
 }
 
 .message-closed{
