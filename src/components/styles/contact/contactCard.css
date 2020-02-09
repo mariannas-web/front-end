@@ -21,3 +21,8 @@
     flex-direction: column; 
     color: white; 
 }
+
+.contact-delete-button{
+    padding: 5px; 
+    border: 1px solid white; 
+}

@@ -37,6 +37,7 @@ export default class ContactCards extends React.Component{
                     return <ContactCard message={item}
                                         key={index}
                                         count={index}
+                                        renderInfo={this.renderInfo}
                            />
                })}
             </div> 
