@@ -1,10 +1,14 @@
-.message-info{
+.contact-card-container{
+    border: 1px solid white; 
     width: 100%;
+}
+
+.message-info{
+    width: 80%;
     display: flex; 
     flex-wrap: wrap; 
     color: white; 
-    justify-content: space-evenly;
-    border: 1px solid white; 
+    justify-content: space-between;
 }
 
 .message-closed{
@@ -14,5 +18,6 @@
 .message-open{
     display: flex; 
     flex-wrap: wrap; 
+    flex-direction: column; 
     color: white; 
 }

@@ -23,7 +23,7 @@ export default class ContactCard extends React.Component{
 
     render(){
         return(
-            <div onClick={this.expandHandler}> 
+            <div className='contact-card-container' onClick={this.expandHandler}> 
                 <div className='message-info'> 
                     <p>{this.props.count}</p> 
                     <p>{this.props.message.date}</p> 
@@ -32,8 +32,7 @@ export default class ContactCard extends React.Component{
                 <div className={this.state.messageOpen === true ? 'message-open' : 'message-closed'}>
                     <p>{this.props.message.email}</p>
                     <p>{this.props.message.message}</p> 
-                </div>                       
-                              
+                </div>                                               
             </div> 
         )
     }
