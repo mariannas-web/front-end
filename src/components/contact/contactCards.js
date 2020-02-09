@@ -41,6 +41,7 @@ export default class ContactCards extends React.Component{
                                         renderInfo={this.renderInfo}
                            />
                })}
+               <p>You currently have {this.state.contactInfo.length} messages!</p>
             </div> 
         )
     }

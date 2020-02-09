@@ -11,6 +11,15 @@
     justify-content: space-between;
 }
 
+.message-info div{
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.message-info div p{
+    padding-left: 25px; 
+}
+
 .message-closed{
     display: none; 
 }
