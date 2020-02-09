@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/contact/contactCard.css'
 
 export default class ContactCard extends React.Component{
     constructor(props){
