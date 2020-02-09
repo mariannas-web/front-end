@@ -37,7 +37,6 @@ export default class ContactCard extends React.Component{
         return(
             <div className='contact-card-container' onClick={this.expandHandler}> 
                 <div className='message-info'> 
-                    <p>{this.props.count}</p> 
                     <p>{this.props.message.date}</p> 
                     <p>{this.props.message.name}</p> 
                     <p onClick={() => {this.deleteHandler(this.props.message.id)}} className='contact-delete-button'>Delete</p> 
