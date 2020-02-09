@@ -1,6 +1,7 @@
 import React from 'react'
 import axiosWithAuth from '../auth/utils';
 import ContactCard from './contactCard'
+import '../styles/contact/contactCards.css'
 
 export default class ContactCards extends React.Component{
     constructor(){
@@ -31,7 +32,7 @@ export default class ContactCards extends React.Component{
             return 'loading your messages'
         }
         return(
-            <div>
+            <div className='contact-cards'>
                 {this.state.contactInfo.map((item, index) => {
                     return <ContactCard message={item}
                                         key={index}
