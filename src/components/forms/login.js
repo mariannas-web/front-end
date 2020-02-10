@@ -44,11 +44,9 @@ export default class LoginForm extends React.Component{
     render(){
         return(
             <div> 
-                <p style={{fontSize:"34px", margin: "10px 0px", textAlign: 'center', fontWeight: "bold", fontFamily: "'Alegreya Sans', 'serif'"}}> Marianna's Web </p>
                 <div className='form-container'>
                     <form onSubmit={this.submitHandler}>
                         <h1>Log In</h1>
-    
                         <input name='username' 
                                placeholder="username" 
                                type='text' 
@@ -64,9 +62,9 @@ export default class LoginForm extends React.Component{
                         <div onClick={this.submitHandler} className='button'>Submit</div> 
                     </form>
                     <hr className='form-hr' /> 
-                    <h4 style={{margin: "5px 0px",textAlign: "center", width: "100%"}}>Not A Member?</h4>
+                    <h4 style={{margin: "15px 0px 5px 0px",textAlign: "center", width: "100%", color: 'white', fontWeight: '100'}}>Not A Member?</h4>
                     <div>
-                        <h3><Link style={{fontSize: '18px', textDecoration: "none", color: 'white'}}to='/register'>Sign Up!</Link></h3>
+                        <h3><Link style={{fontSize: '18px', textDecoration: "none", color: 'white'}}to='/register'>Create New Account!</Link></h3>
                     </div> 
                 </div> 
             </div> 

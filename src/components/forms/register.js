@@ -45,7 +45,6 @@ export default class RegisterForm extends React.Component{
     render(){
         return(
             <div>
-                <p style={{fontSize:"34px", margin: "10px 0px", textAlign: 'center', fontWeight: "bold", fontFamily: "'Alegreya Sans', 'serif'"}}> Marianna's Web </p>
                 <div className='form-container'>
                     <form onSubmit={this.submitHandler}>
                         <h1>Sign Up</h1> 
@@ -67,7 +66,7 @@ export default class RegisterForm extends React.Component{
                         <div className='button' onClick={this.submitHandler}> Submit</div> 
                     </form>
                     <hr className='form-hr'/>
-                    <h4 style={{margin: "5px 0px",textAlign: "center", width: "100%"}}>Already A Member?</h4>
+                    <h4 style={{margin: "15px 0px 5px 0px",textAlign: "center", width: "100%", color:'white', fontWeight: '100'}}>Already A Member?</h4>
                     <h3 className='sign-in-button'><Link style={{textDecoration: 'none', color: 'white'}} to='login'> Sign In Here</Link></h3>
                 </div> 
             </div>
