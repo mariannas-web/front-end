@@ -8,17 +8,7 @@
     display: flex; 
     flex-wrap: wrap; 
     color: white; 
-    justify-content: space-between;
-}
-
-.message-info div{
-    width: 90%; 
-    display: flex; 
-    flex-wrap: wrap; 
-}
-
-.message-info div p{
-    padding-left: 45px; 
+    justify-content: space-around;
 }
 
 .message-closed{
@@ -30,9 +20,12 @@
     flex-wrap: wrap; 
     flex-direction: column; 
     color: white; 
+    padding-bottom: 20px; 
 }
 
 .contact-delete-button{
-    padding: 5px; 
     border: 1px solid white; 
+    text-align: center; 
+    width: 200px; 
+    margin: 0 auto; 
 }

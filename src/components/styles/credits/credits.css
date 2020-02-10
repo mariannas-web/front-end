@@ -1,11 +1,12 @@
 .credits-header{
     display: flex; 
-    justify-content: center; 
+    justify-content: center;  
 }
 
 .credits{
     text-align: center; 
     line-height: .5;
+    color: white; 
 }
 
 .credit{
@@ -26,10 +27,11 @@
     max-width: 280px;
     text-align: center;
     margin: 0px auto;
+    color: white; 
 }
 
 .credits-banner{
-    color: black;
+    color: white; 
     font-weight: normal;
     font-size: 28px;
     margin:  8px auto; 
