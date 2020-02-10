@@ -128,7 +128,7 @@ input:focus{
 
 @media(min-width: 360px){
     .form-hr{
-        width: 25px; 
+        max-width: 280px; 
     }
 }
 
