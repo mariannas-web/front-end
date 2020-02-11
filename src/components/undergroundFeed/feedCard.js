@@ -20,11 +20,11 @@ export default class UndergroundFeedCard extends React.Component{
     }
     
     getPreview = (link) => {
-        axiosWithAuth().get(`https://api.linkpreview.net/?key=${process.env.REACT_APP_LINK_PREVIEW}=${link}`)
+        axiosWithAuth().post(`https://graph.facebook.com/v6.0/?scrape=true&id=${link}&access_token=${process.env.REACT_APP_LINK_PREVIEW}`)
             .then(response => {
                 this.setState({
                     title: response.data.title,
-                    image: response.data.image,
+                    image: response.data.image[0].url,
                     description: response.data.description,
                     url: response.data.url
                 })

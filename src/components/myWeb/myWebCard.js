@@ -18,7 +18,7 @@ export default class MyWebCard extends React.Component{
     }
 
     componentDidMount(){
-        this.getPreview(this.props.link)       
+        this.getPreview(this.props.link)   
     }
 
     deleteHandler = (id) => {
@@ -32,20 +32,13 @@ export default class MyWebCard extends React.Component{
         )
     }
 
-    followUser = () => {
-        if(this.state.isFollowed){
-            this.setState({
-                isFollowed: true
-            })
-        }
-    }
 
     getPreview = (link) => {
-        axiosWithAuth().get(`https://api.linkpreview.net/?key=${process.env.REACT_APP_LINK_PREVIEW}=${link}`)
+        axiosWithAuth().post(`https://graph.facebook.com/v6.0/?scrape=true&id=${link}&access_token=${process.env.REACT_APP_LINK_PREVIEW}`)
             .then(response => {
                 this.setState({
                     title: response.data.title,
-                    image: response.data.image,
+                    image: response.data.image[0].url,
                     description: response.data.description,
                     url: response.data.url
                 })
