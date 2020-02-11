@@ -34,7 +34,8 @@ export default class LoginForm extends React.Component{
                 })
                 localStorage.setItem('token', response.data.payload)
                 localStorage.setItem('username', response.data.username)
-                this.props.history.push('/myWeb')
+                this.props.history.push('/')
+                window.location.reload()
             })
             .catch(error => { console.log('There was an error registering your content')})
     }
