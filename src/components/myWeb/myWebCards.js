@@ -22,8 +22,8 @@ export default class MyWebCards extends React.Component{
     }
 
     componentDidMount(){
-        this.renderSidebarData()
         this.renderUserData()       
+        this.renderSidebarData()
     }
 
     renderUserData = () => {
