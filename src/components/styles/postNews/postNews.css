@@ -67,7 +67,6 @@
     justify-content: flex-end;
     transform: translateY(-20px);
     font-size: 14px;
-    background: rgb(182, 123, 182);
     font-weight: 700;
     font-family: 'Alegreya Sans', 'serif';
 }
@@ -79,9 +78,9 @@
 }
 
   .post-underground-header{
-    border-bottom: 1px solid black;
+    font-family: 'Alegreya Sans', 'serif';
     display: inline-block;
-    font-weight: 500; 
+    color: white; 
 }
 
 .select-container{

@@ -29,7 +29,7 @@ export default class ContactCards extends React.Component{
 
     render(){
         if(!this.state.contactInfo.length){
-            return 'loading your messages'
+            return <p style={{margin: "45% auto", textAlign: 'center', color: 'white'}}>Loading your messages </p> 
         }
         return(
             <div className='contact-cards'>
